@@ -164,6 +164,33 @@
         
       </header>
     
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#京东一二三面"><span class="toc-number">1.</span> <span class="toc-text">京东一二三面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一面"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二面"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三面"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">三面</span></a></li></ol></li></ol></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
+    <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="京东一二三面"><a href="#京东一二三面" class="headerlink" title="京东一二三面"></a>京东一二三面</h1><h4 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h4><p>16号晚上8点半的火车，做了一晚上硬座，真是难受的一笔。主要是还背着电脑，第二天十点到北京，一下车就去麦当劳做新浪笔试。<br>然后等到中午在麦当劳吃过午饭，就去挤地铁了，大概一点半到的富泰酒店，真是豪华。然后莫名被放鸽子，问人事经理，他帮我联系了面试官，说7点之后再给我安排电话面试。我当时有点炸毛了，心里真是伤的一笔，跟hr较为激烈的争吵的几句，就转身走了。在富泰酒店一楼沙发做到4点半就去车站的，大概五点回到了麦当劳，看起了中国新歌声，把之前的不快都忘了。<br>等到七点，面试官准时给我打电话了，然后说八点再面试行么，我说OK。面试官态度特别好，我就没气可撒了。</p>
@@ -379,7 +406,7 @@
 
 
   
-  
+
   
 
   

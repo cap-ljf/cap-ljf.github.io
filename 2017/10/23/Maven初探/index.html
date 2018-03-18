@@ -168,6 +168,33 @@
         
       </header>
     
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven初探"><span class="toc-number">1.</span> <span class="toc-text">Maven初探</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-What（Maven是什么？）"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. What（Maven是什么？）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装Maven"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">安装Maven</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven概览-核心概念"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">Maven概览-核心概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#构建生命周期、构建阶段、构建目标"><span class="toc-number">1.0.1.0.3.</span> <span class="toc-text">构建生命周期、构建阶段、构建目标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#依赖和仓库"><span class="toc-number">1.0.1.0.4.</span> <span class="toc-text">依赖和仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插件"><span class="toc-number">1.0.1.0.5.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置文件"><span class="toc-number">1.0.1.0.6.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#父pom"><span class="toc-number">1.0.1.0.7.</span> <span class="toc-text">父pom</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven配置文件"><span class="toc-number">1.0.1.0.8.</span> <span class="toc-text">Maven配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven运行"><span class="toc-number">1.0.1.0.9.</span> <span class="toc-text">Maven运行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-How-Maven具体使用"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. How(Maven具体使用)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven安装目录"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">Maven安装目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven目录结构"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">Maven目录结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#POM文件"><span class="toc-number">1.0.2.0.3.</span> <span class="toc-text">POM文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#外部依赖"><span class="toc-number">1.0.2.0.4.</span> <span class="toc-text">外部依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#生命周期"><span class="toc-number">1.0.2.0.5.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插件-1"><span class="toc-number">1.0.2.0.6.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven-命令"><span class="toc-number">1.0.2.0.7.</span> <span class="toc-text">maven 命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven的生命周期"><span class="toc-number">1.0.2.0.8.</span> <span class="toc-text">maven的生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#shapshot和release版本"><span class="toc-number">1.0.2.0.9.</span> <span class="toc-text">shapshot和release版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#依赖"><span class="toc-number">1.0.2.0.10.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven的聚合与继承"><span class="toc-number">1.0.2.0.11.</span> <span class="toc-text">maven的聚合与继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven测试"><span class="toc-number">1.0.2.0.12.</span> <span class="toc-text">maven测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-WHY（为什么要使用maven）"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. WHY（为什么要使用maven）</span></a></li></ol></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
+    <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Maven初探"><a href="#Maven初探" class="headerlink" title="Maven初探"></a>Maven初探</h1><p>今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。<br><a id="more"></a></p>
@@ -492,7 +519,7 @@ Maven的中央仓库由Maven社区提供。默认情况下，所有不在本地�
 
 
   
-  
+
   
 
   

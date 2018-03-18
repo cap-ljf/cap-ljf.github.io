@@ -17,7 +17,7 @@
 <meta property="og:description" content="动态规划1. 什么是动态规划？定义：满足对阶段决策过程的最优化问题，一般都可以用动态规划来解决。">
 <meta property="og:image" content="http://cap-ljf.top/2017/07/18/动态规划/1503321739076.png">
 <meta property="og:image" content="http://cap-ljf.top/2017/07/18/动态规划/1503322212142.png">
-<meta property="og:updated_time" content="2018-03-18T06:19:35.034Z">
+<meta property="og:updated_time" content="2018-03-18T06:27:47.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划">
 <meta name="twitter:description" content="动态规划1. 什么是动态规划？定义：满足对阶段决策过程的最优化问题，一般都可以用动态规划来解决。">
@@ -167,6 +167,33 @@
         
       </header>
     
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#动态规划"><span class="toc-number">1.</span> <span class="toc-text">动态规划</span></a></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
+    <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p><strong>1. 什么是动态规划？</strong><br><strong>定义：</strong>满足对阶段决策过程的最优化问题，一般都可以用动态规划来解决。<br><a id="more"></a><br><strong>1.1 特性：</strong></p>
@@ -359,13 +386,26 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#动态规划"><span class="toc-number">1.</span> <span class="toc-text">动态规划</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
   
-  
+
   
 
   
