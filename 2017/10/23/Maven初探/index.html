@@ -8,19 +8,20 @@
   <link rel="dns-prefetch" href="http://cap-ljf.top">
   <title>maven初步学习 | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="@(maven)[maven] Maven初探今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。 1. What（Maven是什么？）Maven是一个强大的Java项目构建工具，构建工具：将软件项目构建相关的过程自动化的工具。">
+  <meta name="description" content="Maven初探今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。 1. What（Maven是什么？）Maven是一个强大的Java项目构建工具，构建工具：将软件项目构建相关的过程自动化的工具。 构建一个软件项目通常包含以下一个或多个过程：  生成源码（如果项目使用自动生成源码）； 从源码生成项目文档； 编译源码">
+<meta name="keywords" content="maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="maven初步学习">
 <meta property="og:url" content="http://cap-ljf.top/2017/10/23/Maven初探/index.html">
 <meta property="og:site_name" content="Jifung博客">
-<meta property="og:description" content="@(maven)[maven] Maven初探今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。 1. What（Maven是什么？）Maven是一个强大的Java项目构建工具，构建工具：将软件项目构建相关的过程自动化的工具。">
+<meta property="og:description" content="Maven初探今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。 1. What（Maven是什么？）Maven是一个强大的Java项目构建工具，构建工具：将软件项目构建相关的过程自动化的工具。 构建一个软件项目通常包含以下一个或多个过程：  生成源码（如果项目使用自动生成源码）； 从源码生成项目文档； 编译源码">
 <meta property="og:image" content="http://ifeve.com/wp-content/uploads/2014/06/maven-overview-1.png">
 <meta property="og:image" content="http://ifeve.com/wp-content/uploads/2014/06/super-pom.png">
 <meta property="og:image" content="http://images.cnitblog.com/i/293735/201407/012038215279940.png">
-<meta property="og:updated_time" content="2018-03-18T06:00:22.932Z">
+<meta property="og:updated_time" content="2018-03-18T06:02:08.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven初步学习">
-<meta name="twitter:description" content="@(maven)[maven] Maven初探今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。 1. What（Maven是什么？）Maven是一个强大的Java项目构建工具，构建工具：将软件项目构建相关的过程自动化的工具。">
+<meta name="twitter:description" content="Maven初探今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。 1. What（Maven是什么？）Maven是一个强大的Java项目构建工具，构建工具：将软件项目构建相关的过程自动化的工具。 构建一个软件项目通常包含以下一个或多个过程：  生成源码（如果项目使用自动生成源码）； 从源码生成项目文档； 编译源码">
 <meta name="twitter:image" content="http://ifeve.com/wp-content/uploads/2014/06/maven-overview-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
@@ -169,10 +170,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>@(maven)[maven]</p>
-<h1 id="Maven初探"><a href="#Maven初探" class="headerlink" title="Maven初探"></a>Maven初探</h1><p>今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。</p>
+        <h1 id="Maven初探"><a href="#Maven初探" class="headerlink" title="Maven初探"></a>Maven初探</h1><p>今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。</p>
 <h3 id="1-What（Maven是什么？）"><a href="#1-What（Maven是什么？）" class="headerlink" title="1. What（Maven是什么？）"></a>1. What（Maven是什么？）</h3><p>Maven是一个强大的Java项目构建工具，构建工具：将软件项目构建相关的过程自动化的工具。</p>
-<a id="more"></a>
 <p>构建一个软件项目通常包含以下一个或多个过程：</p>
 <ul>
 <li>生成源码（如果项目使用自动生成源码）；</li>
@@ -368,6 +367,17 @@ Maven的中央仓库由Maven社区提供。默认情况下，所有不在本地�
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -561,6 +571,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
