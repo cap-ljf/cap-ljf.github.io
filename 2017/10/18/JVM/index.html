@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://cap-ljf.top">
   <title>JVM | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JVM一、类初始化我们常说的类初始化分为三个阶段，类加载、连接、和初始化。类加载把class文件载入内存，类连接进行内存分配、初始化为静态变量赋值。 类的加载类的加载指将类的class文件载入内存，并为之创建一个java.lang.Class对象。可以从下面几种来源加载类。  本地文件系统 JAR包 网络 把一个java文件动态编译，并执行加载类加载完成后，JVM就为其生成一个java.lang.">
+  <meta name="description" content="JVM一、类初始化我们常说的类初始化分为三个阶段，类加载、连接、和初始化。类加载把class文件载入内存，类连接进行内存分配、初始化为静态变量赋值。">
 <meta name="keywords" content="jvm,java虚拟机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM">
 <meta property="og:url" content="http://cap-ljf.top/2017/10/18/JVM/index.html">
 <meta property="og:site_name" content="Jifung博客">
-<meta property="og:description" content="JVM一、类初始化我们常说的类初始化分为三个阶段，类加载、连接、和初始化。类加载把class文件载入内存，类连接进行内存分配、初始化为静态变量赋值。 类的加载类的加载指将类的class文件载入内存，并为之创建一个java.lang.Class对象。可以从下面几种来源加载类。  本地文件系统 JAR包 网络 把一个java文件动态编译，并执行加载类加载完成后，JVM就为其生成一个java.lang.">
+<meta property="og:description" content="JVM一、类初始化我们常说的类初始化分为三个阶段，类加载、连接、和初始化。类加载把class文件载入内存，类连接进行内存分配、初始化为静态变量赋值。">
 <meta property="og:image" content="http://cap-ljf.top/2017/10/18/JVM/1503387415981.png">
 <meta property="og:image" content="http://cap-ljf.top/2017/10/18/JVM/1503387471723.png">
-<meta property="og:updated_time" content="2018-03-18T06:13:59.477Z">
+<meta property="og:updated_time" content="2018-03-18T06:19:35.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM">
-<meta name="twitter:description" content="JVM一、类初始化我们常说的类初始化分为三个阶段，类加载、连接、和初始化。类加载把class文件载入内存，类连接进行内存分配、初始化为静态变量赋值。 类的加载类的加载指将类的class文件载入内存，并为之创建一个java.lang.Class对象。可以从下面几种来源加载类。  本地文件系统 JAR包 网络 把一个java文件动态编译，并执行加载类加载完成后，JVM就为其生成一个java.lang.">
+<meta name="twitter:description" content="JVM一、类初始化我们常说的类初始化分为三个阶段，类加载、连接、和初始化。类加载把class文件载入内存，类连接进行内存分配、初始化为静态变量赋值。">
 <meta name="twitter:image" content="http://cap-ljf.top/2017/10/18/JVM/1503387415981.png">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
@@ -169,7 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h3 id="一、类初始化"><a href="#一、类初始化" class="headerlink" title="一、类初始化"></a>一、类初始化</h3><p>我们常说的类初始化分为三个阶段，类加载、连接、和初始化。类加载把class文件载入内存，类连接进行内存分配、初始化为静态变量赋值。</p>
+        <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h3 id="一、类初始化"><a href="#一、类初始化" class="headerlink" title="一、类初始化"></a>一、类初始化</h3><p>我们常说的类初始化分为三个阶段，类加载、连接、和初始化。类加载把class文件载入内存，类连接进行内存分配、初始化为静态变量赋值。<br><a id="more"></a></p>
 <h4 id="类的加载"><a href="#类的加载" class="headerlink" title="类的加载"></a>类的加载</h4><p>类的加载指将类的class文件载入内存，并为之创建一个java.lang.Class对象。可以从下面几种来源加载类。</p>
 <ul>
 <li>本地文件系统</li>
