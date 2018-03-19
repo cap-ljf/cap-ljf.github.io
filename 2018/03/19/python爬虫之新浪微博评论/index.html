@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://cap-ljf.top">
   <title>python爬虫之新浪微博评论 | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5 一开始我用老一套爬虫方法”chrome登录网站，F12-&amp;gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇博客，于是开启了轻松愉快的爬虫。 1. 寻找 weibo 评论接口爬虫最重要的就是找">
+  <meta name="description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5">
 <meta name="keywords" content="爬虫,新浪微博">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python爬虫之新浪微博评论">
 <meta property="og:url" content="http://cap-ljf.top/2018/03/19/python爬虫之新浪微博评论/index.html">
 <meta property="og:site_name" content="Jifung博客">
-<meta property="og:description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5 一开始我用老一套爬虫方法”chrome登录网站，F12-&amp;gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇博客，于是开启了轻松愉快的爬虫。 1. 寻找 weibo 评论接口爬虫最重要的就是找">
-<meta property="og:image" content="blob:https://maxiang.io/82125779-203c-4ad9-a2c6-5436a4e9b97d">
-<meta property="og:image" content="blob:https://maxiang.io/d0d29a55-395f-492d-a24c-1cdde8c3f85a">
-<meta property="og:image" content="blob:https://maxiang.io/ef597812-2e66-4554-93da-dbc55b842dbd">
-<meta property="og:image" content="blob:https://maxiang.io/efc71bd1-ad68-4f1c-b2f1-79147a3dc56d">
-<meta property="og:updated_time" content="2018-03-19T13:31:23.639Z">
+<meta property="og:description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/2b4877c5-9e3b-4c4c-af61-167835268cbf">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/624bbf2a-3107-4a44-8395-ceee0761e5a0">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/1b38a717-564f-4aff-9537-e9303a6ed457">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/aa7be1dc-5bdf-493a-b5d7-24d85f804c5a">
+<meta property="og:updated_time" content="2018-03-19T13:34:04.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python爬虫之新浪微博评论">
-<meta name="twitter:description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5 一开始我用老一套爬虫方法”chrome登录网站，F12-&amp;gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇博客，于是开启了轻松愉快的爬虫。 1. 寻找 weibo 评论接口爬虫最重要的就是找">
-<meta name="twitter:image" content="blob:https://maxiang.io/82125779-203c-4ad9-a2c6-5436a4e9b97d">
+<meta name="twitter:description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s15/res/2b4877c5-9e3b-4c4c-af61-167835268cbf">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
   
@@ -202,12 +202,13 @@
 <pre><code>环境：
 ubuntu16.10
 python3.5
-</code></pre><p>一开始我用老一套爬虫方法”chrome登录网站，F12-&gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇<a href="https://www.jianshu.com/p/92de44f0376a" target="_blank" rel="noopener">博客</a>，于是开启了轻松愉快的爬虫。</p>
+</code></pre><a id="more"></a>
+<p>一开始我用老一套爬虫方法”chrome登录网站，F12-&gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇<a href="https://www.jianshu.com/p/92de44f0376a" target="_blank" rel="noopener">博客</a>，于是开启了轻松愉快的爬虫。</p>
 <h2 id="1-寻找-weibo-评论接口"><a href="#1-寻找-weibo-评论接口" class="headerlink" title="1. 寻找 weibo 评论接口"></a>1. 寻找 weibo 评论接口</h2><p>爬虫最重要的就是找到合适的接口，这是我目前对爬虫的理解，找到合适的接口能给你减少一半以上的工作。<code>微博</code>作为流量数一数二的平台，早就公开了开发者接口。那我们就来看看怎么使用weibo 开发者 api。</p>
-<p><strong>[1] 微博开放平台创建应用</strong><br>登录<a href="http://open.weibo.com" target="_blank" rel="noopener">微博开放平台</a>，注册个人或公司看自己需求，我注册的个人。<br><img src="blob:https://maxiang.io/82125779-203c-4ad9-a2c6-5436a4e9b97d" alt="Alt text"><br>微连接–&gt;其他–&gt;随意填写信息，完成新应用创建.<br>然后就可以在我的应用中看到自己刚刚创建的应用。点击<code>应用信息</code><br><img src="blob:https://maxiang.io/d0d29a55-395f-492d-a24c-1cdde8c3f85a" alt="Alt text"><br>我们需要的是这个新应用的两样东西：<code>App Key</code>和<code>App Secret</code><br>点击<code>高级信息</code>，将<code>https://api.weibo.com/oauth2/default.html</code>填入<code>授权回调页</code>和<code>取消授权回调页</code>。<br>到这里我们已经完成开发者的申请。</p>
-<p><strong>[2] 微博api 接口</strong><br>在<a href="http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI#.E8.AF.84.E8.AE.BA" target="_blank" rel="noopener">微博API</a>页面找到评论接口：<br><img src="blob:https://maxiang.io/ef597812-2e66-4554-93da-dbc55b842dbd" alt="Alt text"></p>
+<p><strong>[1] 微博开放平台创建应用</strong><br>登录<a href="http://open.weibo.com" target="_blank" rel="noopener">微博开放平台</a>，注册个人或公司看自己需求，我注册的个人。<br><img src="https://app.yinxiang.com/shard/s15/res/2b4877c5-9e3b-4c4c-af61-167835268cbf" alt="Alt text"><br>微连接–&gt;其他–&gt;随意填写信息，完成新应用创建.<br>然后就可以在我的应用中看到自己刚刚创建的应用。点击<code>应用信息</code><br><img src="https://app.yinxiang.com/shard/s15/res/624bbf2a-3107-4a44-8395-ceee0761e5a0" alt="Alt text"><br>我们需要的是这个新应用的两样东西：<code>App Key</code>和<code>App Secret</code><br>点击<code>高级信息</code>，将<code>https://api.weibo.com/oauth2/default.html</code>填入<code>授权回调页</code>和<code>取消授权回调页</code>。<br>到这里我们已经完成开发者的申请。</p>
+<p><strong>[2] 微博api 接口</strong><br>在<a href="http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI#.E8.AF.84.E8.AE.BA" target="_blank" rel="noopener">微博API</a>页面找到评论接口：<br><img src="https://app.yinxiang.com/shard/s15/res/1b38a717-564f-4aff-9537-e9303a6ed457" alt="Alt text"></p>
 <p><strong>[3] 编写简单测试代码</strong></p>
-<p>首先安装 <code>sinaweibopy</code> 模块，我本来想尝试用python3装，但是遇到错误：<img src="blob:https://maxiang.io/efc71bd1-ad68-4f1c-b2f1-79147a3dc56d" alt="Alt text">。google 百度 都没有找到解决方法。结合<a href="https://www.jianshu.com/p/92de44f0376a" target="_blank" rel="noopener">博客：</a>和错误信息，觉得是这个模块并不支持python3，于是用python2.7进行了测试。</p>
+<p>首先安装 <code>sinaweibopy</code> 模块，我本来想尝试用python3装，但是遇到错误：<img src="https://app.yinxiang.com/shard/s15/res/aa7be1dc-5bdf-493a-b5d7-24d85f804c5a" alt="Alt text">。google 百度 都没有找到解决方法。结合<a href="https://www.jianshu.com/p/92de44f0376a" target="_blank" rel="noopener">博客：</a>和错误信息，觉得是这个模块并不支持python3，于是用python2.7进行了测试。</p>
 <p>测试代码参考文章<a href="https://www.jianshu.com/p/92de44f0376a" target="_blank" rel="noopener">开头链接</a>。</p>
 <p><strong>结尾</strong><br>上面是很好的方法，但我并没有使用这种方法，而是爬去这两个接口：</p>
 <ul>
