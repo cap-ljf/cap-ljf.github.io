@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cap-ljf.top">
-  <title>华为面经 | Jifung博客</title>
+  <title>python爬虫之新浪微博评论 | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="坐了两个晚上的火车，赶回来面华为，我也是很拼。  华为面试跟京东地方差不多，都是一个豪华酒店包了一层。但是面试真的很水，至少技术含量跟别家比起来很水。">
-<meta name="keywords" content="面经,华为">
+  <meta name="description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5 一开始我用老一套爬虫方法”chrome登录网站，F12-&amp;gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇博客，于是开启了轻松愉快的爬虫。 1. 寻找 weibo 评论接口爬虫最重要的就是找">
+<meta name="keywords" content="爬虫,新浪微博">
 <meta property="og:type" content="article">
-<meta property="og:title" content="华为面经">
-<meta property="og:url" content="http://cap-ljf.top/2017/09/18/华为面经/index.html">
+<meta property="og:title" content="python爬虫之新浪微博评论">
+<meta property="og:url" content="http://cap-ljf.top/2018/03/19/python爬虫之新浪微博评论/index.html">
 <meta property="og:site_name" content="Jifung博客">
-<meta property="og:description" content="坐了两个晚上的火车，赶回来面华为，我也是很拼。  华为面试跟京东地方差不多，都是一个豪华酒店包了一层。但是面试真的很水，至少技术含量跟别家比起来很水。">
-<meta property="og:updated_time" content="2018-03-18T06:31:04.430Z">
+<meta property="og:description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5 一开始我用老一套爬虫方法”chrome登录网站，F12-&amp;gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇博客，于是开启了轻松愉快的爬虫。 1. 寻找 weibo 评论接口爬虫最重要的就是找">
+<meta property="og:image" content="blob:https://maxiang.io/82125779-203c-4ad9-a2c6-5436a4e9b97d">
+<meta property="og:image" content="blob:https://maxiang.io/d0d29a55-395f-492d-a24c-1cdde8c3f85a">
+<meta property="og:image" content="blob:https://maxiang.io/ef597812-2e66-4554-93da-dbc55b842dbd">
+<meta property="og:image" content="blob:https://maxiang.io/efc71bd1-ad68-4f1c-b2f1-79147a3dc56d">
+<meta property="og:updated_time" content="2018-03-19T13:31:23.639Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="华为面经">
-<meta name="twitter:description" content="坐了两个晚上的火车，赶回来面华为，我也是很拼。  华为面试跟京东地方差不多，都是一个豪华酒店包了一层。但是面试真的很水，至少技术含量跟别家比起来很水。">
+<meta name="twitter:title" content="python爬虫之新浪微博评论">
+<meta name="twitter:description" content="今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。 环境： ubuntu16.10 python3.5 一开始我用老一套爬虫方法”chrome登录网站，F12-&amp;gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇博客，于是开启了轻松愉快的爬虫。 1. 寻找 weibo 评论接口爬虫最重要的就是找">
+<meta name="twitter:image" content="blob:https://maxiang.io/82125779-203c-4ad9-a2c6-5436a4e9b97d">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
   
@@ -146,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-华为面经" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python爬虫之新浪微博评论" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      华为面经
+      python爬虫之新浪微博评论
     </h1>
   
 
         
-        <a href="/2017/09/18/华为面经/" class="archive-article-date">
-  	<time datetime="2017-09-18T06:15:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
+        <a href="/2018/03/19/python爬虫之新浪微博评论/" class="archive-article-date">
+  	<time datetime="2018-03-19T13:29:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-19</time>
 </a>
         
       </header>
@@ -173,7 +178,7 @@
     	<div id="toc-article" class="toc-article">
     	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     		<strong class="toc-title">文章目录</strong>
-               <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一面"><span class="toc-number">1.</span> <span class="toc-text">一面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二面（综合面）"><span class="toc-number">2.</span> <span class="toc-text">二面（综合面）</span></a></li></ol>
+               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-寻找-weibo-评论接口"><span class="toc-number">1.</span> <span class="toc-text">1. 寻找 weibo 评论接口</span></a></li></ol>
              </div>
        <script type="text/javascript">
     	function showToc(){
@@ -193,25 +198,22 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  坐了两个晚上的火车，赶回来面华为，我也是很拼。<br>  华为面试跟京东地方差不多，都是一个豪华酒店包了一层。但是面试真的很水，至少技术含量跟别家比起来很水。<br><a id="more"></a></p>
-<h4 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h4><blockquote>
-<p>进去先给简历，然后说你可以自我介绍了 </p>
+        <p>今天继续进行毕设工作，昨天完成今日头条爬虫之后，今天开始编写微博评论的爬虫。</p>
+<pre><code>环境：
+ubuntu16.10
+python3.5
+</code></pre><p>一开始我用老一套爬虫方法”chrome登录网站，F12-&gt;network查找相应接口”，废老劲找到了评论接口，结果返回结果是html格式。于是google微博api，没想到找到这篇<a href="https://www.jianshu.com/p/92de44f0376a" target="_blank" rel="noopener">博客</a>，于是开启了轻松愉快的爬虫。</p>
+<h2 id="1-寻找-weibo-评论接口"><a href="#1-寻找-weibo-评论接口" class="headerlink" title="1. 寻找 weibo 评论接口"></a>1. 寻找 weibo 评论接口</h2><p>爬虫最重要的就是找到合适的接口，这是我目前对爬虫的理解，找到合适的接口能给你减少一半以上的工作。<code>微博</code>作为流量数一数二的平台，早就公开了开发者接口。那我们就来看看怎么使用weibo 开发者 api。</p>
+<p><strong>[1] 微博开放平台创建应用</strong><br>登录<a href="http://open.weibo.com" target="_blank" rel="noopener">微博开放平台</a>，注册个人或公司看自己需求，我注册的个人。<br><img src="blob:https://maxiang.io/82125779-203c-4ad9-a2c6-5436a4e9b97d" alt="Alt text"><br>微连接–&gt;其他–&gt;随意填写信息，完成新应用创建.<br>然后就可以在我的应用中看到自己刚刚创建的应用。点击<code>应用信息</code><br><img src="blob:https://maxiang.io/d0d29a55-395f-492d-a24c-1cdde8c3f85a" alt="Alt text"><br>我们需要的是这个新应用的两样东西：<code>App Key</code>和<code>App Secret</code><br>点击<code>高级信息</code>，将<code>https://api.weibo.com/oauth2/default.html</code>填入<code>授权回调页</code>和<code>取消授权回调页</code>。<br>到这里我们已经完成开发者的申请。</p>
+<p><strong>[2] 微博api 接口</strong><br>在<a href="http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI#.E8.AF.84.E8.AE.BA" target="_blank" rel="noopener">微博API</a>页面找到评论接口：<br><img src="blob:https://maxiang.io/ef597812-2e66-4554-93da-dbc55b842dbd" alt="Alt text"></p>
+<p><strong>[3] 编写简单测试代码</strong></p>
+<p>首先安装 <code>sinaweibopy</code> 模块，我本来想尝试用python3装，但是遇到错误：<img src="blob:https://maxiang.io/efc71bd1-ad68-4f1c-b2f1-79147a3dc56d" alt="Alt text">。google 百度 都没有找到解决方法。结合<a href="https://www.jianshu.com/p/92de44f0376a" target="_blank" rel="noopener">博客：</a>和错误信息，觉得是这个模块并不支持python3，于是用python2.7进行了测试。</p>
+<p>测试代码参考文章<a href="https://www.jianshu.com/p/92de44f0376a" target="_blank" rel="noopener">开头链接</a>。</p>
+<p><strong>结尾</strong><br>上面是很好的方法，但我并没有使用这种方法，而是爬去这两个接口：</p>
 <ul>
-<li>自我介绍</li>
-<li>本来以为看了我的简历会要问项目，但是问我项目的时候又不问我项目里面的技术，就问我一些零零散散的东西，我想系统的回忆他（一面官）到底问了什么，但是就是整理不起来。（以下部分顺序，回忆起哪个是哪个）</li>
-<li>你觉得你哪门课程学的最好</li>
-<li>从你学的好的课程里挑几门拿里面的知识点来问（我是说的数据结构、算法、Java、计算机网络）</li>
-<li>数据结构之排序算法，熟悉哪些排序算法。我说都熟悉，然后重点说我熟悉堆排序和快速排序，然后面试官问了个冒泡排序的时间复杂度。然后是平衡二叉树。</li>
-<li>算法之应用。你学了这些算法，在实际中或者你的项目中怎么用的。我回答：红黑树在hashmap中的运用，B+树在数据库和文件系统中的运用，迪杰特斯拉算法在路由算法中的运用。说到路由算法，面试官问，你都熟悉哪些路由算法或协议，我就说了距离向量和链路状态，BGP和IGMP等等。</li>
-<li>计算机网络之TCP和UDP的区别。讲完这个，说到TCP是我说跟TCP相关的主要知识有三次握手、四次分手、滑动窗口、拥塞控制等。然后他就问我拥塞控制有哪些算法，我说了慢启动、拥塞控制、快速重传、快速恢复。说到快重传，面试官又问：假如用TCP协议，我们有两台服务器通信，忽然一台服务器重启了，那会发生什么情况。我就说可能超时，会重发，然后他就说还有么，我说岔了，讲到了三次重传那里去了，他提示我是服务器重启，接收不到，然后我就想起来了，也是超时重传，但是超过16次或者多少次会断开连接。然后还问关于应用层协议都有哪些应用等等，比如http、ftp等等</li>
-<li>关于Java基本上没问任何问题，就问我我的这些语言哪个最强，我就说第一Java，然后python，然后C和C++。</li>
-<li>关于以后想往哪个方向发展等等。基本上就是在聊天了。</li>
+<li>热评接口：<code>&#39;https://m.weibo.cn/single/rcList?format=cards&amp;id=&#39; + 单条微博id + &#39;&amp;type=comment&amp;hot=1&amp;page=&#39; + 页码</code>最新评论接口：<code>&#39;https://m.weibo.cn/api/comments/show?id=&#39; + 单条微博id + &#39;&amp;page=&#39; + 页码</code></li>
 </ul>
-</blockquote>
-<h4 id="二面（综合面）"><a href="#二面（综合面）" class="headerlink" title="二面（综合面）"></a>二面（综合面）</h4><blockquote>
-<p>综合面。。。就是关于你什么性格吗，怎么学习的，未来怎么规划的，喜欢加班吗。？？？我真是害怕他这么问，那就是说加班很多咯，好怕怕。而且二面官有点年纪了，冷冰冰的，我害怕，然后就一直说话，说一句解释两句。比如加班问题，我说我不是很怕加班，正常加班的话我是能接受的，额，什么是正常加班。。。然后开始解释，越解释越乱。最后二面官笑了，说你回去等通知吧，我说谢谢您嘞。赶紧溜了。</p>
-</blockquote>
-<p>华为面试真是奇葩。。</p>
+<p>我采用的方法：scrapy + redis +（cookies、ip、UserAgent池）+ Mysql。详情下回揭晓。</p>
 
       
 
@@ -246,11 +248,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面经</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">华为</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">新浪微博</a>
         		</li>
       		
 		</ul>
@@ -306,7 +308,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2017/09/18/华为面经/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2018/03/19/python爬虫之新浪微博评论/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -320,18 +322,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/18/京东面经/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          京东面经
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/16/去哪儿面经/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">去哪儿面经</div>
+    <a href="/2018/01/18/《提问的智慧》笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《提问的智慧》笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -358,7 +351,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一面"><span class="toc-number">1.</span> <span class="toc-text">一面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二面（综合面）"><span class="toc-number">2.</span> <span class="toc-text">二面（综合面）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-寻找-weibo-评论接口"><span class="toc-number">1.</span> <span class="toc-text">1. 寻找 weibo 评论接口</span></a></li></ol>
                     </div>
                 </span>
             </div>
