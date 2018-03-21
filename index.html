@@ -143,6 +143,343 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java 序列化(serialization)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/java 序列化(serialization)/">java 序列化(serialization)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/21/java 序列化(serialization)/" class="archive-article-date">
+  	<time datetime="2018-03-21T06:22:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当你需要存储相同类型的数据时，使用固定长度的记录格式是一个不错的选择。但是在面向对象程序中创建的对象很少全部都具有相同的类型。Java语言支持一种称为<code>对象序列化(object serialization)</code>的非常通用的机制，它可以将任何对象写出到流中，并在之后将其读回。</p>
+<h2 id="1-怎么序列化"><a href="#1-怎么序列化" class="headerlink" title="1. 怎么序列化"></a>1. 怎么序列化</h2><p>对希望在对象流中存储或恢复的所有类都应该实现<code>Serialization</code>接口。<br>为了保存对象数据，首先需要打开一个<code>ObjectOutputStream</code>对象；<br>为了读回这些对象，首先需要获得一个<code>ObjectInputStream</code>对象。<br>
+        
+          <a class="article-more-a" href="/2018/03/21/java 序列化(serialization)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">transient</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">序列化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/21/java 序列化(serialization)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-字符集-字符编码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/字符集-字符编码/">字符集、字符编码</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/21/字符集-字符编码/" class="archive-article-date">
+  	<time datetime="2018-03-21T06:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h3><ul>
+<li><strong>字符</strong>：是各种文字和符号的总称，包括各国家的文字、标点符号、图形符号、数字等</li>
+<li><strong>字符集</strong>：多个字符的集合，常见的有ASCII,GBxx,Unicode等</li>
+<li><strong>字符编码</strong>：是把字符集中的字符编码为特定的二进制数，以便计算机存储。字符集中的每个字符编码都不同。
+        
+          <a class="article-more-a" href="/2018/03/21/字符集-字符编码/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">字符编码</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符集</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">UTF-8</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">UTF-16</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Unicode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/21/字符集-字符编码/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-javaIO流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/javaIO流/">java I/O流</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/21/javaIO流/" class="archive-article-date">
+  	<time datetime="2018-03-21T06:16:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>IO流简单来说就是Input和Output流，IO流主要是用来处理设备之间的数据传输，Java对于数据的操作都是通过流实现，而java用于操作流的对象都在IO包中。<br>
+        
+          <a class="article-more-a" href="/2018/03/21/javaIO流/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">I/O</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">流</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/21/javaIO流/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java流与文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/20/Java流与文件/">Java 流与文件</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/20/Java流与文件/" class="archive-article-date">
+  	<time datetime="2018-03-20T14:44:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前学过很多次流，但是用得少，忘得快，于是今天看《java核心技术 卷二》重新看了一遍,涉及到的内容甚多。<br>
+        
+          <a class="article-more-a" href="/2018/03/20/Java流与文件/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/20/Java流与文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python爬虫之新浪微博评论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -637,338 +974,10 @@ python3.5
 
 
   
-    <article id="post-华为面经" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/18/华为面经/">华为面经</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/18/华为面经/" class="archive-article-date">
-  	<time datetime="2017-09-18T06:15:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  坐了两个晚上的火车，赶回来面华为，我也是很拼。<br>  华为面试跟京东地方差不多，都是一个豪华酒店包了一层。但是面试真的很水，至少技术含量跟别家比起来很水。<br>
-        
-          <a class="article-more-a" href="/2017/09/18/华为面经/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面经</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">华为</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/18/华为面经/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-去哪儿面经" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/16/去哪儿面经/">去哪儿面经</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/16/去哪儿面经/" class="archive-article-date">
-  	<time datetime="2017-09-16T06:14:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-16</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>纪念我的第一个offer，心仪的~<br>
-        
-          <a class="article-more-a" href="/2017/09/16/去哪儿面经/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面经</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">qunar</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/16/去哪儿面经/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java网络IO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/10/java网络IO/">java网络I/O</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/10/java网络IO/" class="archive-article-date">
-  	<time datetime="2017-08-10T06:10:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-10</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>一.套接字</strong>：<br>1.定义：源IP地址和目的IP地址、源端口号和目的端口号的组合称为套接字。其用于标识客户端请求的服务器和服务。<br>
-        
-          <a class="article-more-a" href="/2017/08/10/java网络IO/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">I/O</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/10/java网络IO/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-动态规划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/动态规划/">动态规划</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/18/动态规划/" class="archive-article-date">
-  	<time datetime="2017-07-18T06:11:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1. 什么是动态规划？</strong><br><strong>定义：</strong>满足对阶段决策过程的最优化问题，一般都可以用动态规划来解决。<br>
-        
-          <a class="article-more-a" href="/2017/07/18/动态规划/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/18/动态规划/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1062,6 +1071,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2017</a>
               </li>
              
@@ -1078,7 +1091,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color5">transient</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">序列化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1087,6 +1104,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">I/O</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">流</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1107,6 +1128,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">京东</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">字符编码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">UTF-8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">UTF-16</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Unicode</a>
               </li>
              
               <li class="article-tag-list-item">
