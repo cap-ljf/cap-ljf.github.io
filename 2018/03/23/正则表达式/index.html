@@ -15,13 +15,13 @@
 <meta property="og:url" content="http://cap-ljf.top/2018/03/23/正则表达式/index.html">
 <meta property="og:site_name" content="Jifung博客">
 <meta property="og:description" content="1. 正则表达式是什么 菜鸟教程：正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。">
-<meta property="og:image" content="http://cap-ljf.top/2018/03/23/正则表达式/1521767629685.png">
-<meta property="og:image" content="http://cap-ljf.top/2018/03/23/正则表达式/1521768572824.png">
-<meta property="og:updated_time" content="2018-03-23T04:01:49.642Z">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/1bdd80c2-7840-4ec5-a13c-6f0fe6a2a85c/1521767629685.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/9c64de64-243d-4be9-825e-647e8436af88/1521768572824.png">
+<meta property="og:updated_time" content="2018-03-23T04:02:44.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="1. 正则表达式是什么 菜鸟教程：正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。">
-<meta name="twitter:image" content="http://cap-ljf.top/2018/03/23/正则表达式/1521767629685.png">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s15/res/1bdd80c2-7840-4ec5-a13c-6f0fe6a2a85c/1521767629685.png">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
 <h2 id="2-正则语法"><a href="#2-正则语法" class="headerlink" title="2. 正则语法"></a>2. 正则语法</h2><p>构造正则表达式的方法和创建数学表达式的方法一样。也就是用多种元字符与运算符可以将小的表达式结合在一起来创建更大的表达式。正则表达式的组件可以是单个的字符、字符集合、字符范围、字符间的选择或者所有这些组件的任意组合。</p>
 <p>正则表达式是由普通字符（例如字符 a 到 z）以及特殊字符（称为”元字符”）组成的文字模式。模式描述在搜索文本时要匹配的一个或多个字符串。正则表达式作为一个模板，将某个字符模式与所搜索的字符串进行匹配。</p>
 <h3 id="普通字符"><a href="#普通字符" class="headerlink" title="普通字符"></a>普通字符</h3><p>普通字符包括没有显式指定为元字符的所有可打印和不可打印字符。这包括所有大写和小写字母、所有数字、所有标点符号和一些其他符号。</p>
-<h3 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h3><p><img src="./1521767629685.png" alt="Alt text"></p>
+<h3 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h3><p><img src="https://app.yinxiang.com/shard/s15/res/1bdd80c2-7840-4ec5-a13c-6f0fe6a2a85c/1521767629685.png" alt="Alt text"></p>
 <h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><p>特殊字符就是具有特殊功能的字符，如果要匹配特殊字符本身，需要加上转义字符<code>\</code>。<br>| 特殊字符      |    描述 |<br>| :——– | ——–:|<br>| $  | 匹配行尾，如果设置了RegExp的MultiLine属性，则可以匹配多行，即匹配字符串尾 |<br>|^|匹配行首|<br>|<em>|匹配`</em><code>号前面子表达式 0次或多次|
 |+|匹配</code>+<code>号前面子表达式 1次或多次|
 |.|匹配除换行符</code>\n`以外的所有字符|<br>|[|标记一个中括号表达式的开始|<br>|{|标记限定符表达式的开始|<br>|()|标记一个子表达式的开始和结束|<br>|?|匹配前面子表达式0次或一次|<br>|||指明两项中间的一个选择|</p>
-<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><p>限定符用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。有 * 或 + 或 ? 或 {n} 或 {n,} 或 {n,m} 共6种。<br><img src="./1521768572824.png" alt="Alt text"></p>
+<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><p>限定符用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。有 * 或 + 或 ? 或 {n} 或 {n,} 或 {n,m} 共6种。<br><img src="https://app.yinxiang.com/shard/s15/res/9c64de64-243d-4be9-825e-647e8436af88/1521768572824.png" alt="Alt text"></p>
 <h2 id="3-java怎么使用正则"><a href="#3-java怎么使用正则" class="headerlink" title="3. java怎么使用正则"></a>3. java怎么使用正则</h2><p>正则表达式的最简单用法就是测试某个特定的字符串是否与它匹配。</p>
 <ol>
 <li>首先构建一个<code>Pattern</code>对象。<br><code>Pattern pattern = Pattern.compile(patternString)</code> #patternString为正则表达式字符串</li>
