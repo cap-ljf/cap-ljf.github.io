@@ -9,7 +9,7 @@
   <title>Java网络编程 | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="这一篇博客将介绍怎么进行Java网络编程，首先我们回顾网络的基本概念，然后进一步介绍Java socket，并演示网络客户端和服务器是如何实现的，最后将介绍如果通过Java程序发送E-mail，以及如何从Web服务器获得信息。">
-<meta name="keywords" content="Java网络编程,socket">
+<meta name="keywords" content="Java网络编程,socket,JavaMail">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java网络编程">
 <meta property="og:url" content="http://cap-ljf.top/2018/03/26/Java网络编程/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/a836d720-dcca-42c8-86b1-d21ea60395bc/1522074780596.png">
 <meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/e5374a0f-acba-41e0-9aa8-cd2a6ccbdd3c/1522074797444.png">
 <meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/d2fa064e-d387-427b-b21d-e04b2cc25c83/1522074945736.png">
-<meta property="og:updated_time" content="2018-03-26T14:59:20.448Z">
+<meta property="og:updated_time" content="2018-03-26T15:02:23.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java网络编程">
 <meta name="twitter:description" content="这一篇博客将介绍怎么进行Java网络编程，首先我们回顾网络的基本概念，然后进一步介绍Java socket，并演示网络客户端和服务器是如何实现的，最后将介绍如果通过Java程序发送E-mail，以及如何从Web服务器获得信息。">
@@ -198,7 +198,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这一篇博客将介绍怎么进行Java网络编程，首先我们回顾网络的基本概念，然后进一步介绍Java socket，并演示网络客户端和服务器是如何实现的，最后将介绍如果通过Java程序发送E-mail，以及如何从Web服务器获得信息。<br><a id="more"></a></p>
-<h3 id="1-Socket"><a href="#1-Socket" class="headerlink" title="1. Socket"></a>1. Socket</h3><h4 id="1-1-连接到服务器"><a href="#1-1-连接到服务器" class="headerlink" title="1.1 连接到服务器"></a>1.1 连接到服务器</h4><p>在Linux和windows操作系统中都预装了<code>telnet</code>工具，它对我们调试网络程序非常有帮助。<br>首先尝试下面的命令：<br><code>telnet time-A.timefreq.bldrdoc.gov 13</code><br>在你的控制台将返回下面一行类似的信息：<br><code></code><br>如果你得到上面这行信息，说明你已经连接到了大多数UNIX计算机都支持的“当日时间”服务</p>
+<h3 id="1-Socket"><a href="#1-Socket" class="headerlink" title="1. Socket"></a>1. Socket</h3><h4 id="1-1-连接到服务器"><a href="#1-1-连接到服务器" class="headerlink" title="1.1 连接到服务器"></a>1.1 连接到服务器</h4><p>在Linux和windows操作系统中都预装了<code>telnet</code>工具，它对我们调试网络程序非常有帮助。<br>首先尝试下面的命令：<br><code>telnet time-A.timefreq.bldrdoc.gov 13</code><br>在你的控制台将返回下面一行类似的信息：<br><code>58203 18-03-26 15:01:27 50 0 0 631.0 UTC(NIST) *</code><br>如果你得到上面这行信息，说明你已经连接到了大多数UNIX计算机都支持的“当日时间”服务</p>
 <p><strong>socket概念</strong><br>在计算机网络课程中我们学习了ISO七层协议，其中讲述了socket是指ip地址加port端口号组成的通道，当通道连接之后我们就可以使用socket进行数据传输。</p>
 <p>下面这个程序的作用和telnet工具是一样的，即连接到某个端口并打印出它所找到的信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 这个类的作用与telnet工具是一致的，即连接到某个端口并打印出它所找到的信息</span></span><br><span class="line"><span class="comment"> * author: jifang</span></span><br><span class="line"><span class="comment"> * date: 18-3-26 下午2:01</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SocketTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//打开一个套接字</span></span><br><span class="line">        <span class="keyword">try</span> (Socket s = <span class="keyword">new</span> Socket(<span class="string">"time-A.timefreq.bldrdoc.gov"</span>, <span class="number">13</span>)) &#123;</span><br><span class="line">            s.setSoTimeout(<span class="number">10000</span>);</span><br><span class="line">            <span class="comment">//一旦套接字被打开，就可以得到一个InputStream对象，使用它进行读取数据</span></span><br><span class="line">            InputStream in = s.getInputStream();</span><br><span class="line">            Scanner sc = <span class="keyword">new</span> Scanner(in);</span><br><span class="line">            <span class="keyword">while</span> (sc.hasNextLine())&#123;</span><br><span class="line">                System.out.println(sc.nextLine());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>套接字超时</strong><br>从套接字读取信息时，在有数据可以访问之前，读操作将会被阻塞。如果此时主机不可达，那么应用将要等待很长的时间，并且因为受底层操作系统的限制而最终会导致超时。<br>对于不同的应用，应当确定合理的超时值。调用<code>setSoTimeout</code>方法设置超时时间（单位：毫秒）。<br><code>Socket s = new SOcket(...)</code><br><code>s.setSoTimeout(10000)</code> # 设置超时时间为10秒<br>如果已经为套接字设置了超时时间，并且之后的读操作和写操作在没有完成之前就超过了时间限制，那么这些操作就会抛出<code>SocketTimeoutException</code>异常。你可以捕获这个异常，并对超时做出反应。</p>
@@ -291,6 +291,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">socket</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JavaMail</a>
         		</li>
       		
 		</ul>
@@ -610,6 +614,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Unicode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JavaMail</a>
               </li>
             
             <div class="clearfix"></div>
