@@ -6,23 +6,38 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cap-ljf.top">
-  <title>java网络I/O | Jifung博客</title>
+  <title>健身训练计划 | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一.套接字：1.定义：源IP地址和目的IP地址、源端口号和目的端口号的组合称为套接字。其用于标识客户端请求的服务器和服务。">
-<meta name="keywords" content="java,I&#x2F;O">
+  <meta name="description" content="饮食训练日：  早餐: 包子或蒸饺一屉、粥或豆浆一碗、煎蛋或蒸蛋一个、牛奶一盒 上午：苹果或橘子一个 午餐：西单烤翅鸡胸饭 训练：蛋白粉、香蕉两根 晚餐：蒸美味小鸡胸，一碗粥 睡前：牛奶一盒  休息日：  早餐: 包子或蒸饺一屉、粥或豆浆一碗、煎蛋或蒸蛋一个 午餐：五谷渔粉、冒菜、1968牛扒饭选一 晚餐：蒸五谷渔粉、冒菜、1968牛扒饭选一 睡前：牛奶一盒  健身计划表http://www.ji">
+<meta name="keywords" content="健身,计划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java网络I&#x2F;O">
-<meta property="og:url" content="http://cap-ljf.top/2017/08/10/java网络IO/index.html">
+<meta property="og:title" content="健身训练计划">
+<meta property="og:url" content="http://cap-ljf.top/2018/03/27/健身训练计划/index.html">
 <meta property="og:site_name" content="Jifung博客">
-<meta property="og:description" content="一.套接字：1.定义：源IP地址和目的IP地址、源端口号和目的端口号的组合称为套接字。其用于标识客户端请求的服务器和服务。">
-<meta property="og:image" content="https://www.tuhd.me/img/xinde/javaio2.png">
-<meta property="og:image" content="https://www.tuhd.me/img/xinde/javaio2.png">
-<meta property="og:image" content="http://img0.tuicool.com/QJNVzei.png!web">
-<meta property="og:updated_time" content="2018-03-18T06:31:04.390Z">
+<meta property="og:description" content="饮食训练日：  早餐: 包子或蒸饺一屉、粥或豆浆一碗、煎蛋或蒸蛋一个、牛奶一盒 上午：苹果或橘子一个 午餐：西单烤翅鸡胸饭 训练：蛋白粉、香蕉两根 晚餐：蒸美味小鸡胸，一碗粥 睡前：牛奶一盒  休息日：  早餐: 包子或蒸饺一屉、粥或豆浆一碗、煎蛋或蒸蛋一个 午餐：五谷渔粉、冒菜、1968牛扒饭选一 晚餐：蒸五谷渔粉、冒菜、1968牛扒饭选一 睡前：牛奶一盒  健身计划表http://www.ji">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/3c4bc44e-8c7f-48b6-9dd4-e63e14dff042/1522137084716.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/d6f23da2-dd8d-4797-b84e-9fab626b4ba6/1522137093672.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/1aaecfee-fb4a-4ecc-983e-61e746b2eca1/1522137112994.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/240399a1-9a18-4836-82d9-fa643a1dab2e/1522137136791.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/2bcf6d06-0581-4d73-8a6c-e01f344619fa/1522137142491.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/11a814ea-8de0-4e81-8404-c6194b9423cf/1522137152197.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/abbae747-1129-45ba-9e60-89e902718ce9/1522137409176.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/a096d82f-f815-4b89-85c4-051375514128/1522137413653.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/847d7af1-d152-4c65-bd27-4886331a94d6/1522137419264.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/fae9537b-7280-4cda-863c-8b6d24d2de2b/1522137423735.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/03dfcf61-9c73-41c0-8e62-070f19036124/1522137428955.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/7194198f-b144-4c40-8267-b1d43054b9fd/1522137433757.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/bc3172da-7c2f-469e-873d-61c36189bc5f/1522137438550.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/a8510f00-0921-49ec-848a-fb1e481217f9/1522137444999.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/91be2101-60ae-4bec-84c2-a32b4f66644c/1522137452715.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/3d736455-6358-4645-9673-4b295882f9c2/1522137458255.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/081cbdd7-da2b-4aca-bf84-a28d627d0424/1522137463278.png">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/90543e4e-72e2-4147-9a86-8cb89d8416a7/1522137467643.png">
+<meta property="og:updated_time" content="2018-03-27T08:27:25.889Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java网络I&#x2F;O">
-<meta name="twitter:description" content="一.套接字：1.定义：源IP地址和目的IP地址、源端口号和目的端口号的组合称为套接字。其用于标识客户端请求的服务器和服务。">
-<meta name="twitter:image" content="https://www.tuhd.me/img/xinde/javaio2.png">
+<meta name="twitter:title" content="健身训练计划">
+<meta name="twitter:description" content="饮食训练日：  早餐: 包子或蒸饺一屉、粥或豆浆一碗、煎蛋或蒸蛋一个、牛奶一盒 上午：苹果或橘子一个 午餐：西单烤翅鸡胸饭 训练：蛋白粉、香蕉两根 晚餐：蒸美味小鸡胸，一碗粥 睡前：牛奶一盒  休息日：  早餐: 包子或蒸饺一屉、粥或豆浆一碗、煎蛋或蒸蛋一个 午餐：五谷渔粉、冒菜、1968牛扒饭选一 晚餐：蒸五谷渔粉、冒菜、1968牛扒饭选一 睡前：牛奶一盒  健身计划表http://www.ji">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s15/res/3c4bc44e-8c7f-48b6-9dd4-e63e14dff042/1522137084716.png">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
   
@@ -150,20 +165,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java网络IO" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-健身训练计划" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      java网络I/O
+      健身训练计划
     </h1>
   
 
         
-        <a href="/2017/08/10/java网络IO/" class="archive-article-date">
-  	<time datetime="2017-08-10T06:10:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-10</time>
+        <a href="/2018/03/27/健身训练计划/" class="archive-article-date">
+  	<time datetime="2018-03-27T08:24:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
 </a>
         
       </header>
@@ -177,7 +192,7 @@
     	<div id="toc-article" class="toc-article">
     	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     		<strong class="toc-title">文章目录</strong>
-               
+               <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#饮食"><span class="toc-number">1.</span> <span class="toc-text">饮食</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#健身计划表"><span class="toc-number">2.</span> <span class="toc-text">健身计划表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#训前综合热身"><span class="toc-number">2.1.</span> <span class="toc-text">训前综合热身</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动作图集"><span class="toc-number">2.2.</span> <span class="toc-text">动作图集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拉伸图集"><span class="toc-number">2.3.</span> <span class="toc-text">拉伸图集</span></a></li></ol></li></ol>
              </div>
        <script type="text/javascript">
     	function showToc(){
@@ -197,43 +212,31 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一.套接字</strong>：<br>1.定义：源IP地址和目的IP地址、源端口号和目的端口号的组合称为套接字。其用于标识客户端请求的服务器和服务。<br><a id="more"></a><br>它是网络通信过程中端点的抽象表示，包含进行网络通信的五个必备信息：连接使用的协议、本地主机IP地址、本地进程协议端口号、目的IP地址、目的进程协议端口号。<br>2.主要参数：区分不同应用程序进程间的网络通信和连接，主要有三个参数：使用的目的IP地址、使用的传输层协议（TPC、UDP）和使用的端口号。</p>
-<p><strong>1  BIO编程</strong></p>
-<ul>
-<li>传统的BIO编程采用C/S模型，是两个进程间的通讯。</li>
-<li>客户端向服务端监听的地址发出请求，在三次握手连接之后通过socket套接字进行通讯。</li>
-<li>传统的同步阻塞模型开发中，ServerSocket负责绑定IP地址，启动监听端口；Socket负责发起连接操作，连接成功后，双方通过输入和输出流进行同步阻塞通讯。</li>
-<li>通常服务端有一个Acceptor进程，每当有一个客户端请求，如果Acceptor接受之后就新建一个线程，处理完成后，通过输出流返回应答给客户端，线程销毁。每个线程的处理流程（读取数据、解码、处理、编码、发送响应）</li>
-<li>BIO最大的缺点就是会产生很多的线程，占用很多资源。当客户端并发访问量增加后，服务端的线程个数就和客户端成1:1的关系。系统性能随之降低。<br><img src="https://www.tuhd.me/img/xinde/javaio2.png" alt="BIO图示"></li>
-</ul>
-<p><strong>2  伪异步IO</strong></p>
-<ul>
-<li>传统的IO，每来一个请求就创建一个线程，不适合高并发量请求处理。</li>
-<li>伪异步IO就是把每个请求丢进请求队列中，服务器端增加了一个线程池，用线程池来管理这些线程，实现1个或多个线程处理N个客户端的模型。<br><img src="https://www.tuhd.me/img/xinde/javaio2.png" alt="伪异步IO"></li>
-</ul>
-<p><strong>NIO编程</strong></p>
-<ul>
-<li>Non-block IO</li>
-<li>NIO提供了与传统BIO模型中的Socket和ServerSocket对应的SocketChannel和ServerChannel两种不同的套接字通道实现。</li>
-<li>新增的两种通道都支持阻塞和非阻塞两种方式</li>
-<li>对于低负载、低并发的应用程序，可以使用BIO来提升开发速率和更好的维护；对于高负载、高并发的网络应用，可以使用BIO的非阻塞模式开发。<br><img src="http://img0.tuicool.com/QJNVzei.png!web" alt="NIO"></li>
-<li><p>Channel分为两大类</p>
-<ul>
-<li>SelectableChannel：用户网络读写</li>
-<li>FileChannel：文件读写</li>
-</ul>
-</li>
-<li><p>三个核心API：</p>
-<ul>
-<li>Channels</li>
-<li>Buffers</li>
-<li>Selectors</li>
-</ul>
-</li>
-<li><p>NIO与BIO的最大区别就是，BIO是面向流的，NIO是面向缓冲的。</p>
-</li>
-</ul>
-<p><strong>AIO编程</strong></p>
+        <h3 id="饮食"><a href="#饮食" class="headerlink" title="饮食"></a>饮食</h3><p>训练日：</p>
+<ol>
+<li>早餐: 包子或蒸饺一屉、粥或豆浆一碗、煎蛋或蒸蛋一个、牛奶一盒</li>
+<li>上午：苹果或橘子一个</li>
+<li>午餐：西单烤翅鸡胸饭</li>
+<li>训练：蛋白粉、香蕉两根</li>
+<li>晚餐：蒸美味小鸡胸，一碗粥</li>
+<li>睡前：牛奶一盒</li>
+</ol>
+<p>休息日：</p>
+<ol>
+<li>早餐: 包子或蒸饺一屉、粥或豆浆一碗、煎蛋或蒸蛋一个</li>
+<li>午餐：五谷渔粉、冒菜、1968牛扒饭选一</li>
+<li>晚餐：蒸五谷渔粉、冒菜、1968牛扒饭选一</li>
+<li>睡前：牛奶一盒</li>
+</ol>
+<h3 id="健身计划表"><a href="#健身计划表" class="headerlink" title="健身计划表"></a>健身计划表</h3><p><a href="http://www.jianshen8.com/jihua/biao/14605.html" target="_blank" rel="noopener">http://www.jianshen8.com/jihua/biao/14605.html</a></p>
+<p>一周有四天训练时间：</p>
+<p>　　如果你每周只有两到三天训练时间建议采用以上的全身训练课表，如果你有四天或五天训练时间，这时候你可以考虑把上肢和下肢分开来练！</p>
+<p>　　四天的训练计划，假设你周末休息，我们会建议周一二训练，周三休息，然后周四五训练！</p>
+<h4 id="训前综合热身"><a href="#训前综合热身" class="headerlink" title="训前综合热身"></a>训前综合热身</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 向前肩部环绕 20‘</span><br><span class="line">2. 手臂环绕 20’</span><br><span class="line">3. 髋关节环绕 30‘</span><br><span class="line">4. 支撑弓步转体 4次</span><br><span class="line">5. 半蹲 8次</span><br><span class="line">6. 平板支撑交替抬腿 12次</span><br><span class="line">7. 开合跳 30’</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">　　周一：深蹲5\5\8\12；硬拉4*10；单腿蹲3*10+</span><br><span class="line">　　训后拉伸：左右腿前侧拉伸、小腿拉伸、坐姿大腿后侧拉伸、仰卧左右腿后侧拉伸、左右梨状肌拉伸</span><br><span class="line"></span><br><span class="line">　　周二：卧推5\5\8\12：划船4*10；肩推3*10+</span><br><span class="line">　　讯后拉伸：胸部蝴蝶机动态拉伸、左右胸静态拉伸、跪姿背部拉伸、左右肩拉伸、三头拉伸</span><br><span class="line"></span><br><span class="line">　　周四：硬拉5\5\8\12；深蹲4*10；单腿硬拉3*10+</span><br><span class="line">　　讯后拉伸：左右腿前侧拉伸、小腿拉伸、坐姿大腿后侧拉伸、仰卧左右腿后侧动态拉伸、臀部拉伸</span><br><span class="line"></span><br><span class="line">　　周五：肩推5\5\8\12；下拉4*10：卧推3*10+</span><br><span class="line">　　讯后拉伸：左右肩拉伸、跪姿背部拉伸、胸部动态拉伸、左右胸静态拉伸</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.上下肢分开练，从低次数开始，一次训练中采取一项动作用大重量低次数训练，越往后走次数会越低</span><br><span class="line">　　2.下肢训练依旧以深蹲硬拉为主（变化式也算）并在训练末尾加入单腿的动作！</span><br><span class="line">　　3.卧推肩推可以采用哑铃杠铃交换，也可以做单边动作！划船下拉也是一样！</span><br><span class="line">　　4.10+的意思是课表走到末尾，3组10次和3组12次.15次是差不多的！</span><br><span class="line">　　5.在完成这些主要训练后，可以时时增加一些辅助训练，比如单关节的动作和固定器械！</span><br><span class="line">　　6.上肢训练顺序可以调整，但要保证“推”和“拉”动作平衡，不要出现“推”的动作练的太多！</span><br></pre></td></tr></table></figure>
+<h4 id="动作图集"><a href="#动作图集" class="headerlink" title="动作图集"></a>动作图集</h4><p><img src="https://app.yinxiang.com/shard/s15/res/3c4bc44e-8c7f-48b6-9dd4-e63e14dff042/1522137084716.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/d6f23da2-dd8d-4797-b84e-9fab626b4ba6/1522137093672.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/1aaecfee-fb4a-4ecc-983e-61e746b2eca1/1522137112994.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/240399a1-9a18-4836-82d9-fa643a1dab2e/1522137136791.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/2bcf6d06-0581-4d73-8a6c-e01f344619fa/1522137142491.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/11a814ea-8de0-4e81-8404-c6194b9423cf/1522137152197.png" alt="Alt text"></p>
+<h4 id="拉伸图集"><a href="#拉伸图集" class="headerlink" title="拉伸图集"></a>拉伸图集</h4><p><img src="https://app.yinxiang.com/shard/s15/res/abbae747-1129-45ba-9e60-89e902718ce9/1522137409176.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/a096d82f-f815-4b89-85c4-051375514128/1522137413653.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/847d7af1-d152-4c65-bd27-4886331a94d6/1522137419264.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/fae9537b-7280-4cda-863c-8b6d24d2de2b/1522137423735.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/03dfcf61-9c73-41c0-8e62-070f19036124/1522137428955.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/7194198f-b144-4c40-8267-b1d43054b9fd/1522137433757.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/bc3172da-7c2f-469e-873d-61c36189bc5f/1522137438550.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/a8510f00-0921-49ec-848a-fb1e481217f9/1522137444999.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/91be2101-60ae-4bec-84c2-a32b4f66644c/1522137452715.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/3d736455-6358-4645-9673-4b295882f9c2/1522137458255.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/081cbdd7-da2b-4aca-bf84-a28d627d0424/1522137463278.png" alt="Alt text"><br><img src="https://app.yinxiang.com/shard/s15/res/90543e4e-72e2-4147-9a86-8cb89d8416a7/1522137467643.png" alt="Alt text"></p>
 
       
 
@@ -268,11 +271,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">健身</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">I/O</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计划</a>
         		</li>
       		
 		</ul>
@@ -328,7 +331,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2017/08/10/java网络IO/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2018/03/27/健身训练计划/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -342,18 +345,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/16/去哪儿面经/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          去哪儿面经
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/18/动态规划/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">动态规划</div>
+    <a href="/2018/03/26/Java网络编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java网络编程</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -380,7 +374,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#饮食"><span class="toc-number">1.</span> <span class="toc-text">饮食</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#健身计划表"><span class="toc-number">2.</span> <span class="toc-text">健身计划表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#训前综合热身"><span class="toc-number">2.1.</span> <span class="toc-text">训前综合热身</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动作图集"><span class="toc-number">2.2.</span> <span class="toc-text">动作图集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拉伸图集"><span class="toc-number">2.3.</span> <span class="toc-text">拉伸图集</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
