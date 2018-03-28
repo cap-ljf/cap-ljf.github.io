@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Jifung博客">
 <meta property="og:description" content="我的毕设主题是：时事新闻评论分析软件的设计与实现。要分析评论，就需要评论数据，于是就写起了爬虫。">
 <meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/dcd35021-e4af-42dd-856b-712b5c0061bc/1522163039866.png">
-<meta property="og:updated_time" content="2018-03-28T13:01:36.991Z">
+<meta property="og:updated_time" content="2018-03-28T13:04:02.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于scrapy分布式新闻评论爬虫">
 <meta name="twitter:description" content="我的毕设主题是：时事新闻评论分析软件的设计与实现。要分析评论，就需要评论数据，于是就写起了爬虫。">
@@ -279,7 +279,7 @@
 <p>看一下<code>settings.py</code>中的<code>Redis配置</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># redis配置</span></span><br><span class="line"><span class="comment"># 使用scrapy-redis里的调度器组件，不使用默认的调度器</span></span><br><span class="line">SCHEDULER = <span class="string">"scrapy_redis.scheduler.Scheduler"</span></span><br><span class="line"><span class="comment"># 允许暂停，redis请求记录不丢失</span></span><br><span class="line">SCHEDULER_PERSIST = <span class="keyword">True</span></span><br><span class="line"><span class="comment"># 使用scrapy-redis里的去重组件，不使用scrapy默认的去重方式</span></span><br><span class="line">DUPEFILTER_CLASS = <span class="string">"scrapy_redis.dupefilter.RFPDupeFilter"</span></span><br><span class="line"><span class="comment"># 连接Redis配置</span></span><br><span class="line">REDIS_HOST = <span class="string">'localhost'</span></span><br><span class="line">REDIS_PORT = <span class="string">'6379'</span></span><br><span class="line">REDIS_DB = <span class="number">0</span> <span class="comment"># 指定db为0</span></span><br><span class="line">REDIS_PASSWD = <span class="string">''</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="3-爬虫技巧之接口的获取"><a href="#3-爬虫技巧之接口的获取" class="headerlink" title="3. 爬虫技巧之接口的获取"></a>3. 爬虫技巧之接口的获取</h3><p>当你了解了基础的爬虫知识之后，阻碍你顺利爬取数据的还有数据源的获取，每一个网站都有不同的架构，有些网站可能想让自己的内容更容易的让搜索引擎引用，同时又不想被恶意的爬虫访问，所以各个网站的后台数据送到前台展示方式都不同。</p>
 <p>经过我最近频繁的爬虫，我了解到一个非常重要的规律，那就是<strong>对于文本类型的数据一般都是使用JSON数据格式传输</strong>。但是这个<code>JSON数据接口</code>一般都非常隐蔽，比如<code>凤凰网</code>的评论展示接口，它使用了回调使用<code>js</code>进行处理之后再给到前台展示，所以你第一眼看到的不是整齐的<code>JSON</code>数据，而是一对乱糟糟不规律的类html文本。而<code>今日头条</code>则非常开放。</p>
-<p>好了，这一次的分享就到这儿了，分享一个不太哲学的网站<a href="mmjpg.com">哲学</a><br>爬取太频繁会封ip哦～</p>
+<p>好了，这一次的分享就到这儿了，分享一个不太哲学的网站<a href="http://www.mmjpg.com" target="_blank" rel="noopener">哲学</a><br>爬取太频繁会封ip哦～</p>
 
       
 
