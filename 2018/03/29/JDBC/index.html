@@ -6,23 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cap-ljf.top">
-  <title>maven入门 | Jifung博客</title>
+  <title>JDBC | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。">
-<meta name="keywords" content="maven">
+  <meta name="description" content="1. 什么是JDBC？1996年，Sun公司发布了第一版的Java数据库连接（JDBC）API，使编程人员可以通过这个API接口连接到数据库，并使用结构化查询语言（SQL）完成对数据库的查找与更新。JDBC自此称为Java类库中最常用的API之一。">
+<meta name="keywords" content="JDBC,事务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maven入门">
-<meta property="og:url" content="http://cap-ljf.top/2017/10/23/Maven初探/index.html">
+<meta property="og:title" content="JDBC">
+<meta property="og:url" content="http://cap-ljf.top/2018/03/29/JDBC/index.html">
 <meta property="og:site_name" content="Jifung博客">
-<meta property="og:description" content="今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。">
-<meta property="og:image" content="http://ifeve.com/wp-content/uploads/2014/06/maven-overview-1.png">
-<meta property="og:image" content="http://ifeve.com/wp-content/uploads/2014/06/super-pom.png">
-<meta property="og:image" content="http://images.cnitblog.com/i/293735/201407/012038215279940.png">
-<meta property="og:updated_time" content="2018-03-18T06:31:04.406Z">
+<meta property="og:description" content="1. 什么是JDBC？1996年，Sun公司发布了第一版的Java数据库连接（JDBC）API，使编程人员可以通过这个API接口连接到数据库，并使用结构化查询语言（SQL）完成对数据库的查找与更新。JDBC自此称为Java类库中最常用的API之一。">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/7df5d637-a933-43e8-98a6-e539d3b08fba/1522287325072.png">
+<meta property="og:updated_time" content="2018-03-29T07:37:53.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maven入门">
-<meta name="twitter:description" content="今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。">
-<meta name="twitter:image" content="http://ifeve.com/wp-content/uploads/2014/06/maven-overview-1.png">
+<meta name="twitter:title" content="JDBC">
+<meta name="twitter:description" content="1. 什么是JDBC？1996年，Sun公司发布了第一版的Java数据库连接（JDBC）API，使编程人员可以通过这个API接口连接到数据库，并使用结构化查询语言（SQL）完成对数据库的查找与更新。JDBC自此称为Java类库中最常用的API之一。">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s15/res/7df5d637-a933-43e8-98a6-e539d3b08fba/1522287325072.png">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
   
@@ -150,20 +148,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Maven初探" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JDBC" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      maven入门
+      JDBC
     </h1>
   
 
         
-        <a href="/2017/10/23/Maven初探/" class="archive-article-date">
-  	<time datetime="2017-10-23T02:56:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
+        <a href="/2018/03/29/JDBC/" class="archive-article-date">
+  	<time datetime="2018-03-29T07:36:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
 </a>
         
       </header>
@@ -177,7 +175,7 @@
     	<div id="toc-article" class="toc-article">
     	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     		<strong class="toc-title">文章目录</strong>
-               <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-What（Maven是什么？）"><span class="toc-number">1.</span> <span class="toc-text">1. What（Maven是什么？）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装Maven"><span class="toc-number">1.0.1.</span> <span class="toc-text">安装Maven</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven概览-核心概念"><span class="toc-number">1.0.2.</span> <span class="toc-text">Maven概览-核心概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#构建生命周期、构建阶段、构建目标"><span class="toc-number">1.0.3.</span> <span class="toc-text">构建生命周期、构建阶段、构建目标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#依赖和仓库"><span class="toc-number">1.0.4.</span> <span class="toc-text">依赖和仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插件"><span class="toc-number">1.0.5.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置文件"><span class="toc-number">1.0.6.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#父pom"><span class="toc-number">1.0.7.</span> <span class="toc-text">父pom</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven配置文件"><span class="toc-number">1.0.8.</span> <span class="toc-text">Maven配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven运行"><span class="toc-number">1.0.9.</span> <span class="toc-text">Maven运行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-How-Maven具体使用"><span class="toc-number">2.</span> <span class="toc-text">2. How(Maven具体使用)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven安装目录"><span class="toc-number">2.0.1.</span> <span class="toc-text">Maven安装目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven目录结构"><span class="toc-number">2.0.2.</span> <span class="toc-text">Maven目录结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#POM文件"><span class="toc-number">2.0.3.</span> <span class="toc-text">POM文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#外部依赖"><span class="toc-number">2.0.4.</span> <span class="toc-text">外部依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#生命周期"><span class="toc-number">2.0.5.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插件-1"><span class="toc-number">2.0.6.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven-命令"><span class="toc-number">2.0.7.</span> <span class="toc-text">maven 命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven的生命周期"><span class="toc-number">2.0.8.</span> <span class="toc-text">maven的生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#shapshot和release版本"><span class="toc-number">2.0.9.</span> <span class="toc-text">shapshot和release版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#依赖"><span class="toc-number">2.0.10.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven的聚合与继承"><span class="toc-number">2.0.11.</span> <span class="toc-text">maven的聚合与继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven测试"><span class="toc-number">2.0.12.</span> <span class="toc-text">maven测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-WHY（为什么要使用maven）"><span class="toc-number">3.</span> <span class="toc-text">3. WHY（为什么要使用maven）</span></a></li></ol>
+               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是JDBC？"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是JDBC？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JDBC配置"><span class="toc-number">2.</span> <span class="toc-text">2. JDBC配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-数据库URL"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 数据库URL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#几种常见的数据库连接"><span class="toc-number">2.1.1.</span> <span class="toc-text">几种常见的数据库连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-URL格式详解"><span class="toc-number">2.1.2.</span> <span class="toc-text">MySQL URL格式详解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-驱动程序"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 驱动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-注册驱动器类"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 注册驱动器类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-连接到数据库"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 连接到数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-执行SQL语句"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 执行SQL语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#管理连接、语句和结果集"><span class="toc-number">2.5.1.</span> <span class="toc-text">管理连接、语句和结果集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后续"><span class="toc-number">2.6.</span> <span class="toc-text">后续</span></a></li></ol></li></ol>
              </div>
        <script type="text/javascript">
     	function showToc(){
@@ -197,173 +195,60 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天整理一下对于Maven的学习。和学习其他知识一样，我在看完各种关于Maven的介绍以及文档之后，按照what，how，why来温习。<br><a id="more"></a></p>
-<h3 id="1-What（Maven是什么？）"><a href="#1-What（Maven是什么？）" class="headerlink" title="1. What（Maven是什么？）"></a>1. What（Maven是什么？）</h3><p>Maven是一个强大的Java项目构建工具，构建工具：将软件项目构建相关的过程自动化的工具。</p>
-<p>构建一个软件项目通常包含以下一个或多个过程：</p>
+        <h2 id="1-什么是JDBC？"><a href="#1-什么是JDBC？" class="headerlink" title="1. 什么是JDBC？"></a>1. 什么是JDBC？</h2><p>1996年，Sun公司发布了第一版的Java数据库连接（JDBC）API，使编程人员可以通过这个API接口连接到数据库，并使用结构化查询语言（SQL）完成对数据库的查找与更新。JDBC自此称为Java类库中最常用的API之一。<br><a id="more"></a><br>概念：</p>
 <ul>
-<li>生成源码（如果项目使用自动生成源码）；</li>
-<li>从源码生成项目文档；</li>
-<li>编译源码；</li>
-<li>将编译后的源码打包成JAR文件或者ZIP文件；</li>
-<li>将打包好的代码安装到服务器、仓库或者其他的地方；</li>
+<li>SQL：结构化查询语言，是一种特定的目的程序语言，用于管理关系数据库管理系统，或在关系流数据管理系统（RDSMS）中进行流处理。</li>
+<li>MySQL：原本是一个开放源代码的关系数据库管理系统，原开发者为瑞典的MySQL AB公司，该公司于2008年被昇阳微系统（Sun Microsystems）收购。2009年，甲骨文公司（Oracle）收购昇阳微系统公司，MySQL成为Oracle旗下产品。</li>
+<li>JDBC：Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, which defines how a client may access a database. It is Java based data access technology and used for Java database connectivity. It is part of the Java Standard Edition platform, from Oracle Corporation. It provides methods to query and update data in a database, and is oriented towards relational databases. A JDBC-to-ODBC bridge enables connections to any ODBC-accessible data source in the Java virtual machine (JVM) host environment.</li>
 </ul>
-<h5 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h5><p><a href="http://blog.csdn.net/jiuqiyuliang/article/details/45390313" target="_blank" rel="noopener">【项目管理和构建】——Maven下载、安装和配置（二）</a></p>
-<h5 id="Maven概览-核心概念"><a href="#Maven概览-核心概念" class="headerlink" title="Maven概览-核心概念"></a>Maven概览-核心概念</h5><p>Maven的中心思想是<strong>POM文件</strong>（项目对象模型）。POM文件是以XML文件的形式表述项目的资源，如源码、测试代码、依赖（用到的外部Jar包）等。POM文件应该位于项目的根目录下。</p>
-<p>下图说明了Maven是如何使用POM文件的，以及POM文件的主要组成部分：<br><img src="http://ifeve.com/wp-content/uploads/2014/06/maven-overview-1.png" alt=""></p>
-<h5 id="构建生命周期、构建阶段、构建目标"><a href="#构建生命周期、构建阶段、构建目标" class="headerlink" title="构建生命周期、构建阶段、构建目标"></a>构建生命周期、构建阶段、构建目标</h5><p>Maven的构建过程被分解为构建生命周期、阶段和目标。一个构建周期由一系列的构建阶段组成，每一个构建阶段由一系列的构建目标组成。当你运行Maven的时候，你会传入一条命令。这条命令就是构建生命周期、阶段或目标的名字。如果执行一个生命周期，该生命周期内的所有构建阶段都会被执行。如果执行一个构建阶段，在预定义的构建阶段中，所有处于当前构建阶段之前的阶段也都会被执行。  </p>
-<h5 id="依赖和仓库"><a href="#依赖和仓库" class="headerlink" title="依赖和仓库"></a>依赖和仓库</h5><p>Maven执行时，其中一个首要目标就是检查项目的依赖。依赖是你的项目用到的jar文件（java库）。如果在本地仓库中不存在该依赖，则Maven会从中央仓库下载并放到本地仓库。本地仓库只是你电脑硬盘上的一个目录。你可以根据需要制定本地仓库的位置。你也可以指定下载依赖的远程仓库的地址。</p>
-<h5 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h5><p>构建插件可以向构建阶段中增加额外的构建目标。如果Maven标准的构建阶段和目标无法满足项目构建的需求，你可以在POM文件里增加插件。Maven有一些标准的插件供选用，如果需要你可以自己实现插件。</p>
-<h5 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h5><p><em>不同的开发环境会使用不同的配置</em><br>配置文件用于以不同的方式构建项目。比如，你可能需要在本地环境构建，用于开发和测试，你也可能需要构建后用于开发环境。这两个构建过程是不同的。在POM文件中增加不同的构建配置，可以启用不同的构建过程。当运行Maven时，可以指定要使用的配置。</p>
-<h5 id="父pom"><a href="#父pom" class="headerlink" title="父pom"></a>父pom</h5><p>所有的Maven pom文件都继承自一个父pom。如果没有指定父pom，则该pom文件继承自根pom。pom文件的继承关系如下图所示：<br><img src="http://ifeve.com/wp-content/uploads/2014/06/super-pom.png" alt=""><br>可以让一个pom文件显式地继承另一个pom文件。这样，可以通过修改公共父pom文件的设置来修改所有子pom文件的设置。在pom文件的起始处指定父pom，例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">”http://maven.apache.org/POM/4.0.0″</span></span></span><br><span class="line"><span class="tag"><span class="attr">xmlns:xsi</span>=<span class="string">”http://www.w3.org/2001/XMLSchema-instance”</span></span></span><br><span class="line"><span class="tag"><span class="attr">xsi:schemaLocation</span>=<span class="string">”http://maven.apache.org/POM/4.0.0</span></span></span><br><span class="line"><span class="tag"><span class="attr">http:</span>//<span class="attr">maven.apache.org</span>/<span class="attr">xsd</span>/<span class="attr">maven-4.0.0.xsd</span>”&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.codehaus.mojo<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>my-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">relativePath</span>&gt;</span>../my-parent<span class="tag">&lt;/<span class="name">relativePath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>my-project<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">…</span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>子pom文件的设置可以覆盖父pom文件的设置，只需要在子pom文件里指定新的设置即可。</p>
-<h5 id="Maven配置文件"><a href="#Maven配置文件" class="headerlink" title="Maven配置文件"></a>Maven配置文件</h5><p>Maven配置文件</p>
-<p>Maven有两个配置文件。配置文件里的设置，对所有的pom文件都是有效的。比如，你可以配置：</p>
-<p>本地仓库的路径；<br>当前的编译配置选项<br>等等<br>配置文件名为settings.xml，两个配置文件分别为：</p>
-<ul>
-<li>Maven安装目录中：$M2_HOME/conf/settings.xml</li>
-<li>用户主目录中：${user.home}/.m2/settings.xml</li>
-</ul>
-<p>两个配置文件都是可选的。如果两个文件都存在，则用户目录下的配置会覆盖Maven安装目录中的配置。</p>
-<h5 id="Maven运行"><a href="#Maven运行" class="headerlink" title="Maven运行"></a>Maven运行</h5><p><a href="http://blog.csdn.net/phantomes/article/details/8110779" target="_blank" rel="noopener">maven常用命令行及解释</a></p>
-<h3 id="2-How-Maven具体使用"><a href="#2-How-Maven具体使用" class="headerlink" title="2. How(Maven具体使用)"></a>2. How(Maven具体使用)</h3><h5 id="Maven安装目录"><a href="#Maven安装目录" class="headerlink" title="Maven安装目录"></a>Maven安装目录</h5><p>四个文件夹：<br>bin：包含mvn运行的脚本,m2.conf配置文件<br>boot：boot目录包含一个类加载器的框架<br>conf：是配置文件目录<br>lib：类库</p>
-<h5 id="Maven目录结构"><a href="#Maven目录结构" class="headerlink" title="Maven目录结构"></a>Maven目录结构</h5><p>Maven有一个标准的目录结构。如果你在项目中遵循Maven的目录结构，就无需在pom文件中指定源代码、测试代码等目录。<br>以下为最重要的目录：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- src</span><br><span class="line">  - main</span><br><span class="line">    - java</span><br><span class="line">    - resources</span><br><span class="line">    - webapp</span><br><span class="line">  - test</span><br><span class="line">    - java</span><br><span class="line">    - resources</span><br><span class="line"></span><br><span class="line">- target</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html" target="_blank" rel="noopener">Maven标准目录结构介绍</a><br>src目录是源代码和测试代码的根目录。main目录是应用的源代码目录。test目录是测试代码的目录。main和test下的java目录，分别表示应用的java源代码和测试代码。</p>
-<p>resources目录包含项目的资源文件，比如应用的国际化配置的属性文件等。</p>
-<p>如果是一个web项目，则webapp目录为web项目的根目录，其中包含如WEB-INF等子目录。</p>
-<p>target目录是由Maven创建的，其中包含编译后的类文件、jar文件等。当执行maven的clean目标后，target目录会被清空。</p>
-<h5 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h5><p><a href="http://ifeve.com/maven-pom/" target="_blank" rel="noopener">《Maven官方文档》POM文件</a><br><a href="http://blog.csdn.net/u012152619/article/details/51485297" target="_blank" rel="noopener">Maven之（七）pom.xml配置文件详解</a></p>
-<h5 id="外部依赖"><a href="#外部依赖" class="headerlink" title="外部依赖"></a>外部依赖</h5><p>Maven的外部依赖指的是不在Maven的仓库（包括本地仓库、中央仓库和远程仓库）中的依赖（jar包）。它可能位于你本地硬盘的某个地方，比如web应用的lib目录下。这里的“外部”是对Maven仓库系统而言的，不仅仅是对项目而言的。大部分的外部依赖都是针对项目的，很少的外部依赖是针对仓库系统的（即不在仓库中）。</p>
-<p>配置外部依赖的示例如下：</p>
-<pre><code>
-&lt;dependency&gt;
-  &lt;groupId&gt;mydependency&lt;/groupId&gt;
-  &lt;artifactId&gt;mydependency&lt;/artifactId&gt;
-  &lt;scope&gt;system&lt;/scope&gt;
-  &lt;version&gt;1.0&lt;/version&gt;
-  &lt;systemPath&gt;${basedir}\war\WEB-INF\lib\mydependency.jar&lt;/systemPath&gt;
-&lt;/dependency&gt;
- </code></pre>
-groupId和artifactId为依赖的名称，即API的名称。scope属性为system。systemPath属性为jar文件的路径。${basedir}为pom文件所在的目录，路径中的其它部分是相对于该目录而言的。
-
-##### 快照依赖
-快照依赖指的是那些还在开发中的依赖（jar包）。与其经常地更新版本号来获取最新版本，不如你直接依赖项目的快照版本。快照版本的每一个build版本都会被下载到本地仓库，即使该快照版本已经在本地仓库了。总是下载快照依赖可以确保本地仓库中的每一个build版本都是最新的。
-
-在pom文件的最开头（设置groupId和artifactId的地方），在版本号后追加-SNAPSHOT，则告诉Maven你的项目是一个快照版本。如：
-<pre><code>&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;    </code></pre>
-可以看到加到版本号后的-SNAPSHOT。
-
-在配置依赖时，在版本号后追加-SNAPSHOT表明依赖的是一个快照版本。如：
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;com.jenkov&lt;/groupId&gt;
-    &lt;artifactId&gt;java-web-crawler&lt;/artifactId&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-追加在version后的-SNAPSHOT告诉Maven这是一个快照版本。
-
-可以在Maven配置文件中设置快照版本下载的频率。
-
-##### Maven仓库
-Maven仓库就是存储jar包和一些元数据信息的目录。其中的元数据即pom文件，描述了该jar包属于哪个项目，以及jar包所需的外部依赖。该元数据信息使得Maven可以递归地下载所有的依赖，直到整个依赖树都下载完毕并放到你的本地仓库中。
-Maven有三种类型的仓库：
-
-本地仓库
-中央仓库
-远程仓库
-Maven根据以上的顺序去仓库中搜索依赖。首先是本地仓库，然后是中央仓库，最后，如果pom文件中配置了远程仓库，则会去远程仓库中查找。
-
-下图说明了三种仓库的类型以及位置：
-![](http://ifeve.com/wp-content/uploads/2014/06/maven-repo-types-loc-300x185.png)
-本地仓库
-
-本地仓库就是开发者电脑上的一个目录。该仓库包含了Maven下载的所有依赖。一般来讲，一个本地仓库为多个不同的项目服务。因此，Maven只需下载一次，即使有多个项目都依赖它（如junit）。
-
-通过mvn install命令可以将你自己的项目构建并安装到本地仓库中。这样，你的其它项目就可以通过在pom文件将该jar包作为外部依赖来使用。
-
-Maven的本地仓库默认在你本机的用户目录下。不过，你可以在Maven的配置文件中修改本地仓库的路径。Maven的配置文件也在用户目录下(user-home/.m2)，文件名为settings.xml。以下示例为本地仓库指定其它的路径：
-<pre><code>&lt;settings&gt;
-    &lt;localRepository&gt;
-        d:\data\java\products\maven\repository
-    &lt;/localRepository&gt;
-&lt;/settings&gt;</code></pre>
-##### 中央仓库
-
-Maven的中央仓库由Maven社区提供。默认情况下，所有不在本地仓库中的依赖都会去这个中央仓库查找。然后Maven会将这些依赖下载到你的本地仓库。访问中央仓库不需要做额外的配置。
-
-##### 远程仓库
-
-远程仓库是位于web服务器上的一个仓库，Maven可以从该仓库下载依赖，就像从中央仓库下载依赖一样。远程仓库可以位于Internet上的任何地方，也可以是位于本地网络中。
-
-远程仓库一般用于放置组织内部的项目，该项目由多个项目共享。比如，由多个内部项目共用的安全项目。该安全项目不能被外部访问，因此不能放在公开的中央仓库下，而应该放到内部的远程仓库中。
-
-远程仓库中的依赖也会被Maven下载到本地仓库中。
-
-可以在pom文件里配置远程仓库。将以下的xml片段放到属性之后：
-<pre><code>&lt;repositories&gt;
-   &lt;repository&gt;
-       &lt;id&gt;jenkov.code&lt;/id&gt;
-       &lt;url&gt;http://maven.jenkov.com/maven2/lib&lt;/url&gt;
-   &lt;/repository&gt;
-&lt;/repositories&gt;</code></pre>
-
-<h5 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h5><p>一个完整的项目构建过程通常包括清理、编译、测试、打包、集成测试、验证、部署等步骤，Maven从中抽取了一套完善的、易扩展的生命周期。Maven的生命周期是抽象的，其中的具体任务都交由插件来完成。Maven为大多数构建任务编写并绑定了默认的插件，如针对编译的插件：maven-compiler-plugin。用户也可自行配置或编写插件。<br><strong>1. 三套生命周期</strong><br>Maven定义了三套生命周期：clean、default、site，每个生命周期都包含了一些阶段（phase）。三套生命周期相互独立，但各个生命周期中的phase却是有顺序的，且后面的phase依赖于前面的phase。执行某个phase时，其前面的phase会依顺序执行，但不会触发另外两套生命周期中的任何phase。<br><strong>1.1 clean生命周期</strong></p>
+<h2 id="2-JDBC配置"><a href="#2-JDBC配置" class="headerlink" title="2. JDBC配置"></a>2. JDBC配置</h2><p>你需要有一个可获得其JDBC驱动程序的数据库软件。目前这方面有很多出色的软件可供选择，比如IBM DB2、Microsoft SQL Server、MySQL、Oracle和PostgreSQL。在这一节，我会以MySQL为例演示，在下一篇博客，我会介绍H2缓存数据库。</p>
+<p>现在，假设你已经安装好了MySQL，有一个名称为<code>jifang</code>的<code>database</code>，并且有权限对这个数据库增删改查。</p>
+<h3 id="2-1-数据库URL"><a href="#2-1-数据库URL" class="headerlink" title="2.1 数据库URL"></a>2.1 数据库URL</h3><p>在连接数据库时，我们必须使用各种与数据库类型相关的参数，例如主机名、端口号和数据库名。</p>
+<p>JDBC URL一般格式：<br><code>jdbc:subprotocol:other stuff</code><br>其中，<code>subprotocol</code>（子协议名）用于选择连接到数据库的具体驱动程序。<code>other stuff</code>（数据源名）参数的格式随所使用的<code>subprotocol</code>不同而不同。如果要了解具体格式，你需要查阅数据库供应商的相关文档。</p>
+<h4 id="几种常见的数据库连接"><a href="#几种常见的数据库连接" class="headerlink" title="几种常见的数据库连接"></a>几种常见的数据库连接</h4><p><strong>1. Oracle </strong><br>驱动：<code>oracle.jdbc.driver.OracleDriver</code><br>URL：<code>jdbc:oracle:thin:@host:port:dbname</code><br>host：数据库所在的机器的地址；<br>port：端口号，默认是1521</p>
+<p><strong>2. MySQL</strong><br>驱动：<code>com.mysql.jdbc.Driver</code><br>URL：<code>jdbc:mysql://host:port/dbname</code><br>host：数据库所在的机器的名称；<br>port：端口号，默认3306</p>
+<p><strong>3. SQL Server</strong><br>驱动：<code>com.microsoft.jdbc.sqlserver.SQLServerDriver</code><br>URL：<code>jdbc:microsoft:sqlserver://&lt;host&gt;&lt;:port&gt;;DatabaseName=&lt;dbname&gt;</code><br>host：数据库所在的机器的名称；<br>port：端口号，默认是1433</p>
+<p><strong>4. DB2</strong><br>驱动：<code>com.ibm.db2.jdbc.app.DB2Driver</code><br>URL：<code>jdbc:db2://&lt;host&gt;&lt;:port&gt;/dbname</code><br>host：数据库所在的机器的名称；<br>port：端口号，默认是5000</p>
+<h4 id="MySQL-URL格式详解"><a href="#MySQL-URL格式详解" class="headerlink" title="MySQL URL格式详解"></a>MySQL URL格式详解</h4><p>这里我们主要参考MySQL的URL格式<br><code>jdbc:mysql://[host][,failoverhost...][:port]/[database][?propertyName1][=propertyValue1][&amp;propertyName2][=propertyValue2]...</code></p>
+<p><img src="https://app.yinxiang.com/shard/s15/res/7df5d637-a933-43e8-98a6-e539d3b08fba/1522287325072.png" alt="Alt text"></p>
+<h3 id="2-2-驱动程序"><a href="#2-2-驱动程序" class="headerlink" title="2.2 驱动程序"></a>2.2 驱动程序</h3><p>你需要获得包含了你所使用的数据库的驱动程序的JAR文件。<br>获取方法：</p>
 <ol>
-<li>pre-clean    ：执行清理前的工作；</li>
-<li>clean    ：清理上一次构建生成的所有文件；</li>
-<li>post-clean    ：执行清理后的工作</li>
+<li>去官网<a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/connector/j/</a>载JDBC Driver<br>解压之后获取<code>mysql-connector-java-5.1.46-bin.jar</code>这个jar包</li>
+<li>使用Maven仓库下载 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p><strong>1.2 default生命周期</strong><br>default生命周期是最核心的，它包含了构建项目时真正需要执行的所有步骤。</p>
-<ol><br><li>validate</li><br><li>initialize</li><br><li>generate-sources</li><br><li>process-sources</li><br><li>generate-resources</li><br><li>process-resources &nbsp; &nbsp;：复制和处理资源文件到target目录，准备打包；</li><br><li>compile &nbsp; &nbsp;：编译项目的源代码；</li><br><li>process-classes</li><br><li>generate-test-sources</li><br><li>process-test-sources</li><br><li>generate-test-resources</li><br><li>process-test-resources</li><br><li>test-compile &nbsp; &nbsp;：编译测试源代码；</li><br><li>process-test-classes</li><br><li>test &nbsp; &nbsp;：运行测试代码；</li><br><li>prepare-package</li><br><li>package &nbsp; &nbsp;：打包成jar或者war或者其他格式的分发包；</li><br><li>pre-integration-test</li><br><li>integration-test</li><br><li>post-integration-test</li><br><li>verify</li><br><li>install &nbsp; &nbsp;：将打好的包安装到本地仓库，供其他项目使用；</li><br><li>deploy &nbsp; &nbsp;：将打好的包安装到远程仓库，供其他项目使用；</li><br></ol><br><strong>1.3 site生命周期</strong><br><ol><br><li>pre-site</li><br><li>site &nbsp; &nbsp;：生成项目的站点文档；</li><br><li>post-site</li><br><li>site-deploy &nbsp; &nbsp;：发布生成的站点文档</li><br></ol>
-
-<h5 id="插件-1"><a href="#插件-1" class="headerlink" title="插件"></a>插件</h5><p>Maven的核心文件很小，主要的任务都是由插件来完成。定位到：%本地仓库%\org\apache\maven\plugins，可以看到一些下载好的插件：<br><img src="http://images.cnitblog.com/i/293735/201407/012038215279940.png" alt=""><br>具体参考的这篇文章，写作风格真棒，很漂亮的排版。<br><a href="http://www.cnblogs.com/luotaoyeah/p/3819001.html" target="_blank" rel="noopener">Maven入门指南⑦：Maven的生命周期和插件</a></p>
-<h5 id="maven-命令"><a href="#maven-命令" class="headerlink" title="maven 命令"></a>maven 命令</h5><blockquote>
-<p>编译源代码：mvn compile<br>编译测试代码：mvn test-compile<br>运行测试：mvn test (会运行前面的三个命令)<br>打包：mvn package<br>部署到本地：mvn install<br>在远程部署jar：mvn deploy<br>清除产生的项目：mvn clean<br>窥探SuperPom：mvn help:effective-pom<br>maven依赖树：mvn dependency:tree<br>打包的时候过滤test：mvn clean package -Pdev -Dmaven.test.skip=true</p>
-</blockquote>
-<h5 id="maven的生命周期"><a href="#maven的生命周期" class="headerlink" title="maven的生命周期"></a>maven的生命周期</h5><ul>
-<li>构建生命周期<ul>
-<li>clean<ul>
-<li>Pre-clean 做移除准备</li>
-<li>Clean 移除jar</li>
-<li>Post-clean 移除target</li>
-</ul>
-</li>
-<li>default（项目构建真正需要执行的所有步骤：23个阶段，执行某个执行阶段前的阶段都会被执行，避免重复工作）        <ul>
-<li>pre-resource</li>
-<li>compile</li>
-<li>test-compile</li>
-<li>test</li>
-<li>package</li>
-<li>install</li>
-<li>deploy </li>
-</ul>
-</li>
-<li>site （项目所有的资源文件放在一个站点服务器上，用户可以通过站点访问我们的api文档等）<ul>
-<li>Pre-site</li>
-<li>Site</li>
-<li>Post-site</li>
-<li>Site-deploy</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="shapshot和release版本"><a href="#shapshot和release版本" class="headerlink" title="shapshot和release版本"></a>shapshot和release版本</h5><p>snapshot 快照版会经常更新，maven会实时下载<br>release 稳定版<br>防止版本号的滥用，以及及时的协作更新</p>
-<h5 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h5><p>type:<br>scope:<br>optional:<br>exclusions:<br>依赖特性：依赖传递、<br>依赖冲突：路径优先、声明优先<br>依赖排除：dependencymanagement、execlusion</p>
-<h5 id="maven的聚合与继承"><a href="#maven的聚合与继承" class="headerlink" title="maven的聚合与继承"></a>maven的聚合与继承</h5><p>聚合：使用一个命令同时构建多个模块<br>&lt; modules &gt; &lt; package &gt;pom&lt; &gt;<br>继承： 子模块可以使用父模块的依赖</p>
-<h5 id="maven测试"><a href="#maven测试" class="headerlink" title="maven测试"></a>maven测试</h5><p>快捷键？？？</p>
-<hr>
-<h3 id="3-WHY（为什么要使用maven）"><a href="#3-WHY（为什么要使用maven）" class="headerlink" title="3. WHY（为什么要使用maven）"></a>3. WHY（为什么要使用maven）</h3><p>首先，为什么有maven？构建是程序员每天要做的工作，而且相当长的时间花在了这上面，而maven使这系列的工作完全自动化。 我们一直在寻找避免重复的方法，设计的重复，文档的重复，编码的重复，构建的重复等，maven是跨平台的，最大的消除了构建的重复。</p>
-<p>maven的其他优势：</p>
+<p>如果使用第二种方式，直接就会放在项目的<code>classpath</code>下。如果是第一种，下载好了之后如何安装呢? 把下载 的文件解压后的 <code>mysql-connector-java-5.1.46-bin.jar</code>文件 copy到 %JAVA_HOME%/jre/lib/ext 下， %JAVA_HOME就是jdk的安装目录。</p>
+<h3 id="2-3-注册驱动器类"><a href="#2-3-注册驱动器类" class="headerlink" title="2.3 注册驱动器类"></a>2.3 注册驱动器类</h3><p>某些JDBC的JAR文件将自动注册驱动器类，在这种情况下，可以跳过这一部分所描述的手动注册步骤。</p>
+<p>如果驱动程序JAR文件不支持自动注册，那就需要找出数据库提供商使用的JDBC驱动器类的名字。例如MySQL：<br><code>com.mysql.jdbc.Driver</code></p>
+<p>通过使用<code>DriverManager</code>，可以使用两种方式来注册驱动器。一种方式是在Java程序中加载加载驱动器类，例如：<br><code>Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</code><br>这条语句将使得驱动器类被加载，由此将执行可以注册驱动器的静态初始化器。</p>
+<p>另一种方式是设置jdbc.drivers属性。可以用命令行参数来指定这个属性，例如：<br><code>java -Djdbc.drivers=com.mysql.jdbc.Driver ProgramName</code><br>或者在应用中用下面这样的调用来设置系统属性：<br><code>System.setProperty(&quot;jdbc.Driver&quot;, &quot;com.mysql.jdbc.Driver&quot;);</code></p>
+<h3 id="2-4-连接到数据库"><a href="#2-4-连接到数据库" class="headerlink" title="2.4 连接到数据库"></a>2.4 连接到数据库</h3><p>在Java程序中，我们可以在代码中打开一个数据库连接，例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String url = properties.getProperty(<span class="string">"jdbc.url"</span>);</span><br><span class="line">String username = properties.getProperty(<span class="string">"jdbc.username"</span>);</span><br><span class="line">String password = properties.getProperty(<span class="string">"jdbc.password"</span>);</span><br><span class="line">Connection conn = DriverManager.getConnection(url,username,password);</span><br></pre></td></tr></table></figure></p>
+<p>驱动管理器遍历所有注册过的驱动程序，以便找到一个能够使用数据库URL中指定的子协议的驱动程序。</p>
+<h3 id="2-5-执行SQL语句"><a href="#2-5-执行SQL语句" class="headerlink" title="2.5 执行SQL语句"></a>2.5 执行SQL语句</h3><ol>
+<li>执行SQL命令之前，首先需要创建一个<code>Statement</code>对象，<br><code>Statement stat = conn.createStatement();</code></li>
+<li>SQL语句字符串<br><code>String sql = &quot;CREATE TABLE Greetings (Message CHAR(20))&quot;</code></li>
+<li>然后调用Statement接口中的<code>executeUpdate</code>方法<br><code>stat.executeUpdate(sql)</code><br>对于<code>INSERT DELETE UPDATE</code>等都使用<code>executeUpdate</code>方法，它返回受SQL命令影响的行数。对于<code>SELECT</code>使用<code>executeQuery</code>方法，它返回一个<code>ResultSet</code>类型的对象，可以通过它来每一行地迭代遍历所有查询结果。</li>
+</ol>
+<p><strong>注意：</strong><code>ResultSet</code>接口的迭代协议与java.util.Iterator接口稍有不同。对于<code>ResultSet</code>接口，迭代器初始化时被设定在第一行之前的位置，必须调用<code>next()</code>方法把它移动到第一行。另外，它没有<code>hasNext()</code>方法，我们需要不断地调用<code>next()</code>，知道它返回<code>false</code>。</p>
+<p><code>ResultSet</code>中行的顺序是人任意的，除非你在<code>sql</code>使用了<code>ORDER BY</code>子句指定排序。</p>
+<h4 id="管理连接、语句和结果集"><a href="#管理连接、语句和结果集" class="headerlink" title="管理连接、语句和结果集"></a><strong>管理连接、语句和结果集</strong></h4><p>每个<code>Connection</code>对象都可以创建一个或多个<code>Statement</code>对象。同一个<code>Statement</code>对象可以用于多个不想干的命令和查阅。但是一个<code>Statement</code>对象最多只能有一个打开结果集。<br>如果不你信，可以看下面代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ResultSet resultSet = statement.executeQuery(<span class="string">"SELECT * FROM Greetings"</span>);</span><br><span class="line">ResultSet resultSet2 = statement.executeQuery(<span class="string">"SELECT * FROM Greetings"</span>);</span><br><span class="line"><span class="keyword">if</span> (resultSet2.next())&#123;</span><br><span class="line">    System.out.println(resultSet2.getString(<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (resultSet.next())&#123;</span><br><span class="line">    System.out.println(resultSet.getString(<span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Hello World!sdfsdf</span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">"main"</span> java.sql.SQLException: Operation not allowed after ResultSet closed</span><br><span class="line">	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1055)</span><br><span class="line">	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)</span><br><span class="line">	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926)</span><br><span class="line">	at com.mysql.jdbc.ResultSetImpl.checkClosed(ResultSetImpl.java:768)</span><br><span class="line">	at com.mysql.jdbc.ResultSetImpl.next(ResultSetImpl.java:7008)</span><br><span class="line">	at jdbc.MySQLTest.runTest(MySQLTest.java:31)</span><br><span class="line">	at jdbc.MySQLTest.main(MySQLTest.java:17)</span><br><span class="line"></span><br><span class="line">Process finished with <span class="built_in">exit</span> code 1</span><br></pre></td></tr></table></figure></p>
+<p>也就是说，同一个<code>Statement</code>对象会以最后一个打开的<code>ResultSet</code>有效，之前打开的都已经关闭了。</p>
+<p><strong>使用完ResultSet、Statement或Connection对象后，应立即调用close方法。这些对象都是用了规模较大的数据结构和数据库存服务器上的有限资源</strong><br>如果Statement对象上有一个打开的结果集，那么调用<code>statement.close()</code>方法将自动关闭该结果集。同样的调用Connection类的close方法将关闭该连接上的所有语句。<br>下面是完整的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> jdbc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Paths;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * author: jifang</span></span><br><span class="line"><span class="comment"> * date: 18-3-29 上午9:42</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySQLTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        runTest();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">runTest</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Connection connection = getConnection();</span><br><span class="line">        Statement statement = connection.createStatement();</span><br><span class="line">        statement.executeUpdate(<span class="string">"CREATE TABLE Greetings (Message CHAR(20))"</span>);</span><br><span class="line">        statement.executeUpdate(<span class="string">"INSERT INTO Greetings VALUES ('Hello World!sdfsdf')"</span>);</span><br><span class="line"></span><br><span class="line">        ResultSet resultSet = statement.executeQuery(<span class="string">"SELECT * FROM Greetings"</span>);</span><br><span class="line">        <span class="keyword">if</span> (resultSet.next())&#123;</span><br><span class="line">            System.out.println(resultSet.getString(<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        statement.executeUpdate(<span class="string">"DROP TABLE Greetings"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InputStream inputStream = Files.newInputStream(Paths.get(<span class="string">"src/main/java/jdbc/"</span>, <span class="string">"database.properties"</span>));</span><br><span class="line">            properties.load(inputStream);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        String drivers = properties.getProperty(<span class="string">"jdbc.drivers"</span>);</span><br><span class="line">        <span class="keyword">if</span> (drivers!=<span class="keyword">null</span>)System.setProperty(<span class="string">"jdbc.drivers"</span>,drivers);</span><br><span class="line">        String url = properties.getProperty(<span class="string">"jdbc.url"</span>);</span><br><span class="line">        String username = properties.getProperty(<span class="string">"jdbc.username"</span>);</span><br><span class="line">        String password = properties.getProperty(<span class="string">"jdbc.password"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> DriverManager.getConnection(url,username,password);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>【data.properties】<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.drivers=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url=jdbc:mysql://localhost:3306/jifang</span><br><span class="line">jdbc.username=root</span><br><span class="line">jdbc.password=xjj520520ljf</span><br></pre></td></tr></table></figure></p>
+<p>我们已经了解了怎么使用<code>Statement</code>执行sql语句。现在来看看它的大哥。</p>
+<p><strong>PreparedStatement（预备语句）</strong><br>在预备查询语句中，每个宿主变量都用“？”来表示。如果存在一个以上的变量，那么在设置变量值时必须注意“？”的位置。例如我们要查询的SQL为：<br><code>SELECT * FROM jifang where id = ?</code><br>在执行预备语句之前，必须使用set方法将变量绑定到实际的值上。<br><code>preparedStat.setInt(1, 233)</code><br>第一个参数指的是需要设置的宿主变量的位置，位置1表示第一个“？”。第二个参数是赋予宿主变量的值。</p>
+<p>如果想要重用已经执行过的预备查询语句，那么除非使用set方法或调用<code>clearParameters</code>方法，否则所有宿主变量的绑定都不会改变。<br>一旦为所有变量绑定了具体的值，就可以执行查询操作了。</p>
+<p><strong>注意：</strong>如果查询中涉及用户输入，那就还需要警惕<strong>注入攻击</strong>。因此，只有查询涉及变量时，才应该使用预备语句。</p>
+<h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>除了以上介绍的内容，还有：</p>
 <ol>
-<li>maven不仅是构建工具，它还是依赖管理工具和项目管理工具，提供了中央仓库，能够帮我们自动下载构件。</li>
-<li>为了解决的依赖的增多，版本不一致，版本冲突，依赖臃肿等问题，它通过一个坐标系统来精确地定位每一个构件（artifact）。</li>
-<li>还能帮助我们分散在各个角落的项目信息，包括项目描述，开发者列表，版本控制系统，许可证，缺陷管理系统地址。</li>
-<li>maven还为全世界的java开发者提供了一个免费的中央仓库，在其中几乎可以找到任何的流行开源软件。通过衍生工具(Nexus),我们还能对其进行快速搜索</li>
-<li>maven对于目录结构有要求，约定优于配置，用户在项目间切换就省去了学习成本。</li>
+<li>读写LOB</li>
+<li>获取自动生成键</li>
+<li>可滚动和可更新结果集</li>
+<li>元数据<br>等内容，有兴趣可以查阅《Java核心编程卷二》</li>
 </ol>
-<p>Maven提供了开发人员构建一个完整的生命周期框架。开发团队可以自动完成项目的基础工具建设，Maven使用标准的目录结构和默认构建生命周期。</p>
-<p>在多个开发团队环境时，Maven可以设置按标准在非常短的时间里完成配置工作。由于大部分项目的设置都很简单，并且可重复使用，Maven让开发人员的工作更轻松，同时创建报表，检查，构建和测试自动化设置。</p>
 <blockquote>
-<p><strong>参考文献：</strong><br><a href="http://www.cnblogs.com/luotaoyeah/p/3819001.html" target="_blank" rel="noopener">http://www.cnblogs.com/luotaoyeah/p/3819001.html</a> Maven入门指南⑦：Maven的生命周期和插件<br><a href="http://ifeve.com/maven-1/" target="_blank" rel="noopener">http://ifeve.com/maven-1/</a> Maven入门指南（一）<br><a href="http://ifeve.com/maven-2/" target="_blank" rel="noopener">http://ifeve.com/maven-2/</a> Maven入门指南（二）<br><a href="http://blog.csdn.net/nancy_feng/article/details/38148625" target="_blank" rel="noopener">http://blog.csdn.net/nancy_feng/article/details/38148625</a> maven学习—–maven的优势</p>
+<p>参考文献<br>[1] 《Java核心技术卷二》<br>[2] <a href="https://blog.csdn.net/u014726937/article/details/52786502" target="_blank" rel="noopener">几种常见的数据库连接的URL写法</a><br>[3] <a href="http://elf8848.iteye.com/blog/1684414" target="_blank" rel="noopener">Mysql JDBC Url参数说明</a></p>
 </blockquote>
 
       
@@ -399,7 +284,11 @@ Maven的中央仓库由Maven社区提供。默认情况下，所有不在本地�
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">事务</a>
         		</li>
       		
 		</ul>
@@ -455,7 +344,7 @@ Maven的中央仓库由Maven社区提供。默认情况下，所有不在本地�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2017/10/23/Maven初探/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2018/03/29/JDBC/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -469,18 +358,9 @@ Maven的中央仓库由Maven社区提供。默认情况下，所有不在本地�
   
 <nav id="article-nav">
   
-    <a href="/2017/12/31/2017个人报告/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2017 工作报告
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/18/JVM/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JVM</div>
+    <a href="/2018/03/28/基于scrapy分布式新闻评论爬虫/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于scrapy分布式新闻评论爬虫</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -507,7 +387,7 @@ Maven的中央仓库由Maven社区提供。默认情况下，所有不在本地�
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-What（Maven是什么？）"><span class="toc-number">1.</span> <span class="toc-text">1. What（Maven是什么？）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装Maven"><span class="toc-number">1.0.1.</span> <span class="toc-text">安装Maven</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven概览-核心概念"><span class="toc-number">1.0.2.</span> <span class="toc-text">Maven概览-核心概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#构建生命周期、构建阶段、构建目标"><span class="toc-number">1.0.3.</span> <span class="toc-text">构建生命周期、构建阶段、构建目标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#依赖和仓库"><span class="toc-number">1.0.4.</span> <span class="toc-text">依赖和仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插件"><span class="toc-number">1.0.5.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置文件"><span class="toc-number">1.0.6.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#父pom"><span class="toc-number">1.0.7.</span> <span class="toc-text">父pom</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven配置文件"><span class="toc-number">1.0.8.</span> <span class="toc-text">Maven配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven运行"><span class="toc-number">1.0.9.</span> <span class="toc-text">Maven运行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-How-Maven具体使用"><span class="toc-number">2.</span> <span class="toc-text">2. How(Maven具体使用)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven安装目录"><span class="toc-number">2.0.1.</span> <span class="toc-text">Maven安装目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maven目录结构"><span class="toc-number">2.0.2.</span> <span class="toc-text">Maven目录结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#POM文件"><span class="toc-number">2.0.3.</span> <span class="toc-text">POM文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#外部依赖"><span class="toc-number">2.0.4.</span> <span class="toc-text">外部依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#生命周期"><span class="toc-number">2.0.5.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插件-1"><span class="toc-number">2.0.6.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven-命令"><span class="toc-number">2.0.7.</span> <span class="toc-text">maven 命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven的生命周期"><span class="toc-number">2.0.8.</span> <span class="toc-text">maven的生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#shapshot和release版本"><span class="toc-number">2.0.9.</span> <span class="toc-text">shapshot和release版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#依赖"><span class="toc-number">2.0.10.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven的聚合与继承"><span class="toc-number">2.0.11.</span> <span class="toc-text">maven的聚合与继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven测试"><span class="toc-number">2.0.12.</span> <span class="toc-text">maven测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-WHY（为什么要使用maven）"><span class="toc-number">3.</span> <span class="toc-text">3. WHY（为什么要使用maven）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是JDBC？"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是JDBC？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JDBC配置"><span class="toc-number">2.</span> <span class="toc-text">2. JDBC配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-数据库URL"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 数据库URL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#几种常见的数据库连接"><span class="toc-number">2.1.1.</span> <span class="toc-text">几种常见的数据库连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-URL格式详解"><span class="toc-number">2.1.2.</span> <span class="toc-text">MySQL URL格式详解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-驱动程序"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 驱动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-注册驱动器类"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 注册驱动器类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-连接到数据库"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 连接到数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-执行SQL语句"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 执行SQL语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#管理连接、语句和结果集"><span class="toc-number">2.5.1.</span> <span class="toc-text">管理连接、语句和结果集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后续"><span class="toc-number">2.6.</span> <span class="toc-text">后续</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
