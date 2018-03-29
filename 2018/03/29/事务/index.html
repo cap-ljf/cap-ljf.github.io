@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="http://cap-ljf.top">
   <title>事务 | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="@(博客随笔)[事务] JDBC 事务1. 什么是事务事务基本概念：一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个执行单元。 举例，我不想再举例了，就是支付宝或微信转账，A给B转100元，A减少了100元，那么B一定得增加100元，不能出现A少了钱B没加钱，或者B加了钱A没少钱的情况。 2. 事务四大特性ACID 原子性（Atomicity）：事务中所有操作是不可再分割的原">
+  <meta name="description" content="1. 什么是事务事务基本概念：一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个执行单元。">
+<meta name="keywords" content="事务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事务">
 <meta property="og:url" content="http://cap-ljf.top/2018/03/29/事务/index.html">
 <meta property="og:site_name" content="Jifung博客">
-<meta property="og:description" content="@(博客随笔)[事务] JDBC 事务1. 什么是事务事务基本概念：一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个执行单元。 举例，我不想再举例了，就是支付宝或微信转账，A给B转100元，A减少了100元，那么B一定得增加100元，不能出现A少了钱B没加钱，或者B加了钱A没少钱的情况。 2. 事务四大特性ACID 原子性（Atomicity）：事务中所有操作是不可再分割的原">
+<meta property="og:description" content="1. 什么是事务事务基本概念：一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个执行单元。">
 <meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/70d7f121-6172-4a9c-a2a8-16033017cb0c/1522316358581.png">
-<meta property="og:updated_time" content="2018-03-29T09:40:10.911Z">
+<meta property="og:updated_time" content="2018-03-29T13:17:27.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事务">
-<meta name="twitter:description" content="@(博客随笔)[事务] JDBC 事务1. 什么是事务事务基本概念：一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个执行单元。 举例，我不想再举例了，就是支付宝或微信转账，A给B转100元，A减少了100元，那么B一定得增加100元，不能出现A少了钱B没加钱，或者B加了钱A没少钱的情况。 2. 事务四大特性ACID 原子性（Atomicity）：事务中所有操作是不可再分割的原">
+<meta name="twitter:description" content="1. 什么是事务事务基本概念：一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个执行单元。">
 <meta name="twitter:image" content="https://app.yinxiang.com/shard/s15/res/70d7f121-6172-4a9c-a2a8-16033017cb0c/1522316358581.png">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
@@ -174,7 +175,7 @@
     	<div id="toc-article" class="toc-article">
     	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     		<strong class="toc-title">文章目录</strong>
-               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JDBC-事务"><span class="toc-number">1.</span> <span class="toc-text">JDBC 事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是事务"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 什么是事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-事务四大特性ACID"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 事务四大特性ACID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-JDBC中的事务"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. JDBC中的事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-保存点"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">3.1 保存点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-事务隔离级别"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-事务并发问题"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">4.1 事务并发问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-1-脏读"><span class="toc-number">1.0.4.1.1.</span> <span class="toc-text">4.1.1 脏读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-2-不可重复读"><span class="toc-number">1.0.4.1.2.</span> <span class="toc-text">4.1.2 不可重复读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-3-幻读"><span class="toc-number">1.0.4.1.3.</span> <span class="toc-text">4.1.3 幻读</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-事务隔离级别"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">4.2 事务隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-MySQL隔离级别"><span class="toc-number">1.0.4.3.</span> <span class="toc-text">4.3 MySQL隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-JDBC设置隔离级别"><span class="toc-number">1.0.4.4.</span> <span class="toc-text">4.4 JDBC设置隔离级别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验"><span class="toc-number">1.0.5.</span> <span class="toc-text">实验</span></a></li></ol></li></ol></li></ol>
+               <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是事务"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-事务四大特性ACID"><span class="toc-number">2.</span> <span class="toc-text">2. 事务四大特性ACID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-JDBC中的事务"><span class="toc-number">3.</span> <span class="toc-text">3. JDBC中的事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-保存点"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 保存点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-事务隔离级别"><span class="toc-number">4.</span> <span class="toc-text">4. 事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-事务并发问题"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 事务并发问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-1-脏读"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.1.1 脏读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-2-不可重复读"><span class="toc-number">4.1.2.</span> <span class="toc-text">4.1.2 不可重复读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-3-幻读"><span class="toc-number">4.1.3.</span> <span class="toc-text">4.1.3 幻读</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-事务隔离级别"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 事务隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-MySQL隔离级别"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 MySQL隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-JDBC设置隔离级别"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 JDBC设置隔离级别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验"><span class="toc-number">5.</span> <span class="toc-text">实验</span></a></li></ol>
              </div>
        <script type="text/javascript">
     	function showToc(){
@@ -194,9 +195,7 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>@(博客随笔)[事务]</p>
-<h1 id="JDBC-事务"><a href="#JDBC-事务" class="headerlink" title="JDBC 事务"></a>JDBC 事务</h1><h3 id="1-什么是事务"><a href="#1-什么是事务" class="headerlink" title="1. 什么是事务"></a>1. 什么是事务</h3><p><strong>事务基本概念：</strong>一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个执行单元。</p>
-<p>举例，我不想再举例了，就是支付宝或微信转账，A给B转100元，A减少了100元，那么B一定得增加100元，不能出现A少了钱B没加钱，或者B加了钱A没少钱的情况。</p>
+        <h3 id="1-什么是事务"><a href="#1-什么是事务" class="headerlink" title="1. 什么是事务"></a>1. 什么是事务</h3><p><strong>事务基本概念：</strong>一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个执行单元。<br><a id="more"></a><br>举例，我不想再举例了，就是支付宝或微信转账，A给B转100元，A减少了100元，那么B一定得增加100元，不能出现A少了钱B没加钱，或者B加了钱A没少钱的情况。</p>
 <h3 id="2-事务四大特性ACID"><a href="#2-事务四大特性ACID" class="headerlink" title="2. 事务四大特性ACID"></a>2. 事务四大特性ACID</h3><ul>
 <li>原子性（Atomicity）：事务中所有操作是不可再分割的原子单位。事务中所有操作要么全部执行成功，要么全部执行失败</li>
 <li>一致性（Consistency）：事务执行后，数据库状态与其它业务规则保持一致。如转账业务，无论事务执行成功与否，参与转账的两个账号余额之和应该是不变的</li>
@@ -318,6 +317,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">事务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -411,7 +421,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JDBC-事务"><span class="toc-number">1.</span> <span class="toc-text">JDBC 事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是事务"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 什么是事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-事务四大特性ACID"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 事务四大特性ACID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-JDBC中的事务"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. JDBC中的事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-保存点"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">3.1 保存点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-事务隔离级别"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-事务并发问题"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">4.1 事务并发问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-1-脏读"><span class="toc-number">1.0.4.1.1.</span> <span class="toc-text">4.1.1 脏读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-2-不可重复读"><span class="toc-number">1.0.4.1.2.</span> <span class="toc-text">4.1.2 不可重复读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-3-幻读"><span class="toc-number">1.0.4.1.3.</span> <span class="toc-text">4.1.3 幻读</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-事务隔离级别"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">4.2 事务隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-MySQL隔离级别"><span class="toc-number">1.0.4.3.</span> <span class="toc-text">4.3 MySQL隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-JDBC设置隔离级别"><span class="toc-number">1.0.4.4.</span> <span class="toc-text">4.4 JDBC设置隔离级别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验"><span class="toc-number">1.0.5.</span> <span class="toc-text">实验</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是事务"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-事务四大特性ACID"><span class="toc-number">2.</span> <span class="toc-text">2. 事务四大特性ACID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-JDBC中的事务"><span class="toc-number">3.</span> <span class="toc-text">3. JDBC中的事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-保存点"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 保存点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-事务隔离级别"><span class="toc-number">4.</span> <span class="toc-text">4. 事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-事务并发问题"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 事务并发问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-1-脏读"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.1.1 脏读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-2-不可重复读"><span class="toc-number">4.1.2.</span> <span class="toc-text">4.1.2 不可重复读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-3-幻读"><span class="toc-number">4.1.3.</span> <span class="toc-text">4.1.3 幻读</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-事务隔离级别"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 事务隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-MySQL隔离级别"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 MySQL隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-JDBC设置隔离级别"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 JDBC设置隔离级别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验"><span class="toc-number">5.</span> <span class="toc-text">实验</span></a></li></ol>
                     </div>
                 </span>
             </div>
