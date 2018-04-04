@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cap-ljf.top">
-  <title>Tag: 随笔 | Jifung博客</title>
+  <title>《Spring实战》高级装配 | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jifung博客">
-<meta property="og:url" content="http://cap-ljf.top/tags/随笔/index.html">
+  <meta name="description" content="Spring profile 条件化的bean声明 自动装配及歧义性 bean的作用域 SpEL">
+<meta name="keywords" content="Spring,DI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Spring实战》高级装配">
+<meta property="og:url" content="http://cap-ljf.top/2018/04/04/《Spring实战》高级装配/index.html">
 <meta property="og:site_name" content="Jifung博客">
+<meta property="og:description" content="Spring profile 条件化的bean声明 自动装配及歧义性 bean的作用域 SpEL">
+<meta property="og:updated_time" content="2018-04-04T07:12:42.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jifung博客">
+<meta name="twitter:title" content="《Spring实战》高级装配">
+<meta name="twitter:description" content="Spring profile 条件化的bean声明 自动装配及歧义性 bean的作用域 SpEL">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
   
@@ -147,64 +152,276 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-《Spring实战》高级装配" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/30/《三个火枪手》噗噗噗/" class="archive-article-date">
-  	<time datetime="2018-03-30T07:34:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/30/《三个火枪手》噗噗噗/">《三个火枪手》噗噗噗</a>
+    <h1 class="article-title" itemprop="name">
+      《Spring实战》高级装配
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/2018/04/04/《Spring实战》高级装配/" class="archive-article-date">
+  	<time datetime="2018-04-04T07:11:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-04</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-环境与profile"><span class="toc-number">1.</span> <span class="toc-text">1. 环境与profile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-配置profile-bean"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 配置profile bean</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-激活profile"><span class="toc-number">2.</span> <span class="toc-text">2. 激活profile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-条件化bean"><span class="toc-number">3.</span> <span class="toc-text">2. 条件化bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-处理自动装配的歧义性"><span class="toc-number">4.</span> <span class="toc-text">3. 处理自动装配的歧义性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Bean的作用域"><span class="toc-number">5.</span> <span class="toc-text">4. Bean的作用域</span></a></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
           
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Spring profile</li>
+<li>条件化的bean声明</li>
+<li>自动装配及歧义性</li>
+<li>bean的作用域</li>
+<li>SpEL<a id="more"></a>
+<h3 id="1-环境与profile"><a href="#1-环境与profile" class="headerlink" title="1. 环境与profile"></a>1. 环境与profile</h3></li>
+</ul>
+<p>在正常开发过程中，我们会有不同的环境。例如：</p>
+<ul>
+<li>开发环境（dev）：也就是每个人在电脑上进行开发的环境。</li>
+<li>Beta环境（beta）：即测试环境，QA环境，在测试机器上运行的环境。</li>
+<li>线上环境（prod）：也称为生产环境。即在线上机器上跑的环境。</li>
+</ul>
+<p>这里的环境指的是类似于数据库，ng等资源。</p>
+<h4 id="1-1-配置profile-bean"><a href="#1-1-配置profile-bean" class="headerlink" title="1.1 配置profile bean"></a>1.1 配置profile bean</h4><p><strong>在JavaConfig中配置profile</strong><br><code>@Profile(&quot;dev&quot;)</code>：这个注解可以应用在类或方法上。如果应用于类级别上，他会告诉Spring这个配置类中的bean在相应dev profile 激活时才会创建。如果dev profile没有激活的话，那么带有<code>@Bean</code>注解的方法都会被忽略。</p>
+<p>在Spring 3.1中,只能在类级别上使用@Profile注解。不过,从Spring 3.2开始,你也可以在方法级别上使用@Profile注解,与@Bean注解一同使用。这样的话,就能将这两个bean的声明放到同一个配置类之中。</p>
+<p>没有指定profile的bean始终都会被创建,与激活哪个profile没有关系。</p>
+<p><strong>在XML中配置profile</strong><br>使用标签：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">profile</span>=<span class="string">"dev"</span>&gt;</span></span><br><span class="line">	这里定义相应的bean</span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="2-激活profile"><a href="#2-激活profile" class="headerlink" title="2. 激活profile"></a>2. 激活profile</h3><p>Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：<code>spring.profiles.active</code>和<code>spring.profiles.default</code>。如果设置了<code>spring.profiles.active</code>属性的话,那么它的值就会用来确定哪个profile是激活的。但如果没有设置<code>spring.profiles.active</code>属性的话,那Spring将会查找<code>spring.profiles.default</code>的值。如果<code>spring.profiles.active</code>和<code>spring.profiles.default</code>均没有设置的话,那就没有激活的profile,因此只会创建那些没有定义在profile中的bean。</p>
+<p>有多种方法来设置这两种属性：</p>
+<ul>
+<li>作为DispatcherServlet的初始化参数;</li>
+<li>作为Web应用的上下文参数;</li>
+<li>作为JNDI条目;</li>
+<li>作为环境变量;</li>
+<li>作为JVM的系统属性;</li>
+<li>在集成测试类上,使用@ActiveProfiles注解设置。</li>
+</ul>
+<p><strong>在Web应用的web.xml文件中设置默认的profile</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 为web应用上下文设置默认的profile</span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>spring.profiles.default<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>dev<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"># 为Servlet设置默认的profile</span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>appServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		org.springframework.web.servlet.DispatcherServlet</span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>spring.profile.default<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>dev<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><strong>使用profile进行测试</strong><br>当运行集成测试时,通常会希望采用与生产环境(或者是生产环境的部分子集)相同的配置进行测试。但是,如果配置中的bean定义在了profile中,那么在运行测试时,我们就需要有一种方式来启用合适的profile。</p>
+<p>Spring提供了@ActiveProfiles注解,我们可以使用它来指定运行测试时要激活哪个profile。在集成测试时,通常想要激活的是开发环境的profile。例如,下面的测试类片段展现了使用@ActiveProfiles激活dev profile:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</span><br><span class="line"><span class="meta">@ContextConfiguration</span>(classes=DataSourceConfig.class)</span><br><span class="line"><span class="meta">@ActiveProfiles</span>(<span class="string">"dev"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">DevDataSourceTest</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-条件化bean"><a href="#2-条件化bean" class="headerlink" title="2. 条件化bean"></a>2. 条件化bean</h3><p>假设你希望一个或多个bean只有在应用的类路径下包含特定的库时才创建。或者我们希望某个bean只有当另外某个特定的bean也声明了之后才会创建。我们还可能要求只有某个特定的环境变量设置之后,才会创建某个bean。</p>
+<p>Spring4引入了一个新的注解：<br><code>@Conditional</code>：它可以用到带有@Bean注解的方法上。如果给定的条件计算结果为true,就会创建这个bean,否则的话,这个bean会被忽略。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@Conditional</span>(MagicExistsCondition.class)</span><br><span class="line"><span class="function"><span class="keyword">public</span> MagicBean <span class="title">magicBean</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> MagicBean();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到,@Conditional中给定了一个Class,它指明了条件——在本例中,也就是MagicExistsCondition。@Conditional将会通过Condition接口进行条件对比:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MagicExistsCondition</span> <span class="keyword">implements</span> <span class="title">Condition</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">matches</span><span class="params">(ConditionContext context, AnnotatedTypeMetadata metadata)</span> </span>&#123;</span><br><span class="line">    Environment env = context.getEnvironment();</span><br><span class="line">    <span class="keyword">return</span> env.containsProperty(<span class="string">"magic"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>设置给@Conditional的类可以是任意实现了Condition接口的类型。可以看出来,这个接口实现起来很简单直接,只需提供matches()方法的实现即可。如果matches()方法返回true,那么就会创建带有@Conditional注解的bean。如果matches()方法返回<br>false,将不会创建这些bean。</p>
+<p><em>提示：<code>@Profile</code>注解源码使用了<code>@Conditional</code>注解来实现</em></p>
+<h3 id="3-处理自动装配的歧义性"><a href="#3-处理自动装配的歧义性" class="headerlink" title="3. 处理自动装配的歧义性"></a>3. 处理自动装配的歧义性</h3><p>仅有一个bean匹配所需的结果时,自动装配才是有效的。如果不仅有一个bean能够匹配结果的话,这种歧义性会阻碍Spring自动装配属性、构造器参数或方法参数。</p>
+<p>Spring提供了多种可选方案来解决这样的问题。你可以将可选bean中的某一个设为首选(primary)的bean,或者使用限定符(qualifier)来帮助Spring将可选的bean的范围缩小到只有一个bean。</p>
+<p><code>@Primary</code>：在声明bean的时候,通过将其中一个可选的bean设置为首选(primary)bean能够避免自动装配时的歧义性。当遇到歧义性的时候,Spring将会使用首选的bean,而不是其他可选的bean。实际上,你所声明就是“最喜欢”的bean。</p>
+<p><strong>限定自动装配的bean</strong></p>
+<p><code>@Qualifier</code>注解是使用限定符的主要方式。它可以与@Autowired和@Inject协同使用,在注入的时候指定想要注入进去的是哪个bean。</p>
+<p>更准确地讲,<code>@Qualifier(&quot;iceCream&quot;)</code>所引用的bean要具有String类型的“iceCream”作为限定符。如果没有指定其他的限定符的话,所有的bean都会给定一个默认的限定符,这个限定符与bean的ID相同。因此,框架会将具有“iceCream”限定符的bean注入到setDessert()方法中。这恰巧就是ID为iceCream的bean,它是IceCream类在组件扫描的时候创建的。</p>
+<p>限定符和bean id 是不同的概念，但是默认的限定符就是bean id。</p>
+<h3 id="4-Bean的作用域"><a href="#4-Bean的作用域" class="headerlink" title="4. Bean的作用域"></a>4. Bean的作用域</h3><p>在默认情况下,Spring应用上下文中所有bean都是作为以单例(singleton)的形式创建的。也就是说,不管给定的一个bean被注入到其他bean多少次,每次所注入的都是同一个实例。</p>
+<p>Spring定义了多种作用域,可以基于这些作用域创建bean,包括:</p>
+<ul>
+<li>单例(Singleton):在整个应用中,只创建bean的一个实例。</li>
+<li>原型(Prototype):每次注入或者通过Spring应用上下文获取的时候,都会创建一个新的bean实例。</li>
+<li>会话(Session):在Web应用中,为每个会话创建一个bean实例。</li>
+<li>请求(Rquest):在Web应用中,为每个请求创建一个bean实例。</li>
+</ul>
+<p><code>@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)</code>：这个注解能够更改bean的作用域。这里,使用ConfigurableBeanFactory类的SCOPE_PROTOTYPE常量设置了原型作用域。你当然也可以使用<code>@Scope(&quot;prototype&quot;)</code>,但是使用SCOPE_PROTOTYPE常量更加安全并且不易出错。</p>
+<p><code>@Scope</code>可以应用在组件扫描和Java配置中。<br>在XML配置中：<br><code>&lt;bean id=&quot;xxx&quot; class=&quot;xxx&quot; scope=&quot;prototype&quot;&gt;</code></p>
+<p>会话和请求作用域指Spring为Web应用中的每个会话或请求创建一个对应的bean。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/支付宝.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/微信.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读书</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DI</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2018/04/04/《Spring实战》高级装配/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/04/03/《Spring实战》装配bean/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《Spring实战》装配bean</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-环境与profile"><span class="toc-number">1.</span> <span class="toc-text">1. 环境与profile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-配置profile-bean"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 配置profile bean</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-激活profile"><span class="toc-number">2.</span> <span class="toc-text">2. 激活profile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-条件化bean"><span class="toc-number">3.</span> <span class="toc-text">2. 条件化bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-处理自动装配的歧义性"><span class="toc-number">4.</span> <span class="toc-text">3. 处理自动装配的歧义性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Bean的作用域"><span class="toc-number">5.</span> <span class="toc-text">4. Bean的作用域</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -227,9 +444,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
