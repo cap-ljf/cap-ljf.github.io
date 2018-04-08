@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cap-ljf.top">
-  <title>Java注解 | Jifung博客</title>
+  <title>Tag: Spring MVC | Jifung博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 概念注解是那些插入到源代码中使用其他工具可以对其进行处理的标签。这些工具可以在源码层次上进行操作，或者可以处理编译器在其中放置了注解的类文件。">
-<meta name="keywords" content="注解">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java注解">
-<meta property="og:url" content="http://cap-ljf.top/2018/04/02/Java注解/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Jifung博客">
+<meta property="og:url" content="http://cap-ljf.top/tags/Spring-MVC/index.html">
 <meta property="og:site_name" content="Jifung博客">
-<meta property="og:description" content="1. 概念注解是那些插入到源代码中使用其他工具可以对其进行处理的标签。这些工具可以在源码层次上进行操作，或者可以处理编译器在其中放置了注解的类文件。">
-<meta property="og:updated_time" content="2018-04-02T14:35:43.847Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java注解">
-<meta name="twitter:description" content="1. 概念注解是那些插入到源代码中使用其他工具可以对其进行处理的标签。这些工具可以在源码层次上进行操作，或者可以处理编译器在其中放置了注解的类文件。">
+<meta name="twitter:title" content="Jifung博客">
   
     <link rel="alternative" href="/atom.xml" title="Jifung博客" type="application/atom+xml">
   
@@ -152,303 +147,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java注解" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Java注解
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/04/08/《Spring实战》搭建Spring-MVC/" class="archive-article-date">
+  	<time datetime="2018-04-08T08:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-08</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/04/08/《Spring实战》搭建Spring-MVC/">《Spring实战》搭建Spring MVC</a>
     </h1>
   
 
-        
-        <a href="/2018/04/02/Java注解/" class="archive-article-date">
-  	<time datetime="2018-04-02T14:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    
-        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-              <span class="btn-bg"></span>
-              <span class="btn-text">文章导航</span>
-              </p>
-    	<div id="toc-article" class="toc-article">
-    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-    		<strong class="toc-title">文章目录</strong>
-               <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概念"><span class="toc-number">1.</span> <span class="toc-text">1. 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-用法"><span class="toc-number">2.</span> <span class="toc-text">2. 用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-注解语法"><span class="toc-number">3.</span> <span class="toc-text">3. 注解语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注解定义"><span class="toc-number">3.1.</span> <span class="toc-text">注解定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解使用"><span class="toc-number">3.2.</span> <span class="toc-text">注解使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-标准注解"><span class="toc-number">4.</span> <span class="toc-text">4. 标准注解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#元注解"><span class="toc-number">4.1.</span> <span class="toc-text">元注解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Retention"><span class="toc-number">4.1.1.</span> <span class="toc-text">@Retention</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Documented"><span class="toc-number">4.1.2.</span> <span class="toc-text">@Documented</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Target"><span class="toc-number">4.1.3.</span> <span class="toc-text">@Target</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Inherited"><span class="toc-number">4.1.4.</span> <span class="toc-text">@Inherited</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Repeatable"><span class="toc-number">4.1.5.</span> <span class="toc-text">@Repeatable</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-注解的提取：反射"><span class="toc-number">5.</span> <span class="toc-text">5. 注解的提取：反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-源码级注解处理"><span class="toc-number">6.</span> <span class="toc-text">6. 源码级注解处理</span></a></li></ol>
-             </div>
-       <script type="text/javascript">
-    	function showToc(){
-    		var toc_article = document.getElementById("toc-article");
-    		var show_toc_btn = document.getElementById("show-toc-btn");
-    		toc_article.setAttribute("style","display:block");
-    		show_toc_btn.setAttribute("style","display:none");
-    		};
-    	function showBtn(){
-    		var toc_article = document.getElementById("toc-article");
-    		var show_toc_btn = document.getElementById("show-toc-btn");
-    		toc_article.setAttribute("style","display:none");
-    		show_toc_btn.setAttribute("style","display:block");
-    		};
-       </script>
+        <div class="article-info info-on-right">
           
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h3><p><strong>注解是那些插入到源代码中使用其他工具可以对其进行处理的标签。这些工具可以在源码层次上进行操作，或者可以处理编译器在其中放置了注解的类文件。</strong><br><a id="more"></a><br>看完了概念你理解了吗？注解本身并不能影响代码的执行，它能带来的影响是其他tools或Java编译器产生的。在这里我们只需要知道<strong>注解</strong>就相当于一个<strong>标签</strong>。</p>
-<p>注解不会改变程序的编译方式。Java编译器对于包含注解和不包含注解的代码会生成相同的虚拟机指令。</p>
-<h3 id="2-用法"><a href="#2-用法" class="headerlink" title="2. 用法"></a>2. 用法</h3><p>注解的使用范围很广泛，我现在只是初步了解了注解的用法。在这儿摘抄一段《Java核心技术卷二》原文：</p>
-<blockquote>
-<p>下面是关于注解的一些可能的用法：</p>
-<ul>
-<li>附属文件的自动生成，例如部署描述符或者bean信息类。</li>
-<li>测试、日志、事务语义等代码的自动生成。</li>
-</ul>
-</blockquote>
-<h3 id="3-注解语法"><a href="#3-注解语法" class="headerlink" title="3. 注解语法"></a>3. 注解语法</h3><h4 id="注解定义"><a href="#注解定义" class="headerlink" title="注解定义"></a>注解定义</h4><p>注解是由接口来定义的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> AnnotationTest&#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 18</span>;</span><br><span class="line">	<span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> "小明"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>每个元素声明都具有下面这种形式：<br><code>type elementName();</code><br>或者<br><code>type elementName() default value</code><br>注解接口中的元素声明实际上是方法声明。一个注解接口的方法不能有任何参数和任何throws语句，并且它们也不能是泛型的。<br>注解元素的类型可以是下列之一：</p>
-<ul>
-<li>Java8种基本类型</li>
-<li>String</li>
-<li>Class（具有一个可选的类型参数，例如<code>Class&lt;? extends MyClass&gt;</code>）</li>
-<li>enum 类型</li>
-<li>注解类型</li>
-<li>由上述类型组成的数组（由数组组成的数组不是合法的元素类型）</li>
-</ul>
-<p>既然一个注解元素可以是另一个注解，那么就可以创建出任意复杂的注解。例如：<br><code>@BugReport(ref=@Reference(id=&quot;123&quot;))</code><br><em>注意：在注解中引入循环依赖是一种错误。</em></p>
-<h4 id="注解使用"><a href="#注解使用" class="headerlink" title="注解使用"></a>注解使用</h4><p>在Java中，注解是当作一个<code>修饰符</code>来使用的，它被置于被注解项之前，中间没有分号。（修饰符就是诸如<code>public</code>和<code>static</code>之类的关键词）。除了方法外，还可以注解类、成员以及局部变量，这些注解可以存在于任何可以放置一个像<code>public</code>或者<code>static</code>这样的修饰符的地方。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AnnotationTest</span>(age = <span class="number">20</span>, name=<span class="string">"小红"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"test"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>有两个特殊的快捷方式可以用来简化注解。<br>如果没有指定元素，要么是因为注解中没有任何元素，要么是因为所有元素都是用默认值，那么你就不需要使用圆括号了。例如：<br><code>@AnnotationTest</code><br>和下面的注解是一样的<br><code>@AnnotationTest(age =18, name = &quot;小明&quot;)</code><br>这样的注解又称为<strong>标记注解</strong>。<br>另外一种快捷方式是<strong>单值注解</strong>。如果一个元素具有特殊的名字<code>value</code>，并且没有指定其他元素，那么你就可以忽略掉这个元素名以及等号。例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> OneValue&#123;</span><br><span class="line">	<span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>那么我们可以将这个注解写成：<br><code>@OneValue(&quot;一个&quot;)</code><br>代替：<br><code>@OneValue(value = &quot;一个&quot;)</code></p>
-<p>一个项可以有多个注解，只要他们属于不同的类型即可。（在JDK1.8以前当注解一个特定项的时候，不能多次使用同一注解类型。但是在1.8之后新增<code>@Repeatable</code>注解，可以重复使用）例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@OneValue</span>(<span class="string">"一"</span>)</span><br><span class="line"><span class="meta">@Onevalue</span>(<span class="string">"二"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>就是一种编译期错误。<br>如果你一定要多次使用一个注解，那么设计一个注解，它的值是一个由更简单的注解组成的数组：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> OneValues&#123;</span><br><span class="line">	Onevalue[] OneValues();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Onevalues</span>(&#123;<span class="meta">@Onevalue</span>(<span class="string">"一"</span>), <span class="meta">@OneValue</span>(<span class="string">"二"</span>)&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-标准注解"><a href="#4-标准注解" class="headerlink" title="4. 标准注解"></a>4. 标准注解</h3><p>Java SE在java.lang、java.lang.annotation和javax.annotation包中定义了大量的注解接口。其中四个是<strong>元注解</strong>，用于描述注解接口的行为属性，还有一些其他的预置注解方便你注解你的源代码中的项。</p>
-<h4 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h4><p>元注解是什么意思呢？</p>
-<p>元注解是可以注解到注解上的注解，或者说元注解是一种基本注解，但是它能够应用到其它的注解上面。</p>
-<p>如果难于理解的话，你可以这样理解。元注解也是一张标签，但是它是一张特殊的标签，它的作用和目的就是给其他普通的标签进行解释说明的。</p>
-<p>元标签有 <code>@Retention、@Documented、@Target、@Inherited、@Repeatable</code> 5 种。</p>
-<h5 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h5><p>Retention 的英文意为保留期的意思。当 @Retention 应用到一个注解上的时候，它解释说明了这个注解的的存活时间。<br>它的取值如下： </p>
-<ul>
-<li>RetentionPolicy.SOURCE 注解只在源码阶段保留，在编译器进行编译时它将被丢弃忽视。 </li>
-<li>RetentionPolicy.CLASS 注解只被保留到编译进行的时候，它并不会被加载到 JVM 中。 </li>
-<li>RetentionPolicy.RUNTIME 注解可以保留到程序运行的时候，它会被加载进入到 JVM 中，所以在程序运行时可以获取到它们。</li>
-</ul>
-<h5 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h5><p>顾名思义，这个元注解肯定是和文档有关。它的作用是能够将注解中的元素包含到 Javadoc 中去。</p>
-<h5 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h5><p>Target 是目标的意思，@Target 指定了注解运用的地方。</p>
-<p>你可以这样理解，当一个注解被 @Target 注解时，这个注解就被限定了运用的场景。</p>
-<p>类比到标签，原本标签是你想张贴到哪个地方就到哪个地方，但是因为 @Target 的存在，它张贴的地方就非常具体了，比如只能张贴到方法上、类上、方法参数上等等。@Target 有下面的取值</p>
-<ul>
-<li>ElementType.ANNOTATION_TYPE 可以给一个注解进行注解</li>
-<li>ElementType.CONSTRUCTOR 可以给构造方法进行注解</li>
-<li>ElementType.FIELD 可以给属性进行注解</li>
-<li>ElementType.LOCAL_VARIABLE 可以给局部变量进行注解</li>
-<li>ElementType.METHOD 可以给方法进行注解</li>
-<li>ElementType.PACKAGE 可以给一个包进行注解</li>
-<li>ElementType.PARAMETER 可以给一个方法内的参数进行注解</li>
-<li>ElementType.TYPE 可以给一个类型进行注解，比如类、接口、枚举</li>
-</ul>
-<h5 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h5><p>Inherited 是继承的意思，但是它并不是说注解本身可以继承，而是说如果一个超类被 @Inherited 注解过的注解进行注解的话，那么如果它的子类没有被任何注解应用的话，那么这个子类就继承了超类的注解。<br>说的比较抽象。代码来解释。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@interface</span> Test &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注解 Test 被 @Inherited 修饰，之后类 A 被 Test 注解，类 B 继承 A,类 B 也拥有 Test 这个注解。</p>
-<p>可以这样理解：</p>
-<p>老子非常有钱，所以人们给他贴了一张标签叫做富豪。</p>
-<p>老子的儿子长大后，只要没有和老子断绝父子关系，虽然别人没有给他贴标签，但是他自然也是富豪。</p>
-<p>老子的孙子长大了，自然也是富豪。</p>
-<p>这就是人们口中戏称的富一代，富二代，富三代。虽然叫法不同，好像好多个标签，但其实事情的本质也就是他们有一张共同的标签，也就是老子身上的那张富豪的标签。<br>【示例】<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MethodInfo &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 20</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> "小明"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MethodInfo</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnnotationExample</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InheritedExample</span> <span class="keyword">extends</span> <span class="title">AnnotationExample</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>【Test.java】<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> annotation;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * author: jifang</span></span><br><span class="line"><span class="comment"> * date: 18-4-2 下午9:51</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MethodInfo info = InheritedExample.class.getAnnotation(MethodInfo.class);</span><br><span class="line">        System.out.println(<span class="string">"age: "</span> + info.age());</span><br><span class="line">        System.out.println(<span class="string">"name: "</span> + info.name());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行<code>main</code>方法，得到结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">age: 20</span><br><span class="line">name: 小明</span><br></pre></td></tr></table></figure></p>
-<h5 id="Repeatable"><a href="#Repeatable" class="headerlink" title="@Repeatable"></a>@Repeatable</h5><p>Repeatable 自然是可重复的意思。@Repeatable 是 Java 1.8 才加进来的，所以算是一个新的特性。<br>举一个例子你就懂了，可以看这个链接：<a href="https://blog.csdn.net/z69183787/article/details/54602994" target="_blank" rel="noopener">https://blog.csdn.net/z69183787/article/details/54602994</a></p>
-<p>还有一些Java预置的注解如<code>@Deprecated、@Override、@SuppressWarnings、@SafeVarargs</code>等，有兴趣可以自行查阅。</p>
-<h3 id="5-注解的提取：反射"><a href="#5-注解的提取：反射" class="headerlink" title="5. 注解的提取：反射"></a>5. 注解的提取：反射</h3><p>注解通过反射获取。首先可以通过 Class 对象的 <code>isAnnotationPresent()</code> 方法判断它是否应用了某个注解。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnnotationPresent</span><span class="params">(Class&lt;? extends Annotation&gt; annotationClass)</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后通过 getAnnotation() 方法来获取 Annotation 对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;A extends Annotation&gt; <span class="function">A <span class="title">getAnnotation</span><span class="params">(Class&lt;A&gt; annotationClass)</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>或者是 getAnnotations() 方法。<br><code>public Annotation[] getAnnotations() {}</code><br>前一种方法返回指定类型的注解，后一种方法返回注解到这个元素上的所有注解。</p>
-<p>如果获取到的 Annotation 如果不为 null，则就可以调用它们的属性方法了。比如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MethodInfo &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 20</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> "小明"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@MethodInfo</span><br><span class="line">public class AnnotationExample &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.annotation.Annotation;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * author: jifang</span></span><br><span class="line"><span class="comment"> * date: 18-4-2 下午9:51</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MethodInfo info = InheritedExample.class.getAnnotation(MethodInfo.class);</span><br><span class="line">        System.out.println(<span class="string">"age: "</span> + info.age());</span><br><span class="line">        System.out.println(<span class="string">"name: "</span> + info.name());</span><br><span class="line">        Annotation[] annotations = AnnotationExample.class.getAnnotations();</span><br><span class="line">        System.out.println(annotations.length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age: 20</span><br><span class="line">name: 小明</span><br><span class="line">1</span><br></pre></td></tr></table></figure></p>
-<p>需要注意的是，如果一个注解要在运行时被成功提取，那么<code>@Retention(RetentionPolicy.RUNTIME)</code>是必须的。</p>
-<h3 id="6-源码级注解处理"><a href="#6-源码级注解处理" class="headerlink" title="6. 源码级注解处理"></a>6. 源码级注解处理</h3><p>明天再研究一下补充。</p>
-<blockquote>
-<p>参考文献<br>[1] <a href="https://blog.csdn.net/briblue/article/details/73824058" target="_blank" rel="noopener">秒懂，Java 注解 （Annotation）你可以这样学</a><br>[2] <a href="https://blog.csdn.net/z69183787/article/details/54602994" target="_blank" rel="noopener">java8 新增的@Repeatable注解</a><br>[3] 《Java核心技术卷二》</p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/支付宝.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/微信.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">注解</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring MVC</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2018/04/02/Java注解/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/04/03/《Spring实战》装配bean/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《Spring实战》装配bean
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/03/30/起风了/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">起风了</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概念"><span class="toc-number">1.</span> <span class="toc-text">1. 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-用法"><span class="toc-number">2.</span> <span class="toc-text">2. 用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-注解语法"><span class="toc-number">3.</span> <span class="toc-text">3. 注解语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注解定义"><span class="toc-number">3.1.</span> <span class="toc-text">注解定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解使用"><span class="toc-number">3.2.</span> <span class="toc-text">注解使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-标准注解"><span class="toc-number">4.</span> <span class="toc-text">4. 标准注解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#元注解"><span class="toc-number">4.1.</span> <span class="toc-text">元注解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Retention"><span class="toc-number">4.1.1.</span> <span class="toc-text">@Retention</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Documented"><span class="toc-number">4.1.2.</span> <span class="toc-text">@Documented</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Target"><span class="toc-number">4.1.3.</span> <span class="toc-text">@Target</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Inherited"><span class="toc-number">4.1.4.</span> <span class="toc-text">@Inherited</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Repeatable"><span class="toc-number">4.1.5.</span> <span class="toc-text">@Repeatable</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-注解的提取：反射"><span class="toc-number">5.</span> <span class="toc-text">5. 注解的提取：反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-源码级注解处理"><span class="toc-number">6.</span> <span class="toc-text">6. 源码级注解处理</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -471,9 +231,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
