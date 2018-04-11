@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://cap-ljf.top/2018/04/11/Spring-Data-Redis/</loc>
+    <lastmod>2018-04-11T07:42:41.680Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Data Redis</title>
+        <pubTime>2018-04-11T07:40:43.000Z</pubTime>
+        
+        <tag>redis</tag>
+         
+        <tag>spring data redis</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cap-ljf.top/2018/04/11/%E3%80%8ASpring%E5%AE%9E%E6%88%98%E3%80%8BSpring%E4%B8%AD%E4%BD%BF%E7%94%A8JDBC/</loc>
     <lastmod>2018-04-11T01:47:06.322Z</lastmod>
     <data>
@@ -83,11 +102,11 @@
         <title>《Spring实战》搭建Spring MVC</title>
         <pubTime>2018-04-08T08:19:01.000Z</pubTime>
         
-        <tag>Spring MVC</tag>
-         
         <tag>Spring</tag>
          
         <tag>web</tag>
+         
+        <tag>Spring MVC</tag>
          
          
            
@@ -263,11 +282,11 @@
         <title>基于scrapy分布式新闻评论爬虫</title>
         <pubTime>2018-03-28T13:00:04.000Z</pubTime>
         
+        <tag>redis</tag>
+         
         <tag>爬虫</tag>
          
         <tag>scrapy</tag>
-         
-        <tag>redis</tag>
          
         <tag>weibo</tag>
          
