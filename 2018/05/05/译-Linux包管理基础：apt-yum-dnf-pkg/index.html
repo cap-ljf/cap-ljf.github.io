@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://cap-ljf.top/2018/05/05/译-Linux包管理基础：apt-yum-dnf-pkg/index.html">
 <meta property="og:site_name" content="Cap_ljf&#39;s Blog">
 <meta property="og:description" content="原文地址: Package Management Basics: apt, yum, dnf, pkg原文作者: Brennen Bearnes译文出自: Cap_ljf’s Blog本文永久链接:译者: cap_ljf  引言大多数类Unix操作系统提供了一个用于查找和安装软件的集中式机制。软件通常以软件包的形式分发，保存在软件仓库中。使用软件包被称为软件包管理。软件包为操作系统提供基本的组件">
-<meta property="og:updated_time" content="2018-05-05T07:52:28.920Z">
+<meta property="og:updated_time" content="2018-05-05T07:58:32.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[译]Linux包管理基础：apt,yum,dnf,pkg">
 <meta name="twitter:description" content="原文地址: Package Management Basics: apt, yum, dnf, pkg原文作者: Brennen Bearnes译文出自: Cap_ljf’s Blog本文永久链接:译者: cap_ljf  引言大多数类Unix操作系统提供了一个用于查找和安装软件的集中式机制。软件通常以软件包的形式分发，保存在软件仓库中。使用软件包被称为软件包管理。软件包为操作系统提供基本的组件">
@@ -204,15 +204,51 @@
 </blockquote>
 <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>大多数类Unix操作系统提供了一个用于查找和安装软件的集中式机制。软件通常以软件包的形式分发，保存在软件仓库中。使用软件包被称为软件包管理。软件包为操作系统提供基本的组件，以及共享库、应用程序、服务和文档。<br><a id="more"></a><br>软件包系统不仅仅是一次性安装软件。它还提供用于升级已安装软件的工具。软件包仓库有助于确保代码已经过审核以供你的系统使用，并且已安装的软件版本已获得开发人员和程序包维护人员的批准。</p>
 <p>在配置线上或开发环境时，往往需要去官方仓库检查软件版本。已发行稳定版中的软件包可能已过时，特别是在涉及新的或快速变化的软件情况下。尽管如此，软件包管理对于系统管理员和开发者来说是一项至关重要的技能，而为主流发行版提供的丰富软件包是一项巨大的资源。</p>
-<p>本指南旨在作为一个查找、安装和升级各个发行版软件包的基础知识的快速参考，并应帮助您在不同系统之间切换这些知识。</p>
+<p>本指南旨在作为一个查找、安装和升级各个发行版软件包的基础知识的快速参考，并应帮助你在不同系统之间切换这些知识。</p>
 <h3 id="软件包管理系统：摘要"><a href="#软件包管理系统：摘要" class="headerlink" title="软件包管理系统：摘要"></a>软件包管理系统：摘要</h3><p>大多数软件包系统都是围绕软件包文件集建立的。一个软件包文件通常是一个文档，其中包含已编译二进制文件和其他组装软件的资源以及安装脚本。软件包还包含有价值的元数据，包括依赖项（安装和运行该软件依赖的其他包列表）。</p>
-<p>尽管它们的功能和优点大致相同，但各种平台的封装格式和工具各不相同：<br>| Operating System      |    Format | Tool(s)  |<br>| :——– | ——–:| :–: |<br>| Debian  | .deb |  apt, apt-cache, apt-get, dpkg   |<br>| Ubuntu  | .deb |  apt, apt-cache, apt-get, dpkg   |<br>| CentOS  | .rpm |  yum   |<br>| Fedora  | .rpm |  dnf   |<br>| FreeBSD  | Ports,.deb |  make,pkg   |</p>
+<p>尽管它们的功能和优点大致相同，但各种平台的封装格式和工具各不相同：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operating System</th>
+<th style="text-align:right">Format</th>
+<th style="text-align:center">Tool(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Debian</td>
+<td style="text-align:right">.deb</td>
+<td style="text-align:center">apt, apt-cache, apt-get, dpkg</td>
+</tr>
+<tr>
+<td style="text-align:left">Ubuntu</td>
+<td style="text-align:right">.deb</td>
+<td style="text-align:center">apt, apt-cache, apt-get, dpkg</td>
+</tr>
+<tr>
+<td style="text-align:left">CentOS</td>
+<td style="text-align:right">.rpm</td>
+<td style="text-align:center">yum</td>
+</tr>
+<tr>
+<td style="text-align:left">Fedora</td>
+<td style="text-align:right">.rpm</td>
+<td style="text-align:center">dnf</td>
+</tr>
+<tr>
+<td style="text-align:left">FreeBSD</td>
+<td style="text-align:right">Ports,.deb</td>
+<td style="text-align:center">make,pkg</td>
+</tr>
+</tbody>
+</table>
 <p>在Debian和基于它的系统中，如Ubuntu、Linux Mint和Raspbian，包格式是<code>.deb</code>文件。高级打包工具APT（Advanced Packaging Tool）提供用于大多数常见操作的命令：搜索软件仓库、安装软件包集合以及它们的依赖项，以及管理升级。APT命令作为底层命令dpkg工具的前端操作，dpkg处理本地系统上各个<code>.deb</code>文件的安装，有时会直接调用dpkg。</p>
 <p>近期大多数Debian派生的发行版系统包括<code>APT</code>命令，该命令为常用操作提供了一个简洁统一的接口，这些接口传统上由更具体的<code>apt-get</code>和<code>apt-cache</code>。它的使用是可选的，但可以简化一些任务。</p>
 <p>CentOS、Fedora和其他Red Hat家族的成员使用RPM文件。在CentOS中，<code>yum</code>用于与单个软件包文件和仓库交互。</p>
 <p>在最近的Fedora版本，<code>yum</code>已被<code>dnf</code>取代，<code>dnf</code>是<code>yum</code>一个现代化的分支，它保留了<code>yum</code>的大部分接口。</p>
-<p>FreeBSD的二进制包系统使用pkg命令进行管理。FreeBSD还提供Ports Collection，一个本地目录结构和工具，允许用户使用Makefiles直接从源代码获取、编译和安装软件包。使用pkg通常要方便得多，但偶尔预编译的软件包不可用，或者您可能需要更改编译时选项。</p>
-<h3 id="更新软件包列表"><a href="#更新软件包列表" class="headerlink" title="更新软件包列表"></a>更新软件包列表</h3><p>大多数系统会保留一份远程仓库可用软件列表在本地数据库。您最好在安装和更新软件前更新这个数据库。作为这种模式的一个部分例外，<code>yum</code>和<code>dnf</code>会在执行某些操作之前检查更新，但您可以随时询问是否有更新可用。</p>
+<p>FreeBSD的二进制包系统使用pkg命令进行管理。FreeBSD还提供Ports Collection，一个本地目录结构和工具，允许用户使用Makefiles直接从源代码获取、编译和安装软件包。使用pkg通常要方便得多，但偶尔预编译的软件包不可用，或者你可能需要更改编译时选项。</p>
+<h3 id="更新软件包列表"><a href="#更新软件包列表" class="headerlink" title="更新软件包列表"></a>更新软件包列表</h3><p>大多数系统会保留一份远程仓库可用软件列表在本地数据库。你最好在安装和更新软件前更新这个数据库。作为这种模式的一个部分例外，<code>yum</code>和<code>dnf</code>会在执行某些操作之前检查更新，但你可以随时询问是否有更新可用。</p>
 <table>
 <thead>
 <tr>
@@ -247,14 +283,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="更新已安装软件"><a href="#更新已安装软件" class="headerlink" title="更新已安装软件"></a>更新已安装软件</h3><p>对于一个没有软件包系统的机器，确保所有已安装软件保持是最新版本将是一个巨大的负担。您将不得不追踪数百个不同软件包的上游更改和安全警报。虽然软件包管理器不能解决升级软件时遇到的每个问题，但它确实使您能够使用少量的命令来维护大多数系统组件。</p>
+<h3 id="更新已安装软件"><a href="#更新已安装软件" class="headerlink" title="更新已安装软件"></a>更新已安装软件</h3><p>对于一个没有软件包系统的机器，确保所有已安装软件保持是最新版本将是一个巨大的负担。你将不得不追踪数百个不同软件包的上游更改和安全警报。虽然软件包管理器不能解决升级软件时遇到的每个问题，但它确实使你能够使用少量的命令来维护大多数系统组件。</p>
 <p>在FreeBSD，升级已安装的ports可能导致重大的改变或需要手工配置步骤。在使用portmaster升级之前，最好先阅读/usr/ports/UPDATING。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">系统</th>
-<th style="text-align:left">命令</th>
-<th style="text-align:center">备注</th>
+<th style="text-align:left">System</th>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -505,9 +541,50 @@
 </tr>
 </tbody>
 </table>
-<h3 id="从本地文件系统安装一个软件包"><a href="#从本地文件系统安装一个软件包" class="headerlink" title="从本地文件系统安装一个软件包"></a>从本地文件系统安装一个软件包</h3><p>有时，即使软件没有针对给定的操作系统正式打包，开发者或供应商也会提供打包文件下载。您通常可以使用Web浏览器下载，或者通过<code>curl</code>命令下载。一旦安装包在目标系统上，它通常可以用一个命令安装。</p>
+<h3 id="从本地文件系统安装一个软件包"><a href="#从本地文件系统安装一个软件包" class="headerlink" title="从本地文件系统安装一个软件包"></a>从本地文件系统安装一个软件包</h3><p>有时，即使软件没有针对给定的操作系统正式打包，开发者或供应商也会提供打包文件下载。你通常可以使用Web浏览器下载，或者通过<code>curl</code>命令下载。一旦安装包在目标系统上，它通常可以用一个命令安装。</p>
 <p>在Debian派生的系统上，dkpg处理单个软件包文件。如果一个软件包为满足依赖关系，<code>gdebi</code>通常可以用来从官方存储库检索它们。</p>
-<p>在CentOS和Fedora系统上，<code>yum</code>和<code>dnf</code>命令用于安装单个文件，这两个命令也会处理需要的依赖包。<br>| System      |    Command | Notes  |<br>| :——– | :——–| :–: |<br>| Debian / Ubuntu | sudo dpkg -i package.deb |  |<br>|  | sudo apt-get install -y gdebi &amp;&amp; sudo gdebi package.deb | 安装<code>gdebi</code>并使用gdebi安装package.deb并安装它的依赖项 |<br>| CentOS | sudo yum install package.rpm |  |<br>| Fedora | sudo dnf install package.rpm |  |<br>| FreeBSD Packages | sudo pkg add package.txz |  |<br>|  | sudo pkg add -f package.txz | 即使软件已经安装了也依旧安装 |</p>
+<p>在CentOS和Fedora系统上，<code>yum</code>和<code>dnf</code>命令用于安装单个文件，这两个命令也会处理需要的依赖包。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">System</th>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Debian / Ubuntu</td>
+<td style="text-align:left">sudo dpkg -i package.deb</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">sudo apt-get install -y gdebi &amp;&amp; sudo gdebi package.deb</td>
+<td style="text-align:center">安装<code>gdebi</code>并使用gdebi安装package.deb并安装它的依赖项</td>
+</tr>
+<tr>
+<td style="text-align:left">CentOS</td>
+<td style="text-align:left">sudo yum install package.rpm</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Fedora</td>
+<td style="text-align:left">sudo dnf install package.rpm</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">FreeBSD Packages</td>
+<td style="text-align:left">sudo pkg add package.txz</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">sudo pkg add -f package.txz</td>
+<td style="text-align:center">即使软件已经安装了也依旧安装</td>
+</tr>
+</tbody>
+</table>
 <h3 id="卸载一个或多个已安装软件"><a href="#卸载一个或多个已安装软件" class="headerlink" title="卸载一个或多个已安装软件"></a>卸载一个或多个已安装软件</h3><p>由于软件包管理器知道给定软件包提供了哪些文件，因此如果软件不再需要，通常可以从系统中彻底删除它们。</p>
 <table>
 <thead>
@@ -565,10 +642,95 @@
 </tr>
 </tbody>
 </table>
-<h3 id="apt命令"><a href="#apt命令" class="headerlink" title="apt命令"></a><code>apt</code>命令</h3><p>Debian家族发行版的管理员通常熟悉<code>apt-get</code>和<code>apt-cache</code>。较少广为人知的是简化的apt接口，apt是专为交互式使用而设计的。<br>| Traditional Command      |    apt Equivalent |<br>| :——– | :——–|<br>| apt-get update | apt update |<br>| apt-get dist-upgrade | apt full-upgrade |<br>| apt-cache search string | apt search string |<br>| apt-get install package | apt install package |<br>| apt-get remove package | apt remove package |<br>| apt-get purge package | apt purge package |</p>
+<h3 id="apt命令"><a href="#apt命令" class="headerlink" title="apt命令"></a><code>apt</code>命令</h3><p>Debian家族发行版的管理员通常熟悉<code>apt-get</code>和<code>apt-cache</code>。较少广为人知的是简化的apt接口，apt是专为交互式使用而设计的。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Traditional Command</th>
+<th style="text-align:left">apt Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">apt-get update</td>
+<td style="text-align:left">apt update</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-get dist-upgrade</td>
+<td style="text-align:left">apt full-upgrade</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-cache search string</td>
+<td style="text-align:left">apt search string</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-get install package</td>
+<td style="text-align:left">apt install package</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-get remove package</td>
+<td style="text-align:left">apt remove package</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-get purge package</td>
+<td style="text-align:left">apt purge package</td>
+</tr>
+</tbody>
+</table>
 <p>尽管<code>apt</code>对于是一个更容易记住的操作，但是它并不是完全取代传统命令<code>apt-get</code>等的工具，并且它的接口可能会在不同版本之间进行更改以提高可用性。如果你在脚本或shell管道中使用包管理命令，那么坚持使用apt-get和apt-cache是一个好主意。</p>
 <h3 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h3><p>除了基于Web的文档之外，请记住，Unix手册（通常称为man pages）可用于shell中的大多数命令。要阅读一个页面，请使用<code>man</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man page</span><br></pre></td></tr></table></figure></p>
-<p>使用<code>man</code>命令，你可以通过键盘箭头键进行导航，按<code>/</code>搜索页面中的文本，按<code>q</code>退出。<br>| System      |    Command | Notes  |<br>| :——– | :——–| :–: |<br>| Debian / Ubuntu | man apt-get | 更新本地数据库包并使用软件包 |<br>|  | man apt-cache | 查询本地软件数据库 |<br>|  | man dpkg | 处理单个文件包并查询已安装的软件 |<br>|  | man apt | 查询一个对大多数操作更简洁的、用户友好的接口 |<br>| CentOS | man yum |  |<br>| Fedora | man dnf |  |<br>| FreeBSD Packages | man pkg | 处理已编译二进制包 |<br>| FreeBSD Ports | man ports | 处理Ports Collection. |</p>
+<p>使用<code>man</code>命令，你可以通过键盘箭头键进行导航，按<code>/</code>搜索页面中的文本，按<code>q</code>退出。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">System</th>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Debian / Ubuntu</td>
+<td style="text-align:left">man apt-get</td>
+<td style="text-align:center">更新本地数据库包并使用软件包</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">man apt-cache</td>
+<td style="text-align:center">查询本地软件数据库</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">man dpkg</td>
+<td style="text-align:center">处理单个文件包并查询已安装的软件</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">man apt</td>
+<td style="text-align:center">查询一个对大多数操作更简洁的、用户友好的接口</td>
+</tr>
+<tr>
+<td style="text-align:left">CentOS</td>
+<td style="text-align:left">man yum</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Fedora</td>
+<td style="text-align:left">man dnf</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">FreeBSD Packages</td>
+<td style="text-align:left">man pkg</td>
+<td style="text-align:center">处理已编译二进制包</td>
+</tr>
+<tr>
+<td style="text-align:left">FreeBSD Ports</td>
+<td style="text-align:left">man ports</td>
+<td style="text-align:center">处理Ports Collection.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="结论-amp-扩展阅读"><a href="#结论-amp-扩展阅读" class="headerlink" title="结论&amp;扩展阅读"></a>结论&amp;扩展阅读</h3><p>本指南提供了可以在系统间进行交叉引用的基本操作的概述，但只是浏览了一个复杂主题的表面。有关给定系统的更多细节，你可以参阅以下资源：</p>
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/ubuntu-and-debian-package-management-essentials" target="_blank" rel="noopener">This guide</a>涵盖Ubuntu和Debian软件包管理器的细节。</li>
