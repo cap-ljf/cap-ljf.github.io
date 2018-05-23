@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cap-ljf.top">
-  <title>JDBC | Cap_ljf&#39;s Blog</title>
+  <title>Java并发系列 | Cap_ljf&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 什么是JDBC？1996年，Sun公司发布了第一版的Java数据库连接（JDBC）API，使编程人员可以通过这个API接口连接到数据库，并使用结构化查询语言（SQL）完成对数据库的查找与更新。JDBC自此称为Java类库中最常用的API之一。">
-<meta name="keywords" content="JDBC,事务">
+  <meta name="description" content="并发是Web开发内容中非常重要的一环。我在大三暑期实习是翻开过《Java并发编程实战》这本书，但是没看几页就搁置了，原因是太过理论读起来拗口。回校之后前两周强忍难受又看了4章，最后还是放弃了。于是谷歌Java并发系列教程，有幸发现cnblog一位博主liuxiaopeng的并发系列博客，在这里贴出来供大家学习。这个系列博客简单易懂，在初步了解Java并发很有用。  Java 并发编程：核心理论 J">
+<meta name="keywords" content="并发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JDBC">
-<meta property="og:url" content="http://cap-ljf.top/2018/03/29/JDBC/index.html">
+<meta property="og:title" content="Java并发系列">
+<meta property="og:url" content="http://cap-ljf.top/2018/05/23/Java并发系列/index.html">
 <meta property="og:site_name" content="Cap_ljf&#39;s Blog">
-<meta property="og:description" content="1. 什么是JDBC？1996年，Sun公司发布了第一版的Java数据库连接（JDBC）API，使编程人员可以通过这个API接口连接到数据库，并使用结构化查询语言（SQL）完成对数据库的查找与更新。JDBC自此称为Java类库中最常用的API之一。">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s15/res/7df5d637-a933-43e8-98a6-e539d3b08fba/1522287325072.png">
-<meta property="og:updated_time" content="2018-03-29T07:37:53.668Z">
+<meta property="og:description" content="并发是Web开发内容中非常重要的一环。我在大三暑期实习是翻开过《Java并发编程实战》这本书，但是没看几页就搁置了，原因是太过理论读起来拗口。回校之后前两周强忍难受又看了4章，最后还是放弃了。于是谷歌Java并发系列教程，有幸发现cnblog一位博主liuxiaopeng的并发系列博客，在这里贴出来供大家学习。这个系列博客简单易懂，在初步了解Java并发很有用。  Java 并发编程：核心理论 J">
+<meta property="og:updated_time" content="2018-05-23T05:58:12.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JDBC">
-<meta name="twitter:description" content="1. 什么是JDBC？1996年，Sun公司发布了第一版的Java数据库连接（JDBC）API，使编程人员可以通过这个API接口连接到数据库，并使用结构化查询语言（SQL）完成对数据库的查找与更新。JDBC自此称为Java类库中最常用的API之一。">
-<meta name="twitter:image" content="https://app.yinxiang.com/shard/s15/res/7df5d637-a933-43e8-98a6-e539d3b08fba/1522287325072.png">
+<meta name="twitter:title" content="Java并发系列">
+<meta name="twitter:description" content="并发是Web开发内容中非常重要的一环。我在大三暑期实习是翻开过《Java并发编程实战》这本书，但是没看几页就搁置了，原因是太过理论读起来拗口。回校之后前两周强忍难受又看了4章，最后还是放弃了。于是谷歌Java并发系列教程，有幸发现cnblog一位博主liuxiaopeng的并发系列博客，在这里贴出来供大家学习。这个系列博客简单易懂，在初步了解Java并发很有用。  Java 并发编程：核心理论 J">
   
     <link rel="alternative" href="/atom.xml" title="Cap_ljf&#39;s Blog" type="application/atom+xml">
   
@@ -154,20 +152,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JDBC" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java并发系列" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JDBC
+      Java并发系列
     </h1>
   
 
         
-        <a href="/2018/03/29/JDBC/" class="archive-article-date">
-  	<time datetime="2018-03-29T07:36:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
+        <a href="/2018/05/23/Java并发系列/" class="archive-article-date">
+  	<time datetime="2018-05-23T05:57:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
 </a>
         
       </header>
@@ -181,7 +179,7 @@
     	<div id="toc-article" class="toc-article">
     	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     		<strong class="toc-title">文章目录</strong>
-               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是JDBC？"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是JDBC？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JDBC配置"><span class="toc-number">2.</span> <span class="toc-text">2. JDBC配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-数据库URL"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 数据库URL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#几种常见的数据库连接"><span class="toc-number">2.1.1.</span> <span class="toc-text">几种常见的数据库连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-URL格式详解"><span class="toc-number">2.1.2.</span> <span class="toc-text">MySQL URL格式详解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-驱动程序"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 驱动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-注册驱动器类"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 注册驱动器类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-连接到数据库"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 连接到数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-执行SQL语句"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 执行SQL语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#管理连接、语句和结果集"><span class="toc-number">2.5.1.</span> <span class="toc-text">管理连接、语句和结果集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后续"><span class="toc-number">2.6.</span> <span class="toc-text">后续</span></a></li></ol></li></ol>
+               
              </div>
        <script type="text/javascript">
     	function showToc(){
@@ -201,61 +199,14 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-什么是JDBC？"><a href="#1-什么是JDBC？" class="headerlink" title="1. 什么是JDBC？"></a>1. 什么是JDBC？</h2><p>1996年，Sun公司发布了第一版的Java数据库连接（JDBC）API，使编程人员可以通过这个API接口连接到数据库，并使用结构化查询语言（SQL）完成对数据库的查找与更新。JDBC自此称为Java类库中最常用的API之一。<br><a id="more"></a><br>概念：</p>
+        <p>并发是Web开发内容中非常重要的一环。我在大三暑期实习是翻开过《Java并发编程实战》这本书，但是没看几页就搁置了，原因是太过理论读起来拗口。回校之后前两周强忍难受又看了4章，最后还是放弃了。于是谷歌Java并发系列教程，有幸发现cnblog一位博主liuxiaopeng的并发系列博客，在这里贴出来供大家学习。这个系列博客简单易懂，在初步了解Java并发很有用。</p>
 <ul>
-<li>SQL：结构化查询语言，是一种特定的目的程序语言，用于管理关系数据库管理系统，或在关系流数据管理系统（RDSMS）中进行流处理。</li>
-<li>MySQL：原本是一个开放源代码的关系数据库管理系统，原开发者为瑞典的MySQL AB公司，该公司于2008年被昇阳微系统（Sun Microsystems）收购。2009年，甲骨文公司（Oracle）收购昇阳微系统公司，MySQL成为Oracle旗下产品。</li>
-<li>JDBC：Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, which defines how a client may access a database. It is Java based data access technology and used for Java database connectivity. It is part of the Java Standard Edition platform, from Oracle Corporation. It provides methods to query and update data in a database, and is oriented towards relational databases. A JDBC-to-ODBC bridge enables connections to any ODBC-accessible data source in the Java virtual machine (JVM) host environment.</li>
+<li><a href="http://www.cnblogs.com/paddix/p/5374810.html" target="_blank" rel="noopener">Java 并发编程：核心理论</a></li>
+<li><a href="http://www.cnblogs.com/paddix/p/5367116.html" target="_blank" rel="noopener">Java并发编程：Synchronized及其实现原理</a></li>
+<li><a href="http://www.cnblogs.com/paddix/p/5405678.html" target="_blank" rel="noopener">Java并发编程：Synchronized底层优化（轻量级锁、偏向锁）</a></li>
+<li><a href="http://www.cnblogs.com/paddix/p/5381958.html" target="_blank" rel="noopener">Java 并发编程：线程间的协作(wait/notify/sleep/yield/join)</a></li>
+<li><a href="http://www.cnblogs.com/paddix/p/5428507.html" target="_blank" rel="noopener">Java 并发编程：volatile的使用及其原理</a></li>
 </ul>
-<h2 id="2-JDBC配置"><a href="#2-JDBC配置" class="headerlink" title="2. JDBC配置"></a>2. JDBC配置</h2><p>你需要有一个可获得其JDBC驱动程序的数据库软件。目前这方面有很多出色的软件可供选择，比如IBM DB2、Microsoft SQL Server、MySQL、Oracle和PostgreSQL。在这一节，我会以MySQL为例演示，在下一篇博客，我会介绍H2缓存数据库。</p>
-<p>现在，假设你已经安装好了MySQL，有一个名称为<code>jifang</code>的<code>database</code>，并且有权限对这个数据库增删改查。</p>
-<h3 id="2-1-数据库URL"><a href="#2-1-数据库URL" class="headerlink" title="2.1 数据库URL"></a>2.1 数据库URL</h3><p>在连接数据库时，我们必须使用各种与数据库类型相关的参数，例如主机名、端口号和数据库名。</p>
-<p>JDBC URL一般格式：<br><code>jdbc:subprotocol:other stuff</code><br>其中，<code>subprotocol</code>（子协议名）用于选择连接到数据库的具体驱动程序。<code>other stuff</code>（数据源名）参数的格式随所使用的<code>subprotocol</code>不同而不同。如果要了解具体格式，你需要查阅数据库供应商的相关文档。</p>
-<h4 id="几种常见的数据库连接"><a href="#几种常见的数据库连接" class="headerlink" title="几种常见的数据库连接"></a>几种常见的数据库连接</h4><p><strong>1. Oracle </strong><br>驱动：<code>oracle.jdbc.driver.OracleDriver</code><br>URL：<code>jdbc:oracle:thin:@host:port:dbname</code><br>host：数据库所在的机器的地址；<br>port：端口号，默认是1521</p>
-<p><strong>2. MySQL</strong><br>驱动：<code>com.mysql.jdbc.Driver</code><br>URL：<code>jdbc:mysql://host:port/dbname</code><br>host：数据库所在的机器的名称；<br>port：端口号，默认3306</p>
-<p><strong>3. SQL Server</strong><br>驱动：<code>com.microsoft.jdbc.sqlserver.SQLServerDriver</code><br>URL：<code>jdbc:microsoft:sqlserver://&lt;host&gt;&lt;:port&gt;;DatabaseName=&lt;dbname&gt;</code><br>host：数据库所在的机器的名称；<br>port：端口号，默认是1433</p>
-<p><strong>4. DB2</strong><br>驱动：<code>com.ibm.db2.jdbc.app.DB2Driver</code><br>URL：<code>jdbc:db2://&lt;host&gt;&lt;:port&gt;/dbname</code><br>host：数据库所在的机器的名称；<br>port：端口号，默认是5000</p>
-<h4 id="MySQL-URL格式详解"><a href="#MySQL-URL格式详解" class="headerlink" title="MySQL URL格式详解"></a>MySQL URL格式详解</h4><p>这里我们主要参考MySQL的URL格式<br><code>jdbc:mysql://[host][,failoverhost...][:port]/[database][?propertyName1][=propertyValue1][&amp;propertyName2][=propertyValue2]...</code></p>
-<p><img src="https://app.yinxiang.com/shard/s15/res/7df5d637-a933-43e8-98a6-e539d3b08fba/1522287325072.png" alt="Alt text"></p>
-<h3 id="2-2-驱动程序"><a href="#2-2-驱动程序" class="headerlink" title="2.2 驱动程序"></a>2.2 驱动程序</h3><p>你需要获得包含了你所使用的数据库的驱动程序的JAR文件。<br>获取方法：</p>
-<ol>
-<li>去官网<a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/connector/j/</a>载JDBC Driver<br>解压之后获取<code>mysql-connector-java-5.1.46-bin.jar</code>这个jar包</li>
-<li>使用Maven仓库下载 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>如果使用第二种方式，直接就会放在项目的<code>classpath</code>下。如果是第一种，下载好了之后如何安装呢? 把下载 的文件解压后的 <code>mysql-connector-java-5.1.46-bin.jar</code>文件 copy到 %JAVA_HOME%/jre/lib/ext 下， %JAVA_HOME就是jdk的安装目录。</p>
-<h3 id="2-3-注册驱动器类"><a href="#2-3-注册驱动器类" class="headerlink" title="2.3 注册驱动器类"></a>2.3 注册驱动器类</h3><p>某些JDBC的JAR文件将自动注册驱动器类，在这种情况下，可以跳过这一部分所描述的手动注册步骤。</p>
-<p>如果驱动程序JAR文件不支持自动注册，那就需要找出数据库提供商使用的JDBC驱动器类的名字。例如MySQL：<br><code>com.mysql.jdbc.Driver</code></p>
-<p>通过使用<code>DriverManager</code>，可以使用两种方式来注册驱动器。一种方式是在Java程序中加载加载驱动器类，例如：<br><code>Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</code><br>这条语句将使得驱动器类被加载，由此将执行可以注册驱动器的静态初始化器。</p>
-<p>另一种方式是设置jdbc.drivers属性。可以用命令行参数来指定这个属性，例如：<br><code>java -Djdbc.drivers=com.mysql.jdbc.Driver ProgramName</code><br>或者在应用中用下面这样的调用来设置系统属性：<br><code>System.setProperty(&quot;jdbc.Driver&quot;, &quot;com.mysql.jdbc.Driver&quot;);</code></p>
-<h3 id="2-4-连接到数据库"><a href="#2-4-连接到数据库" class="headerlink" title="2.4 连接到数据库"></a>2.4 连接到数据库</h3><p>在Java程序中，我们可以在代码中打开一个数据库连接，例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String url = properties.getProperty(<span class="string">"jdbc.url"</span>);</span><br><span class="line">String username = properties.getProperty(<span class="string">"jdbc.username"</span>);</span><br><span class="line">String password = properties.getProperty(<span class="string">"jdbc.password"</span>);</span><br><span class="line">Connection conn = DriverManager.getConnection(url,username,password);</span><br></pre></td></tr></table></figure></p>
-<p>驱动管理器遍历所有注册过的驱动程序，以便找到一个能够使用数据库URL中指定的子协议的驱动程序。</p>
-<h3 id="2-5-执行SQL语句"><a href="#2-5-执行SQL语句" class="headerlink" title="2.5 执行SQL语句"></a>2.5 执行SQL语句</h3><ol>
-<li>执行SQL命令之前，首先需要创建一个<code>Statement</code>对象，<br><code>Statement stat = conn.createStatement();</code></li>
-<li>SQL语句字符串<br><code>String sql = &quot;CREATE TABLE Greetings (Message CHAR(20))&quot;</code></li>
-<li>然后调用Statement接口中的<code>executeUpdate</code>方法<br><code>stat.executeUpdate(sql)</code><br>对于<code>INSERT DELETE UPDATE</code>等都使用<code>executeUpdate</code>方法，它返回受SQL命令影响的行数。对于<code>SELECT</code>使用<code>executeQuery</code>方法，它返回一个<code>ResultSet</code>类型的对象，可以通过它来每一行地迭代遍历所有查询结果。</li>
-</ol>
-<p><strong>注意：</strong><code>ResultSet</code>接口的迭代协议与java.util.Iterator接口稍有不同。对于<code>ResultSet</code>接口，迭代器初始化时被设定在第一行之前的位置，必须调用<code>next()</code>方法把它移动到第一行。另外，它没有<code>hasNext()</code>方法，我们需要不断地调用<code>next()</code>，知道它返回<code>false</code>。</p>
-<p><code>ResultSet</code>中行的顺序是人任意的，除非你在<code>sql</code>使用了<code>ORDER BY</code>子句指定排序。</p>
-<h4 id="管理连接、语句和结果集"><a href="#管理连接、语句和结果集" class="headerlink" title="管理连接、语句和结果集"></a><strong>管理连接、语句和结果集</strong></h4><p>每个<code>Connection</code>对象都可以创建一个或多个<code>Statement</code>对象。同一个<code>Statement</code>对象可以用于多个不想干的命令和查阅。但是一个<code>Statement</code>对象最多只能有一个打开结果集。<br>如果不你信，可以看下面代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ResultSet resultSet = statement.executeQuery(<span class="string">"SELECT * FROM Greetings"</span>);</span><br><span class="line">ResultSet resultSet2 = statement.executeQuery(<span class="string">"SELECT * FROM Greetings"</span>);</span><br><span class="line"><span class="keyword">if</span> (resultSet2.next())&#123;</span><br><span class="line">    System.out.println(resultSet2.getString(<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (resultSet.next())&#123;</span><br><span class="line">    System.out.println(resultSet.getString(<span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Hello World!sdfsdf</span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">"main"</span> java.sql.SQLException: Operation not allowed after ResultSet closed</span><br><span class="line">	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1055)</span><br><span class="line">	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)</span><br><span class="line">	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926)</span><br><span class="line">	at com.mysql.jdbc.ResultSetImpl.checkClosed(ResultSetImpl.java:768)</span><br><span class="line">	at com.mysql.jdbc.ResultSetImpl.next(ResultSetImpl.java:7008)</span><br><span class="line">	at jdbc.MySQLTest.runTest(MySQLTest.java:31)</span><br><span class="line">	at jdbc.MySQLTest.main(MySQLTest.java:17)</span><br><span class="line"></span><br><span class="line">Process finished with <span class="built_in">exit</span> code 1</span><br></pre></td></tr></table></figure></p>
-<p>也就是说，同一个<code>Statement</code>对象会以最后一个打开的<code>ResultSet</code>有效，之前打开的都已经关闭了。</p>
-<p><strong>使用完ResultSet、Statement或Connection对象后，应立即调用close方法。这些对象都是用了规模较大的数据结构和数据库存服务器上的有限资源</strong><br>如果Statement对象上有一个打开的结果集，那么调用<code>statement.close()</code>方法将自动关闭该结果集。同样的调用Connection类的close方法将关闭该连接上的所有语句。<br>下面是完整的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> jdbc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Paths;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * author: jifang</span></span><br><span class="line"><span class="comment"> * date: 18-3-29 上午9:42</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySQLTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        runTest();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">runTest</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Connection connection = getConnection();</span><br><span class="line">        Statement statement = connection.createStatement();</span><br><span class="line">        statement.executeUpdate(<span class="string">"CREATE TABLE Greetings (Message CHAR(20))"</span>);</span><br><span class="line">        statement.executeUpdate(<span class="string">"INSERT INTO Greetings VALUES ('Hello World!sdfsdf')"</span>);</span><br><span class="line"></span><br><span class="line">        ResultSet resultSet = statement.executeQuery(<span class="string">"SELECT * FROM Greetings"</span>);</span><br><span class="line">        <span class="keyword">if</span> (resultSet.next())&#123;</span><br><span class="line">            System.out.println(resultSet.getString(<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        statement.executeUpdate(<span class="string">"DROP TABLE Greetings"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InputStream inputStream = Files.newInputStream(Paths.get(<span class="string">"src/main/java/jdbc/"</span>, <span class="string">"database.properties"</span>));</span><br><span class="line">            properties.load(inputStream);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        String drivers = properties.getProperty(<span class="string">"jdbc.drivers"</span>);</span><br><span class="line">        <span class="keyword">if</span> (drivers!=<span class="keyword">null</span>)System.setProperty(<span class="string">"jdbc.drivers"</span>,drivers);</span><br><span class="line">        String url = properties.getProperty(<span class="string">"jdbc.url"</span>);</span><br><span class="line">        String username = properties.getProperty(<span class="string">"jdbc.username"</span>);</span><br><span class="line">        String password = properties.getProperty(<span class="string">"jdbc.password"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> DriverManager.getConnection(url,username,password);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>【data.properties】<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.drivers=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url=jdbc:mysql://localhost:3306/jifang</span><br><span class="line">jdbc.username=root</span><br><span class="line">jdbc.password=xjj520520ljf</span><br></pre></td></tr></table></figure></p>
-<p>我们已经了解了怎么使用<code>Statement</code>执行sql语句。现在来看看它的大哥。</p>
-<p><strong>PreparedStatement（预备语句）</strong><br>在预备查询语句中，每个宿主变量都用“？”来表示。如果存在一个以上的变量，那么在设置变量值时必须注意“？”的位置。例如我们要查询的SQL为：<br><code>SELECT * FROM jifang where id = ?</code><br>在执行预备语句之前，必须使用set方法将变量绑定到实际的值上。<br><code>preparedStat.setInt(1, 233)</code><br>第一个参数指的是需要设置的宿主变量的位置，位置1表示第一个“？”。第二个参数是赋予宿主变量的值。</p>
-<p>如果想要重用已经执行过的预备查询语句，那么除非使用set方法或调用<code>clearParameters</code>方法，否则所有宿主变量的绑定都不会改变。<br>一旦为所有变量绑定了具体的值，就可以执行查询操作了。</p>
-<p><strong>注意：</strong>如果查询中涉及用户输入，那就还需要警惕<strong>注入攻击</strong>。因此，只有查询涉及变量时，才应该使用预备语句。</p>
-<h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>除了以上介绍的内容，还有：</p>
-<ol>
-<li>读写LOB</li>
-<li>获取自动生成键</li>
-<li>可滚动和可更新结果集</li>
-<li>元数据<br>等内容，有兴趣可以查阅《Java核心编程卷二》</li>
-</ol>
-<blockquote>
-<p>参考文献<br>[1] 《Java核心技术卷二》<br>[2] <a href="https://blog.csdn.net/u014726937/article/details/52786502" target="_blank" rel="noopener">几种常见的数据库连接的URL写法</a><br>[3] <a href="http://elf8848.iteye.com/blog/1684414" target="_blank" rel="noopener">Mysql JDBC Url参数说明</a></p>
-</blockquote>
 
       
 
@@ -300,11 +251,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">事务</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
         		</li>
       		
 		</ul>
@@ -360,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2018/03/29/JDBC/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cap-ljf.top/2018/05/23/Java并发系列/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -374,18 +321,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/29/事务/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          事务
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/28/基于scrapy分布式新闻评论爬虫/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于scrapy分布式新闻评论爬虫</div>
+    <a href="/2018/05/18/Java泛型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java泛型</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -412,7 +350,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是JDBC？"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是JDBC？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JDBC配置"><span class="toc-number">2.</span> <span class="toc-text">2. JDBC配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-数据库URL"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 数据库URL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#几种常见的数据库连接"><span class="toc-number">2.1.1.</span> <span class="toc-text">几种常见的数据库连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-URL格式详解"><span class="toc-number">2.1.2.</span> <span class="toc-text">MySQL URL格式详解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-驱动程序"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 驱动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-注册驱动器类"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 注册驱动器类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-连接到数据库"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 连接到数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-执行SQL语句"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 执行SQL语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#管理连接、语句和结果集"><span class="toc-number">2.5.1.</span> <span class="toc-text">管理连接、语句和结果集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后续"><span class="toc-number">2.6.</span> <span class="toc-text">后续</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
