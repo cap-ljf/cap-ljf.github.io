@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6c570663-2daf-4582-b451-912fe6027a87" name="Default" comment="winPC提交测试">
+      <change afterPath="$PROJECT_DIR$/.idea/cap-ljf.github.io.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/2018/09/05/单例模式（三种实现方式，抵御反射、反序列化、克隆攻击）/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/archives/2018/09/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/tags/Singleton/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/单例模式（三种实现方式，抵御反射、反序列化、克隆攻击）.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2017/07/18/动态规划/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2017/07/18/动态规划/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2017/08/10/java网络IO/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2017/08/10/java网络IO/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2017/09/16/去哪儿面经/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2017/09/16/去哪儿面经/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2017/09/18/京东面经/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2017/09/18/京东面经/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2017/09/18/华为面经/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2017/09/18/华为面经/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2017/10/18/JVM/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2017/10/18/JVM/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2017/10/23/Maven初探/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2017/10/23/Maven初探/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2017/12/31/2017个人报告/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2017/12/31/2017个人报告/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/01/18/《提问的智慧》笔记/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/01/18/《提问的智慧》笔记/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/19/python爬虫之新浪微博评论/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/19/python爬虫之新浪微博评论/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/20/Java流与文件/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/20/Java流与文件/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/21/java 序列化(serialization)/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/21/java 序列化(serialization)/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/21/javaIO流/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/21/javaIO流/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/21/字符集-字符编码/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/21/字符集-字符编码/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/23/正则表达式/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/23/正则表达式/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/26/JSON/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/26/JSON/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/26/Java网络编程/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/26/Java网络编程/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/27/健身训练计划/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/27/健身训练计划/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/28/基于scrapy分布式新闻评论爬虫/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/28/基于scrapy分布式新闻评论爬虫/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/29/JDBC/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/29/JDBC/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/29/事务/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/29/事务/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/30/《三个火枪手》噗噗噗/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/30/《三个火枪手》噗噗噗/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/30/西部世界/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/30/起风了/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/30/起风了/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/02/Java注解/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/02/Java注解/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/03/《Spring实战》装配bean/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/03/《Spring实战》装配bean/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/04/《Spring实战》高级装配/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/04/《Spring实战》高级装配/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/05/《Spring实战》面向切面的Spring/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/05/《Spring实战》面向切面的Spring/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/08/AbstractAnnotationConfigDispatcherServletInitializer类方法getRootConfigClasses和getServletConfigClasses区别/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/08/AbstractAnnotationConfigDispatcherServletInitializer类方法getRootConfigClasses和getServletConfigClasses区别/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/08/《Spring实战》搭建Spring-MVC/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/08/《Spring实战》搭建Spring-MVC/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/10/Hexo博客提交百度和谷歌收录/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/10/Hexo博客提交百度和谷歌收录/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/10/《Spring实战》Web中的Spring/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/10/《Spring实战》Web中的Spring/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/10/指路人，还是引路人/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/10/指路人，还是引路人/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/11/Spring-Data-Redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/11/Spring-Data-Redis/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/11/《Spring实战》Spring中使用JDBC/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/11/《Spring实战》Spring中使用JDBC/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/05/译-Linux包管理基础：apt-yum-dnf-pkg/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/05/译-Linux包管理基础：apt-yum-dnf-pkg/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/18/Java泛型/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/18/Java泛型/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/23/Java并发系列/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/23/Java并发系列/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/07/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2017/07/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/08/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2017/08/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/09/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2017/09/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2017/10/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/12/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2017/12/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2017/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/01/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/01/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/03/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/03/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/03/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/05/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/05/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/page/4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/page/4/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/baidu_urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/baidu_urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/baidusitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/baidusitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/content.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/content.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/4/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/2017/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/2017/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/DI/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/DI/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/DataSource/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/DataSource/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/Hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/Hexo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/I-O/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/I-O/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/JDBC/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/JDBC/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/JSON/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/JSON/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/JavaMail/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/JavaMail/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/Java网络编程/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/Java网络编程/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/Spring-MVC/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/Spring-MVC/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/Spring/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/Spring/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/UTF-16/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/UTF-16/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/UTF-8/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/UTF-8/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/Unicode/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/Unicode/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/aop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/aop/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/apt/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/apt/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/ifeng/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/ifeng/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/java/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/java/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/java虚拟机/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/java虚拟机/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/jvm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/jvm/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/linux/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/maven/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/maven/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/music/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/music/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/news163/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/news163/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/qunar/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/qunar/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/redis/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/scrapy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/scrapy/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/seo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/seo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/socket/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/socket/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/spring-data-redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/spring-data-redis/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/toutiao/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/toutiao/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/transient/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/transient/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/weibo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/weibo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/yum/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/yum/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/事务/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/事务/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/京东/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/京东/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/健身/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/健身/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/动态规划/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/动态规划/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/华为/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/华为/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/字符编码/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/字符编码/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/字符集/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/字符集/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/并发/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/并发/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/序列化/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/序列化/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/总结/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/提问的智慧/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/提问的智慧/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/新浪微博/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/新浪微博/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/杂谈/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/杂谈/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/正则表达式/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/正则表达式/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/泛型/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/泛型/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/注解/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/注解/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/流/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/流/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/爬虫/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/爬虫/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/算法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/算法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/读书/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/读书/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/随笔/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/随笔/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/面经/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/面经/index.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="单例模式（三种实现方式，抵御反射、反序列化、克隆攻击）.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/单例模式（三种实现方式，抵御反射、反序列化、克隆攻击）.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="418">
+                <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="健身训练计划.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/健身训练计划.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="242">
+                <caret line="11" column="11" selection-start-line="11" selection-end-line="11" selection-end-column="11" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/source/_posts/单例模式（三种实现方式，抵御反射、反序列化、克隆攻击）.md" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cap-ljf.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cap-ljf.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cap-ljf.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cap-ljf.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cap-ljf.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cap-ljf.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c570663-2daf-4582-b451-912fe6027a87" name="Default" comment="" />
+      <created>1534170595000</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534170595000</updated>
+      <workItem from="1534170596646" duration="19000" />
+      <workItem from="1536110262952" duration="1565000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1584000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293348" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="winPC提交测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="winPC提交测试" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/source/_posts/健身训练计划.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="242">
+            <caret line="11" column="11" selection-start-line="11" selection-end-line="11" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/单例模式（三种实现方式，抵御反射、反序列化、克隆攻击）.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="418">
+            <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
