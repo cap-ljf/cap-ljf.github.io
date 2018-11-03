@@ -1,3 +1,4 @@
+http://cap-ljf.top/2018/11/03/dubbo入门知识-附demo/
 http://cap-ljf.top/2018/09/12/七牛云图床，年轻aº博主的图床/
 http://cap-ljf.top/2018/09/12/Hexo多台电脑同步更新博客/
 http://cap-ljf.top/2018/09/05/单例模式（三种实现方式，抵御反射、反序列化、克隆攻击）/
