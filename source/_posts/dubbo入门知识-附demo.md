@@ -9,7 +9,7 @@ tags: [dubbo]
 关于dubbo产生的背景不再赘述。本文讨论如何在spring中集成dubbo，使用dubbo进行服务注册、服务发现、远程调用，dubbo的使用注意事项，及demo示例。
 
 ## 1、架构
-![Alt text](https://maxiang.io/6991f32d-fd5c-44d6-95ce-19d7dec5a25b)
+![Alt text](blob:https://maxiang.io/6991f32d-fd5c-44d6-95ce-19d7dec5a25b)
 <!--more-->
 **节点角色说明**
 | 节点      |     角色说明 |
