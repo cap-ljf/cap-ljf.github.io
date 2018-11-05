@@ -9,7 +9,7 @@ tags: [dubbo]
 关于dubbo产生的背景不再赘述。本文讨论如何在spring中集成dubbo，使用dubbo进行服务注册、服务发现、远程调用，dubbo的使用注意事项，及demo示例。
 
 ## 1、架构
-![Alt text](blob:https://maxiang.io/6991f32d-fd5c-44d6-95ce-19d7dec5a25b)
+![Alt text](https://app.yinxiang.com/shard/s15/res/d7a1fa30-a283-4f1c-99eb-476f90df4990/1540556051260.png?search=dubbo)
 <!--more-->
 **节点角色说明**
 | 节点      |     角色说明 |
@@ -338,12 +338,12 @@ java.lang.NoClassDefFoundError: io/netty/channel/EventLoopGroup
 Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据量大并发的服务调用，以及服务消费者机器数远大于服务提供者机器数的情况。
 
 反之，Dubbo 缺省协议不适合传送大数据量的服务，比如传文件，传视频等，除非请求量很低。
-![Alt text](https://maxiang.io/080f913e-740e-446d-b167-3763c119540d)
+![Alt text](https://app.yinxiang.com/shard/s15/res/df2cf7de-5a2c-4863-b5df-0432e40d8982/1541035833300.png?search=dubbo)
 ### 约束
 - 参数及返回值需实现Serializable接口
 - 参数及返回值不能自定义实现List、Map、Number、Date、Calendar等接口，只能使用jdk自带的实现，因为hessian会做特殊处理，自定义实现的属性值会丢失。
 - Hessian 序列化，只传成员属性值和值的类型，不传方法或静态变量，兼容情况 
-![Alt text](https://maxiang.io/d90ddd87-e151-4273-b5db-c4f310ae9635)
+![Alt text](https://app.yinxiang.com/shard/s15/res/6057190e-184d-401a-ac9c-31c3949ab00d/1541036163856.png?search=dubbo)
 （客户端应该是指消费者，服务器端指提供者）
 接口增加方法，对客户端无影响，如果该方法不是客户端需要的，客户端不需要重新部署。输入参数和结果集中增加属性，对客户端无影响，如果客户端并不需要新属性，不用重新部署。
 
@@ -382,7 +382,7 @@ Dubbo 协议缺省每服务每提供者每消费者使用单一长连接，如�
 推荐使用Multicast 注册中心
 ### Multicast 注册中心
 Multicast 注册中心不需要启动任何中心节点，只要广播地址一样，就可以互相发现。
-![Alt text](https://maxiang.io/f3ef6bb2-6ecc-4e29-bb2d-2a2cf44ff862)
+![Alt text](https://app.yinxiang.com/shard/s15/res/2597ed3f-c8b0-43a7-8703-cc4a35a13ec6/1541078593920.png?search=dubbo)
 0. 提供方启动时广播自己的地址
 1. 消费方启动时广播订阅请求
 2. 提供方收到订阅请求时，单播自己的地址给订阅者，如果设置了 unicast=false，则广播给订阅者
@@ -402,7 +402,7 @@ Multicast 注册中心不需要启动任何中心节点，只要广播地址一�
 ```
 ### Zookeeper注册中心
 Zookeeper 是 Apacahe Hadoop 的子项目，是一个树型的目录服务，支持变更推送，适合作为 Dubbo 服务的注册中心，工业强度较高，可用于生产环境，并推荐使用 。
-![Alt text](https://maxiang.io/06fe39c6-a4ef-4ee1-b010-916ca647773c)
+![Alt text](https://app.yinxiang.com/shard/s15/res/8d64daf4-c1c0-4a50-b6e8-a423a3966546/1541123904178.png?search=dubbo)
 流程说明：
 
 - 服务提供者启动时: 向 /dubbo/com.foo.BarService/providers 目录下写入自己的 URL 地址
