@@ -150,6 +150,147 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-8-9-10-11新特性之——Java9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/Java-8-9-10-11新特性之——Java9/">Java 8,9,10,11新特性之——Java9</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/21/Java-8-9-10-11新特性之——Java9/" class="archive-article-date">
+  	<time datetime="2018-11-21T10:25:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java9于2017年9月21日发布,  离java8发布三年多之久发布的新版本, 其中最重要的更新就是 Java平台模块系统.</p>
+<p>Java9的核心在于解决历史遗留问题, 为以后的jar包森林清理道路.</p>
+<h2 id="什么是模块化"><a href="#什么是模块化" class="headerlink" title="什么是模块化"></a>什么是模块化</h2><p>首先看一下<a href="https://www.oracle.com/corporate/features/understanding-java-9-modules.html" target="_blank" rel="noopener">Oricle官网Java9模块化介绍博客</a>对模块化的定义:<br><img src="https://app.yinxiang.com/shard/s15/res/e6a2147f-cf94-47dc-a08d-7b3232179ef7/1542677911543.png" alt="Paul Deitel"></p>
+<blockquote>
+<p>Modularity adds a higher level of aggregation above packages. The key new language element is the module—a uniquely named, reusable group of related packages, as well as resources (such as images and XML files) and a module descriptor specifying</p>
+<ul>
+<li>the module’s name</li>
+<li>the module’s dependencies (that is, other modules this module depends on)</li>
+<li>the packages it explicitly makes available to other modules (all other packages in the module are implicitly unavailable to other modules)</li>
+<li>the services it offers</li>
+<li>the services it consumes</li>
+<li>to what other modules it allows reflection</li>
+</ul>
+</blockquote>
+<p><strong>译:</strong><br>模块化是在package(包)层次上添加的更高层次的聚合. Java9语言心得关键元素就是模块化, 模块化是由 一组唯一命名的可重用的包、资源(例如图片和XML文件)和一个模块描述符组成的集合。<br>模块描述符需要指定了：</p>
+<ul>
+<li>模块名</li>
+<li>模块的依赖</li>
+<li>明确指出哪些模块能够访问本模块的具体包（默认模块内的所有包对其他模块都不可用）</li>
+<li>模块提供的服务</li>
+<li>模块消费的服务</li>
+<li>to what other modules it allows reflection（暂不明白）</li>
+</ul>
+<h2 id="为什么需要模块化"><a href="#为什么需要模块化" class="headerlink" title="为什么需要模块化"></a>为什么需要模块化</h2><h3 id="历史遗留问题"><a href="#历史遗留问题" class="headerlink" title="历史遗留问题"></a>历史遗留问题</h3><p>两个问题， 臃肿的jar包和混乱的jar包依赖关系。<br><strong>臃肿的jar包</strong><br>Java8的rt.jar为60兆之大，运行一个Hello world程序， 也需要这么一个庞然大物。我们依赖一个大的工具包，但我们可能只需要其中几个类的功能，之前的jar包机制是很僵硬的， 我们需要一种更加灵活的环境，能够按需分配<br><img src="https://app.yinxiang.com/shard/s15/res/f63cfb43-d641-4263-ab88-855f305abee6/1542762570596.png" alt="Alt text"><br><strong>jar hell</strong><br>jar包之间的依赖可谓错综复杂， 我们需要更加清晰的依赖关系。<br><img src="https://app.yinxiang.com/shard/s15/res/def9edd3-fd3b-42be-810b-d821f29ea31a/1542762727134.png" alt="Alt text"></p>
+<h3 id="模块化的目标"><a href="#模块化的目标" class="headerlink" title="模块化的目标"></a>模块化的目标</h3><p>根据 JSR 376， Java SE平台模块化的关键目标是：</p>
+<ul>
+<li>可靠的配置——模块化提供了一种方式明确的声明模块之间的依赖关系， 在编译时和运行时都能够识别这些依赖关系。系统可以遍历这些依赖关系，以确定包含支持你的应用程序所需的所有模块</li>
+<li>强封装——仅当模块显示的使用exports导出模块时，模块中的包才可供其他模块访问。即使这样，另一个模块也不能使用这些包，除非它使用requires明确声明它需要其他模块的功能。这提高了平台的安全性，因为潜在的攻击者能访问的类更少了。您可能会发现考虑模块化可以帮助您提出更清晰，更合理的设计。</li>
+<li>可扩展的Java平台——以前，Java平台是由大量的包组成的整体，使得开发、维护和扩展都很难。它不容易被子集化。现在这个平台被模块化成95个模块（这个数量可能会随着Java的发展而改变）。您可以创建一个由您想要的能够支持您的应用或者设备所需的模块的运行环境。例如，如果设备不支持GUI，则可以创建不包含GUI模块的运行时，从而显著减少运行时的大小。</li>
+<li>更高德平台完整性——在Java9之前，可以在平台中使用许多不适合应用程序类使用的类。通过强大的封装，这些内部API可以使用该Java9模块化平台真正封装并隐藏在应用程序之外。如果您的代码依赖于这些内部API，这可能会导致这些历史代码迁移到java9模块化时出现问题。</li>
+<li>改进的性能——JVM使用各种优化技术来提高应用程序性能。JSR 376表明，当事先知道所需类型仅位于特定模块中时，这些技术更有效。</li>
+</ul>
+<h2 id="简单入门模块化"><a href="#简单入门模块化" class="headerlink" title="简单入门模块化"></a>简单入门模块化</h2><p>示例demo链接在文章末尾。<br>首先安装好Java11，windows和linux系统都可以安装多个版本的jdk。</p>
+<h3 id="第一个例子，Greetings"><a href="#第一个例子，Greetings" class="headerlink" title="第一个例子，Greetings"></a>第一个例子，Greetings</h3><p>首先查看greetings项目目录结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">└─src</span><br><span class="line">    │  module-info.java</span><br><span class="line">    │</span><br><span class="line">    └─com.greetings</span><br><span class="line">            Main.java</span><br></pre></td></tr></table></figure></p>
+<p>整个项目包含两个文件，一个是<code>module-info.java</code>模块文件，还有一个是<code>Main.java</code>主类文件。<br>查看一下<code>Main.java</code>和<code>module-info.java</code>的代码：<br><strong>Main.Java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Greetings!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>module-info.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> com.greetings &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>模块文件使用<code>module</code>关键字定义了该模块的模块名（唯一的）<code>com.greetings</code>，因为这个<code>Main.java</code>中没有依赖别的模块的内容，也没有打算向外界暴露自己的服务，所以内容是空的。<br>现在我们编译这两个文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd greetings //进入项目根目录</span><br><span class="line">javac -d mods/com.greetings src/com.greetings/Main.java src/module-info.java //linux</span><br><span class="line">javac -d mods/greetings src\com.greetings\Main.java src\module-info.java //windows</span><br></pre></td></tr></table></figure></p>
+<p><code>-d</code>参数用来指定放置生成的类文件的位置，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java --module-path mods -m com.greetings/com.greetings.Main //linux</span><br><span class="line">java --module-path mods -m com.greetings/com.greetings.Main //windows</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>--module-path &lt;模块路径&gt;</code> windows使用<code>；</code>分隔的目录列表，其中每个目录都包含一个模块<br>将主类、源文件、<code>-jar&lt;jar文件&gt;</code>、<code>-m</code>或<code>--module &lt;模块&gt;/&lt;主类&gt;</code>后的参数作为参数传递到主类执行<br>执行上面命令之后输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Greetings!</span><br></pre></td></tr></table></figure></p>
+<h3 id="第二个例子，Greetings-world！"><a href="#第二个例子，Greetings-world！" class="headerlink" title="第二个例子，Greetings world！"></a>第二个例子，Greetings world！</h3><p>先看一下目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">├─astro</span><br><span class="line">│  └─src</span><br><span class="line">│      │  module-info.java</span><br><span class="line">│      │</span><br><span class="line">│      └─com.astro</span><br><span class="line">│              World.java</span><br><span class="line">│</span><br><span class="line">├─greetings</span><br><span class="line">│  └─src</span><br><span class="line">│      │  module-info.java</span><br><span class="line">│      │</span><br><span class="line">│      └─com.greetings</span><br><span class="line">│              Main.java</span><br></pre></td></tr></table></figure></p>
+<p>同样先看代码内容：<br><strong>astro/World.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">World</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">name</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"world"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>World类中定义了一个静态方法<code>name()</code>，返回一个<code>World</code>字符串。<br><strong>astro/module-info.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> com.astro &#123;</span><br><span class="line">    <span class="keyword">exports</span> com.astro;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>astro定义了模块名为<code>com.astro</code>，并且使用了<code>exports</code>提供了自身模块的功能。<br><strong>greetings/Main.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.greetings;</span><br><span class="line"><span class="keyword">import</span> com.astro.World;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.format(<span class="string">"Greetings %s"</span>, World.name());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Main.java引用了astro的World.name方法。<br><strong>greetings/module-info.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> com.greetings &#123;</span><br><span class="line">    <span class="keyword">requires</span> com.astro;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为Main.java，使用了<code>requires</code>关键字声明了需要<code>com.astro</code>这个模块的服务。<br>编译：首先编译astro，然后编译greetings<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">javac -d mods/com.astro src/com.astro/World.java src/module-info.java //linux astro</span><br><span class="line">javac -p ../astro/mods/ -d mods/com.greetings src/com.greetings/Main.java src/module-info.java //linux greetings</span><br><span class="line"></span><br><span class="line">javac -d mods src\com.astro\World.java src\module-info.java //windows</span><br><span class="line">javac -p ..\astro\mods -d mods src\com.greetings\Main.java src\module-info.java //windows</span><br></pre></td></tr></table></figure></p>
+<p><code>--module-path &lt;path&gt;, -p &lt;path&gt;</code> 指定查找应用程序模块的位置<br>运行：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -p mods;..\astro\mods -m com.greetings/com.greetings.Main <span class="comment">//windows</span></span><br><span class="line">java -p mods;../astro/mods -m com.greetings/com.greetings.Main <span class="comment">//linux 试了一下没成功</span></span><br></pre></td></tr></table></figure></p>
+<p>成功的输出了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Greetings world</span><br></pre></td></tr></table></figure></p>
+<h3 id="多模块编译"><a href="#多模块编译" class="headerlink" title="多模块编译"></a>多模块编译</h3><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jar -c -f mlib/com.astro.jar --module-version=1.0 -C mods . //linux</span><br><span class="line">jar -c -f mlib/com.greetings.jar --main-class=com.greetings.Main --module-version=1.0 -C mods . //linux</span><br></pre></td></tr></table></figure>
+<p><code>-c</code> 创建jar包<br><code>-f</code> jar包文件名<br><code>--module-version</code> 创建模块化jar或更新非模块化jar时的模块版本<br><code>-C</code> 更改为指定目录并包含以下文件（所以最后使用了<code>-C mods .</code> 注意有一个英文点号）<br>运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -p mlib;..\astro\mlib -m com.greetings //windows</span><br></pre></td></tr></table></figure></p>
+<p>同样的输出Greetings world</p>
+<h3 id="jlink"><a href="#jlink" class="headerlink" title="jlink"></a>jlink</h3><p>我们可以通过jlink构造自己的jre，前文提到的rt.jar很大，jlink可以帮助我们定制自己想要的运行环境。<br>使用jlink命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jlink --module-path mods;..\astro\mods --add-modules com.greetings --output executable //windows</span><br></pre></td></tr></table></figure></p>
+<p>完成，这样就把执行文件输出到了executable文件夹中，如果对以上的命令不熟悉可以通过<code>命令 --help</code>查看命令帮助<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">executable\bin\java --module-path mods --module com.greetings/com.greetings.Main //windows</span><br></pre></td></tr></table></figure></p>
+<p>上面我们使用了executable文件夹中的java命令，这个就是我们自定义的jre环境。<br>查看一下executable/lib中jrt-fs.jar的大小，仅105KB。</p>
+<h3 id="jmods"><a href="#jmods" class="headerlink" title="jmods"></a>jmods</h3><p>jmod 可以对模块或 jar 包压缩的一个工具，但他的格式和 jar 包不一样。<br>直接在上个练习目录中试用命令就好。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jmod create --class-path mods;..\astro\mods greetings.jmod</span><br></pre></td></tr></table></figure></p>
+<p>然后查看一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\workspace\java9-module-demo\greetings&gt;jmod list greetings.jmod</span><br><span class="line">classes/module-info.class</span><br><span class="line">classes/com/greetings/Main.class</span><br><span class="line">classes/com/astro/World.class</span><br></pre></td></tr></table></figure></p>
+<p>更多的命令解释可以查看一下 jmod –help</p>
+<p>最后附上github地址：<a href="https://github.com/cap-ljf/java9-module-demo/" target="_blank" rel="noopener">https://github.com/cap-ljf/java9-module-demo/</a></p>
+<p>参考文献：</p>
+<blockquote>
+<p><a href="https://hacpai.com/article/1532571971058#toc_h3_9" target="_blank" rel="noopener">https://hacpai.com/article/1532571971058#toc_h3_9</a>, 黑客派，pattyq<br><a href="https://www.oracle.com/corporate/features/understanding-java-9-modules.html，www.oracle.com，Paul" target="_blank" rel="noopener">https://www.oracle.com/corporate/features/understanding-java-9-modules.html，www.oracle.com，Paul</a> Deitel</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">java9</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">模块化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/21/Java-8-9-10-11新特性之——Java9/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java-8-9-10-11新特性之——Java8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -887,89 +1028,6 @@
 
 
   
-    <article id="post-《Spring实战》Spring中使用JDBC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/11/《Spring实战》Spring中使用JDBC/">《Spring实战》Spring中使用JDBC</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/11/《Spring实战》Spring中使用JDBC/" class="archive-article-date">
-  	<time datetime="2018-04-11T01:45:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>为了避免持久化的逻辑分散到应用的各个组件中，最好将数据访问的功能放到一个或多个专注于此项任务的组件中。这样的组件通常称为数据访问对象（Data acess  object, DAO）或 Repository。<br>
-        
-          <a class="article-more-a" href="/2018/04/11/《Spring实战》Spring中使用JDBC/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">DataSource</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/11/《Spring实战》Spring中使用JDBC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1067,14 +1125,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">seo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2017</a>
               </li>
              
@@ -1083,7 +1133,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛型</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">seo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1099,6 +1153,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">spring data redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">泛型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -1111,11 +1177,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">spring data redis</a>
+                <a href="javascript:void(0)" class="js-tag color5">新浪微博</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1131,11 +1197,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">新浪微博</a>
+                <a href="javascript:void(0)" class="js-tag color3">DI</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1151,14 +1213,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">健身</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
@@ -1167,11 +1221,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">qunar</a>
+                <a href="javascript:void(0)" class="js-tag color3">健身</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">华为</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">qunar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1183,6 +1241,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
               </li>
              
@@ -1191,11 +1253,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+                <a href="javascript:void(0)" class="js-tag color1">java9</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">transient</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">序列化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1208,14 +1282,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">提问的智慧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">transient</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">序列化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1263,10 +1329,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Java网络编程</a>
               </li>
              
@@ -1304,6 +1366,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">toutiao</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,7 +8,7 @@ tags: [java9, 模块化]
 java9于2017年9月21日发布,  离java8发布三年多之久发布的新版本, 其中最重要的更新就是 Java平台模块系统.
 
 Java9的核心在于解决历史遗留问题, 为以后的jar包森林清理道路.
-
+<!--more-->
 ## 什么是模块化
 首先看一下[Oricle官网Java9模块化介绍博客](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)对模块化的定义:
 ![Paul Deitel](https://app.yinxiang.com/shard/s15/res/e6a2147f-cf94-47dc-a08d-7b3232179ef7/1542677911543.png)
